@@ -3,7 +3,7 @@ markdown: rdiscount
 rdiscount:
   extensions: [smart]
 pygments: true
-url: sozkoroglu.me
+url: http://sozkoroglu.me
 exclude:
         - Rakefile
         - Makefile
