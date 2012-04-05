@@ -35,4 +35,7 @@ ribbon: GitHub'dayım
 title: Semih Özköroğlu
 twitter: ~
 
-navigator: ~
+navigator:
+        0: Teknik Olmayan Yazılar
+        1: Teknik Yazılar
+
