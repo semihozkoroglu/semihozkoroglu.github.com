@@ -1,4 +1,4 @@
-# ![Alt text](media/ruby-logo.gif)
+# ![Ruby Programlama](https://github.com/semihozkoroglu/semihozkoroglu.github.com/raw/master/p/ruby/media/ruby-logo.gif)
 
 .fx: first
 
