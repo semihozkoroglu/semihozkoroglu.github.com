@@ -1503,8 +1503,8 @@ div.slide {
             currentSlideNo = Number(window.location.hash.replace('#slide', ''));
         }
 
-        // disable context on small screens
-        if (window.screen.availWidth < 1280) {
+        // hide context on small screens and iframes
+        if (window.screen.availWidth < 1280 || top != self) {
             hiddenContext = true;
         }
 
@@ -1630,7 +1630,7 @@ _gaq.push(['_trackPageview']);
             </aside>
             
             <aside class="page_number">
-              1/8
+              1/11
             </aside>
           </footer>
         </div>
@@ -1638,36 +1638,176 @@ _gaq.push(['_trackPageview']);
       
       <!-- slide source: ./index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>Giriş</h2></header>
+            <header><h1>Kurulum</h1></header>
             
             
-            <section><h2>Kurulumu</h2>
-<p>sudo apt-get install ruby1.9.1-full</p>
-<h2>Kullanımı</h2>
-<ul>
+            <section><p>Debian ve türevi dağıtımlarda (ör. Ubuntu)</p>
+<div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install ruby1.9.1-full
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="./index.md">./index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/11
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: ./index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Düzenleme</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ $EDITOR</span> program.rb <span class="c"># veya $EDITOR program</span>
+</pre></div>
+
+<p><code>$EDITOR</code> <code>vim</code> veya (grafik ortamda) <code>gedit</code> olabilir</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="./index.md">./index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              3/11
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: ./index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Çalıştırma</h1></header>
+            
+            
+            <section><p>Dosyanın ilk satırında "she-bang" ile:</p>
+<div class="highlight"><pre><span class="nv">$ </span>which ruby
+/usr/bin/ruby
+
+<span class="nv">$ </span>head -n 1 program.rb <span class="c"># veya head -n 1 program</span>
+<span class="c">#!/usr/bin/ruby</span>
+
+<span class="nv">$ </span>chmod + x program.rb <span class="c"># veya chmod + x program</span>
+
+<span class="nv">$ </span>./program.rb         <span class="c"># veya ./program</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="./index.md">./index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/11
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: ./index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Çalıştırma</h1></header>
+            
+            
+            <section><p>Yorumlayıcıyla açık şekilde:</p>
+<div class="highlight"><pre><span class="nv">$ </span>ruby program.rb      <span class="c"># veya ruby program</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="./index.md">./index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/11
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: ./index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Etkileşimli Ruby</h1></header>
+            
+            
+            <section><ul>
 <li>
-<p><code>$ vim kullanım.rb</code>  veya <code>$ vim kullanım</code></p>
+<p>Irb (Interactive Ruby)</p>
+<div class="highlight"><pre><span class="nv">$ </span>irb
+</pre></div>
+
 </li>
 <li>
-<p><code>$ which ruby</code></p>
-</li>
-</ul>
-<p>çıktı : /usr/bin/ruby</p>
-<ul>
-<li>
-<p><code>#!/usr/bin/ruby</code></p>
-</li>
-<li>
-<p><code>$ chmod + x kullanım.rb</code> veya <code>$ chmod + x kullanım</code></p>
-</li>
-<li>
-<p><code>$ ./kullanım.rb</code> veya <code>$ ./kullanım</code></p>
-</li>
-<li>
-<p><code>$ ruby kullanım.rb</code> veya <code>$ ruby kullanım</code></p>
+<p>Oturum</p>
+<div class="highlight"><pre><span class="go">irb(main):001:0&gt;</span>
+<span class="gp">irb(main):010:0&gt; </span><span class="nb">puts</span> <span class="s2">&quot;hello&quot;</span>
+<span class="go">        hello</span>
+<span class="go">        =&gt; nil    # Bu nedir ?</span>
+
+<span class="gp">irb(main):005:0&gt; </span><span class="k">def</span> <span class="nf">goster</span> <span class="nb">name</span>
+<span class="gp">irb(main):006:1&gt; </span><span class="nb">name</span>
+<span class="gp">irb(main):007:1&gt; </span><span class="k">end</span>
+
+<span class="gp">irb(main):009:0&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">goster</span> <span class="s2">&quot;hello&quot;</span>
+<span class="go">        =&gt; &quot;hello&quot;</span>
+<span class="gp">irb(main):011:0&gt; </span><span class="n">s</span>
+<span class="go">        =&gt; &quot;hello&quot;</span>
+</pre></div>
+
 </li>
 </ul></section>
             
@@ -1685,102 +1825,7 @@ _gaq.push(['_trackPageview']);
             </aside>
             
             <aside class="page_number">
-              2/8
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: ./index.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h2>İnteraktif Ruby</h2></header>
-            
-            
-            <section><pre><code>    $ irb
-
-    irb(main):001:0&gt;
-    irb(main):010:0&gt; puts "hello"
-        hello
-        =&gt; nil    # Bu nedir ?
-
-    irb(main):005:0&gt; def goster name
-    irb(main):006:1&gt; name
-    irb(main):007:1&gt; end
-
-    irb(main):009:0&gt; s = goster "hello"
-        =&gt; "hello"
-    irb(main):011:0&gt; s
-        =&gt; "hello"
-</code></pre></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="./index.md">./index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              3/8
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: ./index.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h2>Nesne Methodları</h2></header>
-            
-            
-            <section><pre><code>    irb(main):032:0&gt; a = "Hello"
-    irb(main):032:0&gt; a.methods # Deneyelim?
-    irb(main):032:0&gt; a.upcase
-        =&gt; "HELLO"
-    irb(main):032:0&gt; a
-        =&gt; "Hello"
-    irb(main):035:0&gt; a.upcase!
-        =&gt; "HELLO"
-    irb(main):032:0&gt; a
-        =&gt; "HELLO"
-    -------------------
-    irb(main):032:0&gt; a = "Hello"
-    irb(main):004:0&gt; a.chop
-        =&gt; "Hell"
-    irb(main):005:0&gt; a
-        =&gt; "Hello"
-    irb(main):006:0&gt; a.chop!
-        =&gt; "Hell"
-    irb(main):007:0&gt; a
-        =&gt; "Hell"
-</code></pre></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="./index.md">./index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              4/8
+              6/11
             </aside>
           </footer>
         </div>
@@ -1791,25 +1836,75 @@ _gaq.push(['_trackPageview']);
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>Uygulamalar</h2></header>
+            <header><h1>Nesne Metodları</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="gp">irb(main):032:0&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
+<span class="gp">irb(main):032:0&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">methods</span> <span class="c1"># Deneyelim?</span>
+<span class="gp">irb(main):032:0&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">upcase</span>
+<span class="go">        =&gt; &quot;HELLO&quot;</span>
+<span class="gp">irb(main):032:0&gt; </span><span class="n">a</span>
+<span class="go">        =&gt; &quot;Hello&quot;</span>
+<span class="gp">irb(main):035:0&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">upcase!</span>
+<span class="go">        =&gt; &quot;HELLO&quot;</span>
+<span class="gp">irb(main):032:0&gt; </span><span class="n">a</span>
+<span class="go">        =&gt; &quot;HELLO&quot;</span>
+
+<span class="gp">irb(main):032:0&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
+<span class="gp">irb(main):004:0&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">chop</span>
+<span class="go">        =&gt; &quot;Hell&quot;</span>
+<span class="gp">irb(main):005:0&gt; </span><span class="n">a</span>
+<span class="go">        =&gt; &quot;Hello&quot;</span>
+<span class="gp">irb(main):006:0&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">chop!</span>
+<span class="go">        =&gt; &quot;Hell&quot;</span>
+<span class="gp">irb(main):007:0&gt; </span><span class="n">a</span>
+<span class="go">        =&gt; &quot;Hell&quot;</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="./index.md">./index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/11
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: ./index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Uygulamalar</h1></header>
             
             
             <section><div class="highlight"><pre><span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="nb">name</span> <span class="o">=</span> <span class="s2">&quot;World&quot;</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="s2">&quot;Hello </span><span class="si">#{</span><span class="nb">name</span><span class="o">.</span><span class="n">capitalize</span><span class="si">}</span><span class="s2">!&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Hello </span><span class="si">#{</span><span class="nb">name</span><span class="o">.</span><span class="n">capitalize</span><span class="si">}</span><span class="s2">!&quot;</span>
 <span class="k">end</span>
-<span class="o">-----------</span>
+
 <span class="k">def</span> <span class="nf">atama</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="k">unless</span> <span class="n">x</span><span class="o">.</span><span class="n">nil?</span>
+  <span class="k">unless</span> <span class="n">x</span><span class="o">.</span><span class="n">nil?</span>
     <span class="nb">puts</span> <span class="s2">&quot;parametre objesi var.&quot;</span>
   <span class="k">else</span>
-  <span class="nb">puts</span> <span class="s2">&quot;parametre objesi yok.&quot;</span>
-    <span class="k">end</span>
+    <span class="nb">puts</span> <span class="s2">&quot;parametre objesi yok.&quot;</span>
+  <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="n">atama</span><span class="p">(</span><span class="nb">puts</span> <span class="s2">&quot;hello&quot;</span><span class="p">)</span>
 </pre></div>
-
-<h1>Ne Bekliyoruz ?</h1></section>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -1825,7 +1920,7 @@ _gaq.push(['_trackPageview']);
             </aside>
             
             <aside class="page_number">
-              5/8
+              8/11
             </aside>
           </footer>
         </div>
@@ -1836,19 +1931,19 @@ _gaq.push(['_trackPageview']);
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>Selamlama Örneği</h2></header>
+            <header><h1>Selamlama Örneği</h1></header>
             
             
             <section><div class="highlight"><pre><span class="k">class</span> <span class="nc">Greeter</span>
-    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span> <span class="o">=</span> <span class="s2">&quot;World&quot;</span><span class="p">)</span>
-        <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
-    <span class="k">end</span>
-    <span class="k">def</span> <span class="nf">say_hi</span>
-        <span class="nb">puts</span> <span class="s2">&quot;Hi </span><span class="si">#{</span><span class="vi">@name</span><span class="si">}</span><span class="s2">!&quot;</span>
-    <span class="k">end</span>
-    <span class="k">def</span> <span class="nf">say_bye</span>
-        <span class="nb">puts</span> <span class="s2">&quot;Bye </span><span class="si">#{</span><span class="vi">@name</span><span class="si">}</span><span class="s2">, come back soon.&quot;</span>
-    <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span> <span class="o">=</span> <span class="s2">&quot;World&quot;</span><span class="p">)</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">say_hi</span>
+    <span class="nb">puts</span> <span class="s2">&quot;Hi </span><span class="si">#{</span><span class="vi">@name</span><span class="si">}</span><span class="s2">!&quot;</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">say_bye</span>
+    <span class="nb">puts</span> <span class="s2">&quot;Bye </span><span class="si">#{</span><span class="vi">@name</span><span class="si">}</span><span class="s2">, come back soon.&quot;</span>
+  <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="n">person</span> <span class="o">=</span> <span class="no">Greeter</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Pat&quot;</span><span class="p">)</span>
@@ -1871,7 +1966,7 @@ _gaq.push(['_trackPageview']);
             </aside>
             
             <aside class="page_number">
-              6/8
+              9/11
             </aside>
           </footer>
         </div>
@@ -1882,27 +1977,27 @@ _gaq.push(['_trackPageview']);
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>Sınıf ve Nesne değişkenleri</h2></header>
+            <header><h1>Sınıf ve Nesne Değişkenleri</h1></header>
             
             
             <section><div class="highlight"><pre><span class="k">class</span> <span class="nc">Greeter</span>
-<span class="vc">@@total</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span> <span class="o">=</span> <span class="s2">&quot;World&quot;</span><span class="p">)</span>
+  <span class="vc">@@total</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span> <span class="o">=</span> <span class="s2">&quot;World&quot;</span><span class="p">)</span>
     <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
     <span class="vi">@personal</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">end</span>
-<span class="k">def</span> <span class="nf">say_hi</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">say_hi</span>
     <span class="nb">puts</span> <span class="s2">&quot;Hi </span><span class="si">#{</span><span class="vi">@name</span><span class="si">}</span><span class="s2">!&quot;</span>
     <span class="n">say</span>
-<span class="k">end</span>
-<span class="k">def</span> <span class="nf">say_bye</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">say_bye</span>
     <span class="nb">puts</span> <span class="s2">&quot;Bye </span><span class="si">#{</span><span class="vi">@name</span><span class="si">}</span><span class="s2">, come back soon.&quot;</span>
     <span class="n">say</span>
-<span class="k">end</span>
-<span class="k">def</span> <span class="nf">say</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">say</span>
     <span class="nb">puts</span> <span class="s2">&quot;Kisisel&quot;</span><span class="p">,</span> <span class="vi">@personal</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="nb">puts</span> <span class="s2">&quot;Toplam&quot;</span><span class="p">,</span> <span class="vc">@@total</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="k">end</span>
+  <span class="k">end</span>
 <span class="k">end</span>
 </pre></div>
 </section>
@@ -1921,7 +2016,7 @@ _gaq.push(['_trackPageview']);
             </aside>
             
             <aside class="page_number">
-              7/8
+              10/11
             </aside>
           </footer>
         </div>
@@ -1932,7 +2027,7 @@ _gaq.push(['_trackPageview']);
         <div class="slide">
           <div class="inner">
             
-            <header><h2>Python ve Ruby Farklılıkları</h2></header>
+            <header><h1>Python ve Ruby Farklılıkları</h1></header>
             
             
             <section><ul>
@@ -1958,7 +2053,7 @@ _gaq.push(['_trackPageview']);
             </aside>
             
             <aside class="page_number">
-              8/8
+              11/11
             </aside>
           </footer>
         </div>
@@ -1977,42 +2072,65 @@ _gaq.push(['_trackPageview']);
         <td><a href="#slide1">1</a></td>
       </tr>
       
-        
-        <tr id="toc-row-2" class="sub">
-          <th><a href="#slide2">Giriş</a></th>
-          <td><a href="#slide2">2</a></td>
-        </tr>
-        
-        <tr id="toc-row-3" class="sub">
-          <th><a href="#slide3">İnteraktif Ruby</a></th>
-          <td><a href="#slide3">3</a></td>
-        </tr>
-        
-        <tr id="toc-row-4" class="sub">
-          <th><a href="#slide4">Nesne Methodları</a></th>
-          <td><a href="#slide4">4</a></td>
-        </tr>
-        
-        <tr id="toc-row-5" class="sub">
-          <th><a href="#slide5">Uygulamalar</a></th>
-          <td><a href="#slide5">5</a></td>
-        </tr>
-        
-        <tr id="toc-row-6" class="sub">
-          <th><a href="#slide6">Selamlama Örneği</a></th>
-          <td><a href="#slide6">6</a></td>
-        </tr>
-        
-        <tr id="toc-row-7" class="sub">
-          <th><a href="#slide7">Sınıf ve Nesne değişkenleri</a></th>
-          <td><a href="#slide7">7</a></td>
-        </tr>
-        
-        <tr id="toc-row-8" class="sub">
-          <th><a href="#slide8">Python ve Ruby Farklılıkları</a></th>
-          <td><a href="#slide8">8</a></td>
-        </tr>
-        
+      
+      <tr id="toc-row-2">
+        <th><a href="#slide2">Kurulum</a></th>
+        <td><a href="#slide2">2</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-3">
+        <th><a href="#slide3">Düzenleme</a></th>
+        <td><a href="#slide3">3</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-4">
+        <th><a href="#slide4">Çalıştırma</a></th>
+        <td><a href="#slide4">4</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-5">
+        <th><a href="#slide5">Çalıştırma</a></th>
+        <td><a href="#slide5">5</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-6">
+        <th><a href="#slide6">Etkileşimli Ruby</a></th>
+        <td><a href="#slide6">6</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-7">
+        <th><a href="#slide7">Nesne Metodları</a></th>
+        <td><a href="#slide7">7</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-8">
+        <th><a href="#slide8">Uygulamalar</a></th>
+        <td><a href="#slide8">8</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-9">
+        <th><a href="#slide9">Selamlama Örneği</a></th>
+        <td><a href="#slide9">9</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-10">
+        <th><a href="#slide10">Sınıf ve Nesne Değişkenleri</a></th>
+        <td><a href="#slide10">10</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-11">
+        <th><a href="#slide11">Python ve Ruby Farklılıkları</a></th>
+        <td><a href="#slide11">11</a></td>
+      </tr>
       
       
     </table>
