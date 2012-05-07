@@ -16,8 +16,10 @@ PRESENTATION_DIR = CONFIG.fetch('directory', 'p')
 DEFAULT_CONFFILE = CONFIG.fetch('conffile', '_templates/presentation.cfg')
 # Öntanımlı landslide javascript dosyası
 DEFAULT_JSFILE = CONFIG.fetch('conffile', 'assets/presentation.js')
+# Sunum indeksi şablonu
+INDEX_TEMPLATE   = File.join('p', 'index.erb')
 # Sunum indeksi
-INDEX_FILE = File.join(PRESENTATION_DIR, 'index.html')
+INDEX_FILE       = File.join('p', 'index.html')
 # İzin verilen en büyük resim boyutları
 IMAGE_GEOMETRY = [ 733, 550 ]
 # Bağımlılıklar için yapılandırmada hangi anahtarlara bakılacak
@@ -180,8 +182,11 @@ FileList[File.join(PRESENTATION_DIR, "[^_.]*")].each do |dir|
       base = 'presentation'
       ispublic = false
     else
-      die "#{dir}: sunum kaynağı 'presentation.md' veya 'index.md' olmalı"
+      next
     end
+
+    # YAML frontmatter ile başlayanları atla.  Bu kod tam bir WTF
+    next if File.read(source)[0..2] == '---'
 
     basename = base + '.html'
     thumbnail = File.to_herepath(base + '.png')
@@ -323,6 +328,15 @@ presentation.each do |presentation, data|
   end
 end
 
+if File.exists? DEFAULT_JSFILE
+  ga = if m = File.read(DEFAULT_JSFILE).match(/(^.*Google +Analytics +start.*^.*Google +Analytics +end)/mi)
+    m[1].strip.gsub(/^/, ' '*4)
+  else
+    cry "Google Analytics kodu bulunamadı!"
+    ''
+  end
+end
+
 namespace :p do
   # görev tablosundan yararlanarak üst isim uzayında ilgili görevleri tanımla
   tasktab.each do |name, info|
@@ -331,16 +345,22 @@ namespace :p do
     task name[0] => name
   end
 
+  # task :index do
+  #   index = YAML.load_file(INDEX_FILE) || {}
+  #   presentations = presentation.values.select { |v| v[:public] }.map { |v| v[:directory] }.sort
+  #   # unless index and presentations == index['presentations'] #and File.size(INDEX_FILE) != 0
+  #     index['presentations'] = presentations
+  #     File.open(INDEX_FILE, 'w') do |f|
+  #       f.write(index.to_yaml)
+  #       f.write("---\n")
+  #     end
+  #   # end
+  # end
+
+
   task :index do
-    index = YAML.load_file(INDEX_FILE) || {}
-    presentations = presentation.values.select { |v| v[:public] }.map { |v| v[:directory] }.sort
-    unless index and presentations == index['presentations']
-      index['presentations'] = presentations
-      File.open(INDEX_FILE, 'w') do |f|
-        f.write(index.to_yaml)
-        f.write("---\n")
-      end
-    end
+    index_file = ERB.new(File.read(INDEX_TEMPLATE)).result(BINDING)
+    File.open(INDEX_FILE, 'w') { |f| f.write index_file }
   end
 
   task :build do

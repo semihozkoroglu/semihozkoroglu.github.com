@@ -7,6 +7,12 @@ ul li {
   padding-left: 1em;
   text-indent: -32px;
 }
+ul li p:first-child {
+  margin-left: 3px;
+}
+ul li p {
+  margin-left: 32px;
+}
 ul li pre { text-indent: 0; }
 ul li:before {
   content: '\25B6 \0020';
