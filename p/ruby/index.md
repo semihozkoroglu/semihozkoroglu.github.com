@@ -123,6 +123,8 @@ Yorumlayıcıyla açık şekilde:
 
     atama(puts "hello")
 
+		# Ne bekliyoruz ?
+
 ---
 
 # Selamlama Örneği

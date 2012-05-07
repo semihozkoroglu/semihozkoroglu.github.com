@@ -1503,8 +1503,8 @@ div.slide {
             currentSlideNo = Number(window.location.hash.replace('#slide', ''));
         }
 
-        // hide context on small screens and iframes
-        if (window.screen.availWidth < 1280 || top != self) {
+        // disable context on small screens
+        if (window.screen.availWidth < 1280) {
             hiddenContext = true;
         }
 
@@ -1903,6 +1903,8 @@ _gaq.push(['_trackPageview']);
 <span class="k">end</span>
 
 <span class="n">atama</span><span class="p">(</span><span class="nb">puts</span> <span class="s2">&quot;hello&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Ne bekliyoruz ?</span>
 </pre></div>
 </section>
             
