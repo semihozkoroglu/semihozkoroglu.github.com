@@ -20,4 +20,4 @@ check etme durumu bu şekilde başlamaktadır.Ext3 dosya sistemleri günlüklü 
 durumun aynısını gerçekleştirmedi mi ? 
 
 işte böyle bir garip durumla karşılaştım eğer bunu okuyorsanız dikkat edin sizde terminale düşebilirsiniz o durumda
-fsck kurtarıyor =)
+fsck kurtarıyor

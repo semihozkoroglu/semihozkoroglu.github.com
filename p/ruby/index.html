@@ -761,6 +761,12 @@ ul li {
   padding-left: 1em;
   text-indent: -32px;
 }
+ul li p:first-child {
+  margin-left: 3px;
+}
+ul li p {
+  margin-left: 32px;
+}
 ul li pre { text-indent: 0; }
 ul li:before {
   content: '\25B6 \0020';
@@ -1503,8 +1509,8 @@ div.slide {
             currentSlideNo = Number(window.location.hash.replace('#slide', ''));
         }
 
-        // disable context on small screens
-        if (window.screen.availWidth < 1280) {
+        // hide context on small screens and iframes
+        if (window.screen.availWidth < 1280 || top != self) {
             hiddenContext = true;
         }
 
@@ -1543,7 +1549,7 @@ div.slide {
 
 // Google Analytics start
 var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-23160847-1']);
+_gaq.push(['_setAccount', 'UA-23160847-2']);
 
 _gaq.push(['_setDomainName', 'sozkoroglu.me]');
 
