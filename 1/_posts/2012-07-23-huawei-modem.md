@@ -3,7 +3,7 @@ layout: post
 title: Huawei E177 modem'in Ubuntu 11.10 'a tanıtılması
 ---
 
-Turkcell modem kullanıyorum ve ubuntu 11.10 üzerinde bu modemi çalıştıramadım, yaptığım araştırmalar neticesinde Huawei E177 modellerinin sanal cdrom özelliği açık gelmekte ve sebeble ubuntu üzerinde bunu bir modem olarak göremiyoruz, ve şimdi modemimizin sanal cdrom özelliğini kapatmak için windows üzerinde birkaç işlem yapıcaz.
+Turkcell modem kullanıyorum ve ubuntu 11.10 üzerinde bu modemi çalıştıramadım, yaptığım araştırmalar neticesinde Huawei E177 modellerinin sanal cdrom özelliği açık gelmekte ve bu sebeble ubuntu üzerinde bunu bir modem olarak göremiyoruz, ve şimdi modemimizin sanal cdrom özelliğini kapatmak için windows üzerinde birkaç işlem yapıcaz.
 
 Bunun için öncelikle Putty programını şu adresten [indirin](http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe)
 
@@ -11,15 +11,15 @@ Bunun için öncelikle Putty programını şu adresten [indirin](http://the.eart
 
 Modemimizin hangi usb com'una bağlı oldugunu bulmak için Device manager'dan modem kısmından Huawei özelliklerine bakarak portunu buluyoruz.
 
-Putty'i çalıştırdıktan sonra serial karşımıza çıkan pencerede serial kısmını seçerek ve portunu ( yani hangi slot'a takılı ise ) yazarak open diyoruz
+Putty'i çalıştırdıktan sonra karşımıza çıkan pencerede serial kısmını seçerek ve portunu ( yani modem hangi slot'a takılı ise ) yazarak open diyoruz
 
 Tabi bu arada `unable to connect` hatası alırsanız, şuanda sizin bir yandan modem üzerinden internet bağlantısını kullanmanızdan kaynaklanacak, bunun için öncelikle modemin internet bağlantısını kesiniz
 
 putty ile modemimize bağlantı kurduğumuzda karşımıza açılan terminalde sırası ile şu komutları kullanın
 
--	ATX
+-	`ATX`
 
-- AT^U2DIAG=0
+- `AT^U2DIAG=0`
 
 sanal özelliğinin açmak için ise `AT^U2DIAG=1` diyebiliriz.
 
