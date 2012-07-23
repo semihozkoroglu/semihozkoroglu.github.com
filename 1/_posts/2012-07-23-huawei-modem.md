@@ -26,4 +26,4 @@ sanal özelliğinin açmak için ise `AT^U2DIAG=1` diyebiliriz.
 Bundan sonra ubuntu üzerinde `Edit connection` kısmından `Mobile Broadband` bölümünü seçin ve ordan da yeni bağlantı eklemek için `add` seçeneğini seçin
 
 Karşılaştıgımız kurulum penceresinde `Create a connection for this mobile broadband device` kısmında Huawei modemi görüyor olucaksınız,
-ödeme planı kısmında ise APN mgb olarak belirtikten sonra bağlantınızı kurabilirsiniz.
+ödeme planı kısmında ise APN mgb olarak belirtikten sonra ( Tabi bu modeme göre değişebilir ) bağlantınızı kurabilirsiniz.
