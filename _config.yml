@@ -3,7 +3,7 @@ markdown: rdiscount
 rdiscount:
   extensions: [smart]
 pygments: true
-url: http://sozkoroglu.me
+url: http://semihozkoroglu.github.com
 exclude:
         - Rakefile
         - Makefile
@@ -25,7 +25,7 @@ google: ~
 googleanalyticsid: UA-23160847-2
 googleplus: ~
 gpg: ~
-domain: sozkoroglu.me
+domain: semihozkoroglu.github.com
 logo: /assets/19/19-normal-128x128.png
 organization: 19
 picasa: ~
