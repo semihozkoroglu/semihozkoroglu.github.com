@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+<h2>Tüm Girdiler</h2>
+<ul class="arrow-list">
+    {% for post in site.posts %}
+        <li>
+            <time style="color:#a4a4a4;">{{ post.date | date: "%B" }} , {{ post.date | date: "%d" }} - {{ post.date | date: "%Y" }} >> </time><a style="color:#069; font-size:20px;" href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+    {% endfor %}
+</ul>

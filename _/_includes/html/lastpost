@@ -1,13 +1,13 @@
 <div class="underline-heading">
 	<h3>{{site.latestpost}}</h3>
 </div>
-<ul class="latest-posts">
+<ul class="arrow-list">
     {% for post in site.posts limit: 5 %}
         <li>
-          <div class="text">
-            <em><div class="title"><a href="{{ post.url }}">{{ post.title }}</a></div></em>
-            <div class="date">({{ post.date | date:"%Y-%m-%d" }})</div>
-          </div>
+            <a style="color:#a4a4a4; font-size:15px;" href="{{ post.url }}">{{ post.title }}</a>
         </li>
     {% endfor %}
 </ul>
+<div class="read-more">
+    <a href="/posts.html">Show more >></a>
+</div>
