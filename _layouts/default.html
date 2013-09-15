@@ -1,24 +1,128 @@
----
-layout: frame
----
-<div class="site">
-  <div class="title">
-    {% include html/navigator %}
-    {% include html/logo %}
+<!DOCTYPE html>
+<html lang="tr">
+
+{% include html/head %}
+
+<body>
+
+  <!-- Color Customizer, remove if not needed -->
+  <div id="joiee-customizer"></div>
+
+  <div id="main-wrapper" class="wide">
+
+    <!-- Main Header -->
+    <header id="main-header">
+
+      <!-- Top Header -->
+      <div id="header-top">
+        <div class="container">
+          <div class="sixteen columns">
+
+            <!-- Logo Container -->
+            <div id="logo-container">
+              <div id="logo-center">
+                <a href="#">
+                  <img src="/assets/img/logo.png" alt="Sem">
+                </a>
+              </div>
+            </div>
+            <!-- END Logo Container -->
+
+            <div class="tagline">{{site.tagline}}</div>
+
+            <!-- Main Navigation -->
+            <nav id="main-nav">
+              <div class="circle" style="background-image: 
+                    url('/assets/img/sem.jpg')">
+              </div>
+            </nav>
+            <!-- END Main Navigation -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Header -->
+    </header>
+    <!-- END Main Header -->
+
+    <!-- Main Content -->
+    <section id="main-content">
+
+      <div class="container">
+
+        <div id="header-bottom">
+          <div class="container">
+            <div class="sixteen columns">
+              <ul class="breadcrumb">
+                <li><a href="/index.html">{{site.home}}</a><span class="divider">/</span></li>
+                <li style="color:#ff5700">{{site.blog}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <aside class="four columns sidebar">
+          <section class="sidebar-section">
+            {% include html/lastpost %}
+            {% include html/tag %}
+          </section>
+        </aside>
+        <div class="twelve columns">
+          {{ content }}
+        </div>
+    </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <!-- Bottom Footer -->
+      <div id="footer-top">
+        <div class="container">
+          {% include html/footer %}
+        </div>
+      </div>
+      <!-- END Bottom Footer -->
+
+    </footer>
+    <!-- END Footer -->
+
   </div>
 
-  {% unless page.moved %}
-    {{ content }}
-  {% else %}
-    Bu girdi <a href="http://{{ page.moved }}">başka bir adrese</a>
-    taşınmıştır.  Şimdi bu sayfaya yönlendirileceksiniz.
-  {% endunless %}
+  <!-- Required Scripts -->
+  <script src="/assets/js/jquery-1.8.3.min.js"></script>
+  <script src="/assets/js/jquery.plugins.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
 
-  <div class="footer">
-    {% include html/contact %}
-    {% include html/google %}
-    {% include html/feedurl %}
-  </div>
-</div>
+  <!-- Plugins -->
+  <script src="/assets/plugins/selectnav/selectnav.min.js"></script>
+  <script src="/assets/plugins/tweet/jquery.tweet.js"></script>
+  <script src="/assets/plugins/jflickrfeed/jflickrfeed.min.js"></script>
+  <script src="/assets/plugins/fitvids/jquery.fitvids.js"></script>
+  <script src="/assets/plugins/isotope/jquery.isotope.min.js"></script>
+  <script src="/assets/plugins/sharrre/jquery.sharrre-1.3.4.min.js"></script>
 
-{% include html/ribbon %}
+  <script src="/assets/plugins/flexslider/jquery.flexslider-min.js"></script>
+  <link rel="stylesheet" href="/assets/plugins/flexslider/flexslider.css">
+
+  <script src="/assets/plugins/nivo/jquery.nivo.slider.pack.js"></script>
+  <link rel="stylesheet" href="/assets/plugins/nivo/nivo-slider.css">
+
+  <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  <script src="/assets/plugins/map/jquery.ui.map.min.js"></script>
+
+  <script src="/assets/plugins/revolutionslider/js/jquery.themepunch.revolution.min.js"></script>
+  <link rel="stylesheet" href="/assets/plugins/revolutionslider/css/settings.css">
+
+  <script src="/assets/plugins/caroufredsel/jquery.carouFredSel-6.1.0-packed.js"></script>
+  <script src="/assets/plugins/caroufredsel/jquery.touchSwipe.min.js"></script>
+
+  <!-- Template Script -->
+  <script src="/assets/js/template.js"></script>
+  <script src="/assets/js/customizer.js"></script>
+
+</body>
+
+</html>
+
+</html>

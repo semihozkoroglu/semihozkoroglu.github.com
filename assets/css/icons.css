@@ -1,0 +1,355 @@
+/*
+ * Joiee v1.0 - Social Media Icons Stylesheet
+ *
+ * This file is part of Joiee, a HTML template build for sale at ThemeForest.
+ * For questions, suggestions or support request, please mail me at maimairel@yahoo.com
+ *
+ * Development Started:
+ * December 10, 2012
+ *
+ */
+
+[class^="icos-"] {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 32px;
+    height: 32px;
+    background-image: url(../img/icos32.png);
+    background-repeat: no-repeat;
+    background-position: 224px 192px;
+}
+[class^="icos-"].small {
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/icos16.png);
+    background-position: 112px 96px;
+}
+
+.icos-500px.small {
+    background-position: 0px 0px;
+}
+
+.icos-addthis.small {
+    background-position: -16px 0px;
+}
+
+.icos-behance.small {
+    background-position: -32px 0px;
+}
+
+.icos-blogger.small {
+    background-position: -48px 0px;
+}
+
+.icos-delicious.small {
+    background-position: -64px 0px;
+}
+
+.icos-deviantart.small {
+    background-position: -80px 0px;
+}
+
+.icos-digg.small {
+    background-position: -96px 0px;
+}
+
+.icos-dopplr.small {
+    background-position: 0px -16px;
+}
+
+.icos-dribbble.small {
+    background-position: -16px -16px;
+}
+
+.icos-evernote.small {
+    background-position: -32px -16px;
+}
+
+.icos-facebook.small {
+    background-position: -48px -16px;
+}
+
+.icos-flickr.small {
+    background-position: -64px -16px;
+}
+
+.icos-forrst.small {
+    background-position: -80px -16px;
+}
+
+.icos-github.small {
+    background-position: -96px -16px;
+}
+
+.icos-google.small {
+    background-position: 0px -32px;
+}
+
+.icos-grooveshark.small {
+    background-position: -16px -32px;
+}
+
+.icos-instagram.small {
+    background-position: -32px -32px;
+}
+
+.icos-lastfm.small {
+    background-position: -48px -32px;
+}
+
+.icos-linkedin.small {
+    background-position: -64px -32px;
+}
+
+.icos-mail.small {
+    background-position: -80px -32px;
+}
+
+.icos-myspace.small {
+    background-position: -96px -32px;
+}
+
+.icos-path.small {
+    background-position: 0px -48px;
+}
+
+.icos-paypal.small {
+    background-position: -16px -48px;
+}
+
+.icos-picasa.small {
+    background-position: -32px -48px;
+}
+
+.icos-posterous.small {
+    background-position: -48px -48px;
+}
+
+.icos-reddit.small {
+    background-position: -64px -48px;
+}
+
+.icos-rss.small {
+    background-position: -80px -48px;
+}
+
+.icos-sharethis.small {
+    background-position: -96px -48px;
+}
+
+.icos-skype.small {
+    background-position: 0px -64px;
+}
+
+.icos-soundcloud.small {
+    background-position: -16px -64px;
+}
+
+.icos-spotify.small {
+    background-position: -32px -64px;
+}
+
+.icos-stumbleupon.small {
+    background-position: -48px -64px;
+}
+
+.icos-tumblr.small {
+    background-position: -64px -64px;
+}
+
+.icos-twitter.small {
+    background-position: -80px -64px;
+}
+
+.icos-viddler.small {
+    background-position: -96px -64px;
+}
+
+.icos-vimeo.small {
+    background-position: 0px -80px;
+}
+
+.icos-virb.small {
+    background-position: -16px -80px;
+}
+
+.icos-windows.small {
+    background-position: -32px -80px;
+}
+
+.icos-wordpress.small {
+    background-position: -48px -80px;
+}
+
+.icos-youtube.small {
+    background-position: -64px -80px;
+}
+
+.icos-zerply.small {
+    background-position: -80px -80px;
+}
+
+.icos-500px {
+    background-position: 0px 0px;
+}
+
+.icos-addthis {
+    background-position: -32px 0px;
+}
+
+.icos-behance {
+    background-position: -64px 0px;
+}
+
+.icos-blogger {
+    background-position: -96px 0px;
+}
+
+.icos-delicious {
+    background-position: -128px 0px;
+}
+
+.icos-deviantart {
+    background-position: -160px 0px;
+}
+
+.icos-digg {
+    background-position: -192px 0px;
+}
+
+.icos-dopplr {
+    background-position: 0px -32px;
+}
+
+.icos-dribbble {
+    background-position: -32px -32px;
+}
+
+.icos-evernote {
+    background-position: -64px -32px;
+}
+
+.icos-facebook {
+    background-position: -96px -32px;
+}
+
+.icos-flickr {
+    background-position: -128px -32px;
+}
+
+.icos-forrst {
+    background-position: -160px -32px;
+}
+
+.icos-github {
+    background-position: -192px -32px;
+}
+
+.icos-google {
+    background-position: 0px -64px;
+}
+
+.icos-grooveshark {
+    background-position: -32px -64px;
+}
+
+.icos-instagram {
+    background-position: -64px -64px;
+}
+
+.icos-lastfm {
+    background-position: -96px -64px;
+}
+
+.icos-linkedin {
+    background-position: -128px -64px;
+}
+
+.icos-mail {
+    background-position: -160px -64px;
+}
+
+.icos-myspace {
+    background-position: -192px -64px;
+}
+
+.icos-path {
+    background-position: 0px -96px;
+}
+
+.icos-paypal {
+    background-position: -32px -96px;
+}
+
+.icos-picasa {
+    background-position: -64px -96px;
+}
+
+.icos-posterous {
+    background-position: -96px -96px;
+}
+
+.icos-reddit {
+    background-position: -128px -96px;
+}
+
+.icos-rss {
+    background-position: -160px -96px;
+}
+
+.icos-sharethis {
+    background-position: -192px -96px;
+}
+
+.icos-skype {
+    background-position: 0px -128px;
+}
+
+.icos-soundcloud {
+    background-position: -32px -128px;
+}
+
+.icos-spotify {
+    background-position: -64px -128px;
+}
+
+.icos-stumbleupon {
+    background-position: -96px -128px;
+}
+
+.icos-tumblr {
+    background-position: -128px -128px;
+}
+
+.icos-twitter {
+    background-position: -160px -128px;
+}
+
+.icos-viddler {
+    background-position: -192px -128px;
+}
+
+.icos-vimeo {
+    background-position: 0px -160px;
+}
+
+.icos-virb {
+    background-position: -32px -160px;
+}
+
+.icos-windows {
+    background-position: -64px -160px;
+}
+
+.icos-wordpress {
+    background-position: -96px -160px;
+}
+
+.icos-youtube {
+    background-position: -128px -160px;
+}
+
+.icos-zerply {
+    background-position: -160px -160px;
+}

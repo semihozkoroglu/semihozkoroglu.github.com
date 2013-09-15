@@ -1,0 +1,50 @@
+---
+layout: default
+---
+<div class="row">
+  <div class="sixteen">
+    <div class="underline-heading">
+      <h2>{{page.title}}</h2>
+    </div>
+    {% for post in site.posts %}
+        {% for tag in post.tags %}
+          {% if tag == page.tag %}
+              <div class="testimonial">
+                <div class="author">
+                  <div class="highlights bold clearfix">
+                    <div class="one-third column highlight-item">
+                      <table>
+                        <tr>
+                          <td>
+                            <div class="icon">
+                              <i class="icon-embed-close"></i>
+                            </div>
+                          </td>
+                          <td>
+                            <div>
+                              <br>
+                              <h3>
+                                <a href="{{post.url}}">{{post.title}}
+                                <small><em>{{post.date | date: "%m/%d/%y"}}</em></small>
+                                </a>
+                              </h3>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="body">
+                  {% if post.content contains '<!--more-->' %}
+                    {{ post.content | split:'<!--more-->' | first }}
+                  {% else %}
+                    {{ post.content }}
+                  {% endif %}
+                </div>
+              </div>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+  </div>
+</div>

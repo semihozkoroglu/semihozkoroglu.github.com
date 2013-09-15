@@ -1,10 +1,20 @@
 <head>
-  {% include html/getpageinfo %}<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="author" content="{{ site.author }}" />
-  {% if page.moved %}<meta http-equiv="refresh" content="3; url=http://{{ page.moved }}">
-  {% endif %}<title>{{ title }}</title>
-  {% if feed != null %}<link href="{{ feed }}" rel="alternate" title="{{ title }}" type="application/atom+xml" />
-  {% endif %}<link rel="stylesheet" href="{{ site.assets }}/site.css"   type="text/css" media="screen, projection" />
-  <link rel="stylesheet" href="{{ site.assets }}/syntax.css" type="text/css" />
-  <link rel="stylesheet" href="{{ site.assets }}/local.css"  type="text/css" media="screen, projection" />
-  {% include html/googleanalytics %}</head>
+<meta charset="utf-8">
+
+<title>{{site.author}}</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<link rel="shortcut icon" href="/assets/css/favicon.ico">
+
+<!-- Le Styles -->
+<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="/assets/css/skeleton.css" rel="stylesheet">
+<link href="/assets/css/layout.css" rel="stylesheet">
+
+<!-- Le Fonts -->
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700" rel="stylesheet">
+<link href="/assets/css/fonts/glyphicons/style.css" rel="stylesheet">
+</head>

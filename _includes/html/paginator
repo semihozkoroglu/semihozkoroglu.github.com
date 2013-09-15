@@ -1,0 +1,35 @@
+<div class="col-xs-9 col-md-10">
+  <ul>
+    {% assign counter = 0 %}
+    {% for post in paginator.posts %}
+      {% assign set = counter | plus:counter %}
+      {% if set == 0 %}<div class="col-xs-6 col-md-6">{% endif %}
+      {% if set >= site.paginate %}</div><div class="col-xs-6 col-md-6">{% endif %}
+      <div class="well well-sm">
+		  <div class="page-header"><h3><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h3></div>
+		  {{ post.excerpt }}
+		  <hr> 
+		</div>
+      {% assign counter = counter | plus:1 %}
+    {% endfor %}
+    </div>
+  </ul>
+</div>
+<!-- Pagination Links start -->
+<ul class="pager">
+  {% if paginator.previous_page %}
+    {% if paginator.previous_page > 1 %}
+      <li class="previous"><a href="{{ site.url }}/page{{ paginator.previous_page }}">&larr; {{site.previous}}</a></li>
+    {% else %}
+      <li class="previous"><a href="/">&larr; {{site.previous}}</a></li>
+    {% endif %}
+  {% else %}
+    <li class="previous disabled"><a href="#">&larr; {{site.previous}}</a></li>
+  {% endif %}
+  {% if paginator.next_page %}
+    <li class="next"><a href="{{ site.url }}/page{{ paginator.next_page }}">{{site.next}} &rarr;</a></li>
+  {% else %}
+    <li class="next disabled"><a href="">{{site.next}} &rarr;</a></li>
+  {% endif %}
+</ul>
+<!-- Pagination Links end -->
