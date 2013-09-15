@@ -1,8 +1,0 @@
-<div class="underline-heading">
-	<h3>{{site.tag}}</h3>
-</div>
-<ul class="tag-labels">
-  {% for tag in site.tags %}
-    <li><a href="{{ site.url }}/tag/{{ tag | first }}" title="{{ tag | first }}" class="label label-default">{{ tag | first }}</a>
-  {% endfor %}</li>
-</ul>
