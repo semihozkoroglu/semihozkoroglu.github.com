@@ -1,0 +1,415 @@
+/*
+ * Joiee v1.0 - Form Stylesheet
+ *
+ * This file is part of Joiee, a HTML template build for sale at ThemeForest.
+ * For questions, suggestions or support request, please mail me at maimairel@yahoo.com
+ *
+ * Development Started:
+ * December 10, 2012
+ *
+ */
+
+/* Form Style
+================================================== */
+ 
+.form {
+    clear: both;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.form .form-row {
+    margin-bottom: 20px;
+}
+
+/* Button Row
+================================================== */
+
+.form .button-row .btn + .btn, 
+.form .button-row .btn-group + .btn, 
+.form .button-row .btn + .btn-group {
+    margin-left: 5px;
+}
+
+/* Fieldset
+================================================== */
+
+.form fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.form fieldset:first-child legend {
+    border-top: 0;
+}
+
+.form fieldset legend {
+    margin: 0;
+    border: solid #ccc;
+    border-width: 1px 0;
+    background: #f8f8f8 repeat-x left bottom;
+    background-image: -ms-linear-gradient(top, #f8f8f8, #e7e7e7);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f8f8f8), to(#e7e7e7));
+    background-image: -webkit-linear-gradient(top, #f8f8f8, #e7e7e7);
+    background-image: -o-linear-gradient(top, #f8f8f8, #e7e7e7);
+    background-image: -moz-linear-gradient(top, #f8f8f8, #e7e7e7);
+    background-image: linear-gradient(top, #f8f8f8, #e7e7e7);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f8f8', endColorstr='#e7e7e7', GradientType=0);
+    color: #555;
+    line-height: 24px;
+    padding: 8px;
+    padding-left: 20px;
+    width: 100%;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form fieldset:first-child {
+    border-top: 0;
+}
+
+/* Form Labels
+================================================== */
+
+.form .form-label {
+    padding-bottom: 5px;
+    cursor: pointer;
+    display: block;
+}
+
+.form .form-label .required {
+    color: #f00;
+}
+
+/* Form Inputs
+================================================== */
+
+.form .form-item {
+    position: relative;
+}
+
+.form .form-item .medium {
+    width: 80%;
+}
+
+.form .form-item .large {
+    width: 100%;
+}
+
+.form .form-item .small {
+    width: 60%;
+}
+
+select, 
+textarea, 
+input[type="text"], 
+input[type="password"], 
+input[type="datetime"], 
+input[type="datetime-local"], 
+input[type="date"], 
+input[type="month"], 
+input[type="time"],
+input[type="week"], 
+input[type="number"], 
+input[type="email"], 
+input[type="url"], 
+input[type="search"], 
+input[type="tel"], 
+input[type="color"] {
+    border: 1px solid #ddd;
+    padding: 9px;
+    color: #555;
+    margin: 0;
+    line-height: 16px;
+    background-color: #fbfbfb;
+    outline: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-box-shadow: inset 0px 1px 3px rgba(128, 128, 128, 0.1);
+    -moz-box-shadow: inset 0px 1px 3px rgba(128, 128, 128, 0.1);
+    box-shadow: inset 0px 1px 3px rgba(128, 128, 128, 0.1);
+}
+
+textarea:focus, 
+input[type="text"]:focus, 
+input[type="password"]:focus, 
+input[type="datetime"]:focus, 
+input[type="datetime-local"]:focus, 
+input[type="date"]:focus, 
+input[type="month"]:focus, 
+input[type="time"]:focus,
+input[type="week"]:focus, 
+input[type="number"]:focus, 
+input[type="email"]:focus, 
+input[type="url"]:focus, 
+input[type="search"]:focus, 
+input[type="tel"]:focus, 
+input[type="color"]:focus {
+    background-color: #fff;
+}
+
+.form textarea {
+    height: 10em;
+    resize: none;
+}
+
+.form input[disabled],
+.form select[disabled],
+.form textarea[disabled],
+.form input[readonly],
+.form select[readonly],
+.form textarea[readonly] {
+    background: #f0f0f0;
+}
+
+.form select.error, 
+.form textarea.error, 
+.form input[type="text"].error, 
+.form input[type="password"].error, 
+.form input[type="datetime"].error, 
+.form input[type="datetime-local"].error, 
+.form input[type="date"].error, 
+.form input[type="month"].error, 
+.form input[type="time"].error,
+.form input[type="week"].error, 
+.form input[type="number"].error, 
+.form input[type="email"].error, 
+.form input[type="url"].error, 
+.form input[type="search"].error, 
+.form input[type="tel"].error, 
+.form input[type="color"].error {
+    border-color: #eb979b;
+}
+
+/* Column Form Layout
+================================================== */
+
+.form .form-cols {
+    *zoom: 1;
+}
+
+.form .form-cols:before,
+.form .form-cols:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.form .form-cols:after {
+    clear: both;
+}
+
+.form .form-cols [class^="form-col-"] .form-label, 
+.form .form-cols [class*=" form-col-"] .form-label {
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.form .form-cols [class^="form-col-"], 
+.form .form-cols [class*=" form-col-"] {
+    float: left;
+    margin-left: 1.8181818181818181%;
+}
+
+.form .form-cols [class^="form-col-"]:first-child, 
+.form .form-cols [class*=" form-col-"]:first-child {
+    margin-left: 0;
+}
+
+.form .form-cols .form-item {
+    margin: 0 !important;
+}
+
+.form .form-cols .form-col-8-8 {
+    width: 100%;
+}
+
+.form .form-cols .form-col-7-8 {
+    width: 87.27272727272727%;
+}
+
+.form .form-cols .form-col-6-8 {
+    width: 74.54545454545455%;
+}
+
+.form .form-cols .form-col-5-8 {
+    width: 61.81818181818181%;
+}
+
+.form .form-cols .form-col-4-8 {
+    width: 49.090909090909086%;
+}
+
+.form .form-cols .form-col-3-8 {
+    width: 36.36363636363636%;
+}
+
+.form .form-cols .form-col-2-8 {
+    width: 23.636363636363633%;
+}
+
+.form .form-cols .form-col-1-8 {
+    width: 10.909090909090908%;
+}
+
+.form .form-cols [class^="form-col-"] select, 
+.form .form-cols [class^="form-col-"] textarea, 
+.form .form-cols [class^="form-col-"] input {
+    width: 100%;
+}
+
+/* Form Layout
+================================================== */
+
+.form .form-inline .form-item {
+    margin-left: 156px;
+}
+
+.form .form-inline .form-label {
+    width: 140px;
+    float: left;
+    padding-top: 5px;
+}
+
+.form .form-inline .form-block .form-label {
+    width: auto;
+    float: none;
+    padding-top: 0;
+    margin-right: 0;
+}
+
+.form .form-inline .form-block .form-item {
+    margin-left: 0;
+}
+
+/* Form List
+================================================== */
+
+.form .form-list, 
+.form .form-list li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.form .form-list li {
+    margin-bottom: 4px;
+}
+
+.form .form-list li:last-child {
+    margin-bottom: 0;
+}
+
+.form .form-list.inline {
+    margin-top: 4px;
+}
+
+.form .form-list.inline li {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    margin: 0 5px 0 0;
+    vertical-align: middle;
+}
+
+.form .form-list li > input, 
+.form .form-list li > label {
+    padding: 0;
+    margin: 0 1px 0 0;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
+
+/* Form Clearfix
+================================================== */
+
+.form .form-row:before,
+.form .form-row:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.form .form-row:after {
+    clear: both;
+}
+
+.form .form-row {
+    *zoom: 1;
+}
+
+/* Form Errors
+================================================== */
+
+.form .form-item .error, 
+.form .form-item label.error, 
+.form .form-item span.error, 
+.form .form-item div.error {
+    background: none;
+    color: #c83139;
+    margin: 0;
+    width: auto;
+    float: none;
+    display: block;
+    padding: 5px 0 0;
+    font-size: 12px;
+}
+
+/* Media Queries
+================================================== */
+
+@media only screen and (max-width: 767px) {
+    .form .form-inline .form-label, 
+    .form .form-inline .form-item {
+        display: block;
+        width: 100%;
+        margin: 0;
+        float: none;
+    }
+
+    .form .form-inline .form-label {
+        padding-top: 0;
+    }
+
+    .form .form-inline .form-list {
+        float: none;
+        width: auto;
+        display: block;
+    }
+
+    .form .form-list.inline li {
+        float: none;
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    .form .form-item, 
+    .form .form-item .medium, 
+    .form .form-item .large, 
+    .form .form-item .small {
+        width: 100%;
+    }
+
+    .form-message {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-position: 12px 7px;
+    }
+}

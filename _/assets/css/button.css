@@ -1,0 +1,106 @@
+/*
+ * Joiee v1.0 - Button Stylesheet
+ *
+ * This file is part of Joiee, a HTML template build for sale at ThemeForest.
+ * For questions, suggestions or support request, please mail me at maimairel@yahoo.com
+ *
+ * Development Started:
+ * December 10, 2012
+ *
+ */
+
+/* #Button Styles
+================================================== */
+
+.btn {
+    outline: none;
+    background-image: none !important;
+    -webkit-transition: background-color 0.1s ease-in-out;
+    -moz-transition: background-color 0.1s ease-in-out;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:hover, 
+.btn:active, 
+.btn[disabled] {
+    background-color: #e8e8e8;
+}
+
+.btn-primary {
+	background-color: #77a6ee;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary[disabled] {
+    background-color: #4866c8;
+}
+
+/* Warning Button
+================================================== */
+
+.btn-warning {
+	background-color: #f78234;
+}
+
+.btn-warning:hover,
+.btn-warning:active,
+.btn-warning[disabled] {
+    background-color: #ea7b31;
+}
+
+/* Danger Button
+================================================== */
+
+.btn-danger {
+	background-color: #d84d5a;
+}
+
+.btn-danger:hover,
+.btn-danger:active,
+.btn-danger[disabled] {
+    background-color: #cd4955;
+}
+
+/* Success Button
+================================================== */
+
+.btn-success {
+	background-color: #8ecd44;
+}
+
+.btn-success:hover,
+.btn-success:active,
+.btn-success[disabled] {
+    background-color: #86c240;
+}
+
+/* Info Button
+================================================== */
+
+.btn-info {
+	background-color: #4dd0d8;
+}
+
+.btn-info:hover,
+.btn-info:active,
+.btn-info[disabled] {
+    background-color: #49c5cd;
+}
+
+/* Inverse Button
+================================================== */
+
+.btn-inverse {
+	background-color: #333;
+}
+
+.btn-inverse:hover,
+.btn-inverse:active,
+.btn-inverse[disabled] {
+    background-color: #303030;
+}

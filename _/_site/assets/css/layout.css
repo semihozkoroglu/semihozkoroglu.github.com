@@ -1,0 +1,224 @@
+/*
+ * Joiee v1.0 - Template Stylesheet
+ *
+ * This file is part of Joiee, a HTML template build for sale at ThemeForest.
+ * For questions, suggestions or support request, please mail me at maimairel@yahoo.com
+ *
+ * Development Started:
+ * December 10, 2012
+ *
+ */
+
+@import url('typography.css');
+@import url('form.css');
+@import url('button.css');
+@import url('main.css');
+@import url('widgets.css');
+@import url('icons.css');
+
+/* #Demo Styles
+================================================== */
+
+.icons-list, 
+.icons-list li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.icons-list li {
+    float: left;
+    margin: 0 6px 6px 0;
+}
+
+.icons-list.boxed li span {
+    display: block;
+    font-size: 24px;
+    padding: 8px;
+    background-color: #fcfcfc;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.icons-list.boxed li span [class*="icon-"] {
+    width: 24px;
+    height: 24px;
+}
+
+/* #Bootstrap Tweaks
+================================================== */
+
+.alert {
+    font-size: 13px;
+}
+
+.pager li > a {
+    color: #444;
+}
+
+.pager li > a:hover {
+    color: #555;
+}
+
+.search-query {
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjE2cHgiPjxwYXRoIGZpbGw9IiNjY2NjY2MiIGQ9Ik0xNC45MDUsMTMuMDkxbC0zLjc1Mi0zLjc1M2MwLjYxLTAuOTQ2LDAuOTcxLTIuMDY5LDAuOTcxLTMuMjc3QzEyLjEyNCwyLjcxOCw5LjQwMywwLDYuMDYyLDAgQzIuNzE4LDAsMCwyLjcxOCwwLDYuMDYxYzAsMy4zNDMsMi43MTgsNi4wNjIsNi4wNjIsNi4wNjJjMS4yMDcsMCwyLjMzLTAuMzU4LDMuMjc3LTAuOTY5bDMuNzUxLDMuNzUyIGMwLjEyNiwwLjEyNiwwLjMzMiwwLjEyNiwwLjQ1NSwwbDEuMzYxLTEuMzYxQzE1LjAzMSwxMy40MiwxNS4wMzEsMTMuMjE2LDE0LjkwNSwxMy4wOTF6IE0xLjkyNCw2LjA2MSBjMC0yLjI3OSwxLjg1Ni00LjEzNiw0LjEzNy00LjEzNmMyLjI4MiwwLDQuMTM3LDEuODU2LDQuMTM3LDQuMTM2YzAsMi4yODItMS44NTUsNC4xMzctNC4xMzcsNC4xMzcgQzMuNzgsMTAuMTk4LDEuOTI0LDguMzQyLDEuOTI0LDYuMDYxeiIvPjwvc3ZnPg==");
+}
+
+/* #Isotope Styles
+================================================== */
+
+/**** Isotope Filtering ****/
+
+.isotope-item {
+    z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+    pointer-events: none;
+    z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -ms-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+}
+
+.isotope {
+    -webkit-transition-property: height, width;
+    -moz-transition-property: height, width;
+    -ms-transition-property: height, width;
+    -o-transition-property: height, width;
+    transition-property: height, width;
+}
+
+.isotope .isotope-item {
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    -ms-transition-property: -ms-transform, opacity;
+    -o-transition-property: -o-transform, opacity;
+    transition-property: transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+    -webkit-transition-duration: 0s;
+    -moz-transition-duration: 0s;
+    -ms-transition-duration: 0s;
+    -o-transition-duration: 0s;
+    transition-duration: 0s;
+}
+
+/* #Revolution Slider
+================================================== */
+
+.fullwidthbanner-container {
+    width: 100% !important;
+    position: relative;
+    padding: 0;
+    max-height: 550px !important;
+    overflow: hidden;
+}
+
+.fullwidthbanner-container ul, 
+.fullwidthbanner-container ul li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* #Customizer (remove this part when not needed)
+================================================== */
+
+#joiee-customizer {
+    position: fixed;
+    display: none;
+    top: 200px;
+    left: 0;
+    background-color: #fff;
+    width: 72px;
+    padding: 4px;
+    z-index: 99999;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 0;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 0 6px 6px 0;
+    -moz-border-radius: 0 6px 6px 0;
+    border-radius: 0 6px 6px 0;
+}
+
+#joiee-customizer.active {
+    display: block;
+}
+
+#joiee-customizer .color-list, 
+#joiee-customizer .color-list li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#joiee-customizer .color-list {
+    margin-bottom: 5px;
+}
+
+#joiee-customizer .color-list li {
+    float: left;
+    margin: 2px;
+}
+
+#joiee-customizer .color-list li span {
+    display: block;
+    cursor: pointer;
+    width: 32px; height: 32px;
+}
+
+/* #Media Queries
+================================================== */
+
+@media only screen and (max-width: 959px) {
+    #main-nav ul li {
+        padding: 26px 12px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #main-nav {
+        clear: left;
+        text-align: center;
+        float: none;
+        margin-bottom: 23px;
+        width: 100%;
+    }
+
+    .js #main-nav-list {
+        display: none;
+    }
+
+    .js .selectnav {
+        width: 100%;
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #joiee-customizer, 
+    #joiee-customizer.active {
+        display: none;
+    }
+}
