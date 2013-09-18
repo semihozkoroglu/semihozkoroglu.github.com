@@ -44,7 +44,7 @@
     <li class="next disabled"><a href="">{{site.next}} &rarr;</a></li>
   {% endif %}
 
-  <li><a href=""><strong style="color:blue;">{{paginator.page}}</strong></a><li>
+  <li><a href=""><strong style="color:#069;">{{paginator.page}}</strong></a><li>
   <li><a href="">..</a></li>
   <li><a href=""><strong>{{paginator.total_pages}}</strong></a><li>
 </ul>
