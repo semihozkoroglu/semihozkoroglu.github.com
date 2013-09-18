@@ -36,12 +36,16 @@
       <li class="previous"><a href="/">&larr; {{site.previous}}</a></li>
     {% endif %}
   {% else %}
-    <li class="previous disabled"><a href="#">&larr; {{site.previous}}</a></li>
+    <li class="previous disabled"><a href="">&larr; {{site.previous}}</a></li>
   {% endif %}
   {% if paginator.next_page %}
     <li class="next"><a href="{{ site.url }}/page{{ paginator.next_page }}">{{site.next}} &rarr;</a></li>
   {% else %}
     <li class="next disabled"><a href="">{{site.next}} &rarr;</a></li>
   {% endif %}
+
+  <li><a href=""><strong style="color:blue;">{{paginator.page}}</strong></a><li>
+  <li><a href="">..</a></li>
+  <li><a href=""><strong>{{paginator.total_pages}}</strong></a><li>
 </ul>
 <!-- Pagination Links end -->
