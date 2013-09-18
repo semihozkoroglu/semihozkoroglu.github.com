@@ -32,9 +32,23 @@
 
             <!-- Main Navigation -->
             <nav id="main-nav">
-              <div class="circle" style="background-image: 
-                    url('/assets/img/{{site.image}}')">
-              </div>
+              <table border="0">
+                <tr>
+                  <td>
+                    <div class="circle" style="background-image: 
+                        url('/assets/img/{{site.image}}')">
+                    </div>
+                  </td>
+                  {% for nav in site.accounts %}
+                    <td>
+                      <a style="margin-right:5px;" href="{{nav.url}}">
+                        <div class="{{nav.icon}}">
+                        </div>
+                      </a>
+                    </td>
+                  {% endfor %}
+                </tr>
+              </table>
             </nav>
             <!-- END Main Navigation -->
           </div>
