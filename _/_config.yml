@@ -2,7 +2,7 @@ author: Semih Özköroğlu - Blog
 disqus: 19notlar
 image: sem.jpg
 markdown: redcarpet
-paginate: 6
+paginate: 5
 pygments: true
 accounts:
 - icon: icos-github

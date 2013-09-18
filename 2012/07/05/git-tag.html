@@ -187,58 +187,84 @@
           </section>
         </aside>
         <div class="twelve columns">
-          <h2>Tüm Girdiler</h2>
-<ul class="arrow-list">
-    
-        <li>
-            <time style="color:#a4a4a4;">July , 23 - 2012 >> </time><a style="color:#069; font-size:20px;" href="/2012/07/23/huawei-modem.html">Huawei E177 modem'in Ubuntu 11.10 'a tanıtılması</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">July , 05 - 2012 >> </time><a style="color:#069; font-size:20px;" href="/2012/07/05/git-tag.html">Github version takibi ve version oluşturma</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">July , 19 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/07/19/drupal-jquery-kurulumu.html">Drupal sistemine jquery-ui paketini ekleme</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">June , 12 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/06/12/rails-kurulumu.html">Rails-1</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">June , 12 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/06/12/rails-controller-sctions-views.html">Rails-2</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">April , 30 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/04/30/wordpress-tema.html">Wordpress'de temanın page.php'sinde sayfa çağırmak</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 21 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/21/subshell-cut.html">Subshell ve Cut komutu</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 14 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/14/fsck-kurtarma.html">Güncelleme  Yöneticisine dikkat</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 12 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/12/c-sistem-programlama-dizin-dolas.html">C sistem programlama dizin dolaşmak</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 11 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/11/clonezilla-kars%CC%A7%C4%B1las%CC%A7t%C4%B1g%CC%86%C4%B1m-problem.html">Clonezilla'da karşılaştığım problem</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">November , 26 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/11/26/clonezilla-disk-imaji-alma.html">Clonezilla ile Disk imajı almak ve alınan imajı kullanmak</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">November , 24 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/11/24/clonezilla-ile-tan%C4%B1s%CC%A7mak.html">Clonezilla ile tanışmak</a>
-        </li>
-    
+          <h2>Github version takibi ve version oluşturma</h2>
+<p class="meta">05 Jul 2012</p>
+
+<div class="post">
+<p>Yaptığınız uygulamayı geliştirmeye devam ediyorsanız bunu github sistemi üzerinde versionlar şeklinde dağıtmak istiyorsanız
+tag&#39;ler oluşturmanız gerekmektedir.</p>
+
+<p>ilk olarak düzenleme yaptığınız uygulamada etiket oluşturuyoruz.</p>
+
+<ul>
+<li><code>git tag -a v1.0 -m &#39;version 1.0&#39;</code></li>
 </ul>
+
+<p>diyerek version 1.0 &#39;ı oluşturmuş oluyoruz. ve add, commit işleminden sonra push yapacağımız zaman etiketleri dikkate al
+dememiz gerekiyor.</p>
+
+<ul>
+<li><code>git push --tags</code></li>
+</ul>
+
+<p>diyerek depomuza değişiklikleri yeni etiket ile gönderiyoruz, ancak son sürüm üzerinde yapılan değişikliği o etikete nasıl göndereceğimi çözemedim
+ancak <a href="https://github.com/WordPress/WordPress">wordpress</a> &#39;in deposunu incelediğimde, 1.5, 3.3 , 3.4 gibi sürümlerini branch olarak koymuş fakat, 3.3.1 , 3.3.2 , 3.4.1 gibi sürümleri tag olarak yerleştirmiş, yani aslında taglar her değişiklik için kullanılıyor olabilir, var olan tag üzerinde gönderme yapamadığım için böyle bir kanıya vardım</p>
+
+<hr>
+
+<p>kullanıcı tarafında etiketdeki değişikliği nasıl alıyoruz?</p>
+
+<ul>
+<li><code>git fetch --tags</code></li>
+</ul>
+
+<p>diyerek etiketleri listeliyoruz.</p>
+
+<ul>
+<li><code>git merge tags/v1.0</code></li>
+</ul>
+
+<p>diyerek o versiyonu elimizdeki ile merge ediyoruz.</p>
+
+<ul>
+<li><code>git tag</code></li>
+</ul>
+
+<p>ile elimizdeki tag&#39;leri görebilir ve geçmek istediğimiz etiketi</p>
+
+<ul>
+<li><code>git checkout v1.0</code></li>
+</ul>
+
+<p>şeklinde belirtebiliriz.</p>
+
+<p>Tagleri silmek için</p>
+
+<ul>
+<li><code>git push origin :refs/tags/v1.0</code></li>
+</ul>
+
+<p>diyebiliriz.</p>
+
+<h3>TODO</h3>
+
+</div>
+
+<!-- Disqus start -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /*
+   * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+   */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://19notlar.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Lütfen bu sayfaya gelen <a href="http://disqus.com/?ref_noscript=19notlar">yorumları</a> görmek için tarayıcınızın JavaScript desteğini etkinleştirin.</noscript>
+<!-- Disqus end -->
+
         </div>
     </div>
 

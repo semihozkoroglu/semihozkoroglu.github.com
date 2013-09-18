@@ -13,10 +13,10 @@
     <div class="content">
       <h2 class="title"><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h2>
       <p>
-        {% if post.content.size > 1000 %}
-          {{ post.content | truncatewords: 40 }}
+        {% if post.content.size > 200 %}
+          {{ post.content | truncatewords: 40 | strip_html}}
         {% else %}
-          {{ post.content }}
+          {{ post.content | strip_html }}
         {% endif %}
       </p>
     </div>

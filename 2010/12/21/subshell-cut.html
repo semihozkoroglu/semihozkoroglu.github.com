@@ -187,58 +187,119 @@
           </section>
         </aside>
         <div class="twelve columns">
-          <h2>Tüm Girdiler</h2>
-<ul class="arrow-list">
-    
-        <li>
-            <time style="color:#a4a4a4;">July , 23 - 2012 >> </time><a style="color:#069; font-size:20px;" href="/2012/07/23/huawei-modem.html">Huawei E177 modem'in Ubuntu 11.10 'a tanıtılması</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">July , 05 - 2012 >> </time><a style="color:#069; font-size:20px;" href="/2012/07/05/git-tag.html">Github version takibi ve version oluşturma</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">July , 19 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/07/19/drupal-jquery-kurulumu.html">Drupal sistemine jquery-ui paketini ekleme</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">June , 12 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/06/12/rails-kurulumu.html">Rails-1</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">June , 12 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/06/12/rails-controller-sctions-views.html">Rails-2</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">April , 30 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/04/30/wordpress-tema.html">Wordpress'de temanın page.php'sinde sayfa çağırmak</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 21 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/21/subshell-cut.html">Subshell ve Cut komutu</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 14 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/14/fsck-kurtarma.html">Güncelleme  Yöneticisine dikkat</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 12 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/12/c-sistem-programlama-dizin-dolas.html">C sistem programlama dizin dolaşmak</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 11 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/11/clonezilla-kars%CC%A7%C4%B1las%CC%A7t%C4%B1g%CC%86%C4%B1m-problem.html">Clonezilla'da karşılaştığım problem</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">November , 26 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/11/26/clonezilla-disk-imaji-alma.html">Clonezilla ile Disk imajı almak ve alınan imajı kullanmak</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">November , 24 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/11/24/clonezilla-ile-tan%C4%B1s%CC%A7mak.html">Clonezilla ile tanışmak</a>
-        </li>
-    
-</ul>
+          <h2>Subshell ve Cut komutu</h2>
+<p class="meta">21 Dec 2010</p>
+
+<div class="post">
+<h4>Subshell</h4>
+
+<p>Subshell xterm emilatöründeyken yeni bir bash prosesinin forklanmasıdır.yani:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">budizin=$( pwd ; echo &quot;hımm&quot; )
+echo $budizin
+</code></pre></div>
+<p>dediğimizde <code>$( pwd ; echo &quot;hımm&quot; )</code> ifadesinde bir çocuk prosesi üretilir ve komut burada yorumlanır.ancak</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">budizin=$( pwd ; var=&quot;hımm&quot; )
+echo $budizin
+</code></pre></div>
+<p>dediğimizde anaprosese döndüğünde <code>$budizin</code> ifadesini yazdırdığında <code>var=&quot;hıımm&quot;</code> değişkenini göremez çünkü
+subshell&#39;de yaratılan değişkenler local olarak oluşturulmaktadır.
+Bu durumun ne gibi kullanımı vardır ?
+örnek : <code>echo &quot;sistem adi : $( uname -n ) &#39;dir .&quot;</code>  dediğimizde subshell&#39;e girip sistem adını basıp çıkıcaktır.</p>
+
+<p>export komutuyla anaprosesten subshell&#39;e değişiken gönderebilriz.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">export var=&quot;merhaba&quot;
+bash #subshell&#39;e giriyoruz.
+echo $var 
+</code></pre></div>
+<p>yada</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">var=&quot;merhaba&quot;
+export var
+bash
+echo $var
+</code></pre></div>
+<p>dediğimizde subshell gönderdiğimiz var değişkenini görmektedir.Ancak
+Subshell&#39;deyken export yapamayız ana prosesteyken export yapabiliriz buda subshell&#39;in variable listesine ekleme yapar.</p>
+
+<p>Yada <code>var=&quot;merhaba&quot; bash</code> diyerek export etmeden direk değişkeni gönderebiliriz ancak bu durumda ana proses tarafından bu değişken tanımlı olmucaktır.</p>
+
+<h4>Shell değişken değiştirme</h4>
+
+<p>Burada değişkenimizin karekterleri üzerinde oynamalar yapabilicez.Örnek :</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">var=/foo/bar/baz
+
+echo &quot;${ var##*/ }&quot;
+</code></pre></div>
+<p>Dediğimizde değişkenimizin başından itibaren tarayarak ilerle ve gidebileceğin en son yerdeki <code>/</code> karekterinden sonrasını döndür anlamındadır.
+çıktısı &gt;&gt; baz</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">echo &quot;${var#*/}&quot;
+</code></pre></div>
+<p>Bu durumda ise değişkenin başından itibaren tarayarak ilerle ve gidebileceğin en az mesafedeki <code>/</code> karakterinden sonrasını döndür.
+çıktısı &gt;&gt; foo/bar/baz </p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">echo &quot;${var%/*}&quot;
+</code></pre></div>
+<p>Burada ise değişkenin sonundan itibaren tarayarak ilerle ve gidebileceğin en az mesafedeki <code>/</code> karakterinden sonrasını döndür.
+çıktı &gt;&gt; /foo/bar</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">echo &quot;${var%%/*}&quot;
+</code></pre></div>
+<p>Dediğimizde değişkenimizin sonundan itibaren tarayarak ilerle ve gidebileceğin en son yerdeki <code>/</code> karekterinden sonrasını döndür anlamındadır.
+çıktı &gt;&gt; &quot;boş&quot;</p>
+
+<p>Anlaşılacağı üzere taradıgı alan haricini döndürmektedir ve de <code>#</code> ile <code>%</code> karakterleri en az mesafeyi <code>##</code> ile <code>##</code> karakterleride en fazla mesafeyi ifade etmektedir.</p>
+
+<h4>Cut komutu</h4>
+
+<p>Cut komutu default olarak tab&#39;a göre ayarlanmıştır. <code>cut  -f2</code> komutu&#39;na gelen girdide tab karekteri varsa tab&#39;a göre ayraçlık yapar ve ikinci kısmını geri döner.
+Eğer tab karekteri yoksa metnin kendisini döndürür.</p>
+
+<p><code>cut -d &#39; : &#39; -f3</code> ifadesindeki <code>-d</code> paremetresi ayraç vereceğimizi bildirmektedir ve tırnaklar içinde verilen <code>:</code>  karakterine göre ayıracağını ve 3. parçasını döndürmektedir.
+Bunu:
+    cut -d &#39; &#39; -f2-4
+olacak şekildede yazabiliriz.<code>-f2-4</code> ifadesi parçalardan 2 ve 4 dahil olmak üzere o aralığı döndürmektedir.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">line=&quot;a:b:c:d&quot;
+karakter=$( echo $line | cut -d &#39;:&#39; -f3 )
+echo $karakter 
+</code></pre></div>
+<p>Dediğimizde <code>c</code> &#39;yi döndürecektir.</p>
+
+<p>Bu şekilde girdiyi istediğimiz karaktere göre ayırabiliriz.Awk programıyla&#39;da benzer işi yapabiliriz ve awk programı daha kapsamlı olmasına rağmen cut komutu ile neredeyse 
+eşdeğer çalışmaktadır.Awk programının kullanımını daha sonradan bahsedicem ancak basit olarak </p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">echo &quot;a ? b ? c ? d:e &quot; | awk -F ? &#39; { print $4 } &#39;
+</code></pre></div>
+<p>çıktı -&gt; d:e</p>
+
+<p>Dediğimizde <code>-F</code> paremetresi alan ayıraçı anlamında yani default olarak değilde verdiğimiz <code>?</code> karekterine göre ayırmamızı sağlamaktadır.
+<code>&#39;{print $4}&#39;</code> ifadesindeki <code>$4</code> parçalamadan sonraki 4. parçamızı ifade etmektedir.</p>
+
+<p>Bu şekil cut ve awk programlarını kullanarak işlemimizi gerçekleştirebiliriz ancak bunun için shell&#39;in kendi imkanlarını kullanmak daha mantıklı olacaktır.
+Her seferinde cut ve awk&#39;nın forklanması için ayrı bir sürede harcamamış olucaz.Bunu şu şekilde gösterebiliriz.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">#!/bin/bash
+
+    ifs_save=$IFS
+    IFS=:
+    while read line ; do
+            set $line
+            echo &quot;kabuk : $7&quot;
+    done &lt; /etc/passwd
+</code></pre></div>
+<p>Burada doğrudan shell&#39;in kendi imkanlarını kullandık ve passwd dosyasının kullanıcıların kullandıkları kabuk programları listelemiş olduk.</p>
+
+</div>
+
+<!-- Disqus start -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /*
+   * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+   */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://19notlar.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Lütfen bu sayfaya gelen <a href="http://disqus.com/?ref_noscript=19notlar">yorumları</a> görmek için tarayıcınızın JavaScript desteğini etkinleştirin.</noscript>
+<!-- Disqus end -->
+
         </div>
     </div>
 

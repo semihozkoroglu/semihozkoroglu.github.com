@@ -187,58 +187,62 @@
           </section>
         </aside>
         <div class="twelve columns">
-          <h2>Tüm Girdiler</h2>
-<ul class="arrow-list">
-    
-        <li>
-            <time style="color:#a4a4a4;">July , 23 - 2012 >> </time><a style="color:#069; font-size:20px;" href="/2012/07/23/huawei-modem.html">Huawei E177 modem'in Ubuntu 11.10 'a tanıtılması</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">July , 05 - 2012 >> </time><a style="color:#069; font-size:20px;" href="/2012/07/05/git-tag.html">Github version takibi ve version oluşturma</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">July , 19 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/07/19/drupal-jquery-kurulumu.html">Drupal sistemine jquery-ui paketini ekleme</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">June , 12 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/06/12/rails-kurulumu.html">Rails-1</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">June , 12 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/06/12/rails-controller-sctions-views.html">Rails-2</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">April , 30 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/04/30/wordpress-tema.html">Wordpress'de temanın page.php'sinde sayfa çağırmak</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 21 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/21/subshell-cut.html">Subshell ve Cut komutu</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 14 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/14/fsck-kurtarma.html">Güncelleme  Yöneticisine dikkat</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 12 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/12/c-sistem-programlama-dizin-dolas.html">C sistem programlama dizin dolaşmak</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 11 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/11/clonezilla-kars%CC%A7%C4%B1las%CC%A7t%C4%B1g%CC%86%C4%B1m-problem.html">Clonezilla'da karşılaştığım problem</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">November , 26 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/11/26/clonezilla-disk-imaji-alma.html">Clonezilla ile Disk imajı almak ve alınan imajı kullanmak</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">November , 24 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/11/24/clonezilla-ile-tan%C4%B1s%CC%A7mak.html">Clonezilla ile tanışmak</a>
-        </li>
-    
+          <h2>Rails-1</h2>
+<p class="meta">12 Jun 2011</p>
+
+<div class="post">
+<p>Rails&#39;in default ayarları sayesinde xml bir dosyayı düzenlemek ve çalıştırmak için fazla zaman harcamayız.
+Railsde modeller, controller, view , images, style sheets, Javascript ve ayar dosyaları olmak üzere herşeyin yeri bellidir.</p>
+
+<p>Rails MVC mimarisi ruby tarafından derlerdiğin için esnek ve hızlıdır.Genel olarak mimariden bahsedecek olursak</p>
+
+<ul>
+<li><p>Model : Database&#39;e yazılacak olan veriyi belli kurallara tabi tutulmasıdır örnek olarak doldurulması gereken alanlardan istediğimizi zorunlu kılabilmemize olanak sağlamaktadır.</p></li>
+<li><p>Controller : Aldığı komutu çalıştırır ve dönüş değerini view&#39;e geçer. Controller de bulunan methodlara gelen get , post gibi istekleri yönlendirmeden sorumludur.</p></li>
+<li><p>View : Verinin gösterilmesinden sorumludur. View complex mantık işlemlerinin içermemelidir. View contoller actionlarından gelen verilerin gösterilmesiden sorumludur.Controller ve View yapısı birbirine bağlı yapılardır.</p></li>
 </ul>
+
+<p>rails mimarisinde veritabanındaki tabloların alanları sınıfların özelliğiymiş gibi atanıp active record sayesinde de veri üzerinde arama kaydetme gibi methodları kullanabiliriz.</p>
+
+<p>kurulumu</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">    gem install rails
+</code></pre></div>
+<p>güncelleme</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">gem update rails
+</code></pre></div>
+<p>veritabanı olarak mysql haricindeki veritabanı yöneticelerinde veritabanı sürücülerinin kurulması gerekmektedir.</p>
+
+<p>Bütün kurulumlarmız tamamlandı ise eksik bileşenimizin olup olmadıgını <code>bundle install</code> komutu ile kontrol edebiliriz.Eğer mysql veritabanı kullanacak
+iseniz sqlite3 eksikliğini göz ardı edebilirsiniz.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">rails new my-blog
+</code></pre></div>
+<p>diyerek blog uygulamamızı yarattıgımız zaman <code>config/database.yml</code> dosyamız default olarak sqlite3 &#39;bağlı olarak gelecektir.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">rails new my-blog -d mysql
+</code></pre></div>
+<p>dediğimizde ise <code>-d</code> parametresinden sonra kullanacağımız veritabanımızı ismini girebiliriz.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">cd my-blog
+</code></pre></div>
+<p>uygulamamızın içinde <code>config/database.yml</code> dosyamızı düzenledikten sonra <code>rails server</code> diyerek rails ile gelen webrick&#39;i başlatabiliriz bunun için projemizi oluşturduğumuz yerin önemi yoktur.
+ve default olarak localhost&#39;un 3000 portunda çalışmaktadır.Eğer istersen <code>-p</code> parametresi ile <code>rails server -p 27000</code> gibi istediğimiz ancak kullanılmayan portlar üzerinde çalıştırabiliriz.
+tarayıcımızda <code>localhost:3000</code> adresine giderek çalıştıgından emin olabiliriz.</p>
+
+</div>
+
+<!-- Disqus start -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /*
+   * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+   */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://19notlar.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Lütfen bu sayfaya gelen <a href="http://disqus.com/?ref_noscript=19notlar">yorumları</a> görmek için tarayıcınızın JavaScript desteğini etkinleştirin.</noscript>
+<!-- Disqus end -->
+
         </div>
     </div>
 

@@ -187,58 +187,101 @@
           </section>
         </aside>
         <div class="twelve columns">
-          <h2>Tüm Girdiler</h2>
-<ul class="arrow-list">
-    
-        <li>
-            <time style="color:#a4a4a4;">July , 23 - 2012 >> </time><a style="color:#069; font-size:20px;" href="/2012/07/23/huawei-modem.html">Huawei E177 modem'in Ubuntu 11.10 'a tanıtılması</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">July , 05 - 2012 >> </time><a style="color:#069; font-size:20px;" href="/2012/07/05/git-tag.html">Github version takibi ve version oluşturma</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">July , 19 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/07/19/drupal-jquery-kurulumu.html">Drupal sistemine jquery-ui paketini ekleme</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">June , 12 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/06/12/rails-kurulumu.html">Rails-1</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">June , 12 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/06/12/rails-controller-sctions-views.html">Rails-2</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">April , 30 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/04/30/wordpress-tema.html">Wordpress'de temanın page.php'sinde sayfa çağırmak</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 21 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/21/subshell-cut.html">Subshell ve Cut komutu</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 14 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/14/fsck-kurtarma.html">Güncelleme  Yöneticisine dikkat</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 12 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/12/c-sistem-programlama-dizin-dolas.html">C sistem programlama dizin dolaşmak</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 11 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/11/clonezilla-kars%CC%A7%C4%B1las%CC%A7t%C4%B1g%CC%86%C4%B1m-problem.html">Clonezilla'da karşılaştığım problem</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">November , 26 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/11/26/clonezilla-disk-imaji-alma.html">Clonezilla ile Disk imajı almak ve alınan imajı kullanmak</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">November , 24 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/11/24/clonezilla-ile-tan%C4%B1s%CC%A7mak.html">Clonezilla ile tanışmak</a>
-        </li>
-    
-</ul>
+          <h2>C sistem programlama dizin dolaşmak</h2>
+<p class="meta">12 Dec 2010</p>
+
+<div class="post">
+<div class="highlight"><pre><code class="text language-text" data-lang="text">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;dirent.h&gt;
+#include &lt;string.h&gt;
+#include &lt;sys/stat.h&gt;
+#define MAX_PATH_SIZE 1024
+void DirWalk(const char *path, void (*Proc) (const char *))
+{
+    char fname[MAX_PATH_SIZE];
+    struct dirent *de;
+    struct stat status;
+    DIR *dir;
+    if ((dir = opendir(path)) == NULL) {
+        perror(&quot;opendir&quot;);
+        return;
+    }
+    while ((de = readdir(dir)) != NULL) {
+        sprintf(fname, &quot;%s/%s&quot;, path, de-&gt;d_name);
+        Proc(fname);
+        if (strcmp(de-&gt;d_name, &quot;.&quot;) != 0 &amp;&amp; strcmp(de-&gt;d_name, &quot;..&quot;) != 0) {
+            if (stat(fname, &amp;status) == -1) {
+                perror(&quot;stat&quot;);
+                break;
+            }
+            if (S_ISDIR(status.st_mode))
+                DirWalk(fname, Proc);
+        }   
+    }
+    closedir(dir);
+}
+void Disp(const char *name)
+{
+    puts(name);
+}
+int main(int argc, char *argv[])
+{
+    char fname[MAX_PATH_SIZE];
+    char *plast;
+    if (argc != 2) {
+        printf(&quot;Usage: dirtree &lt;path&gt;\n&quot;);
+        exit(1);
+    }
+    strcpy(fname, argv[1]);
+    plast = strchr(fname, &#39;\0&#39;) - 1;
+    if (*plast == &#39;/&#39;)
+        *plast = &#39;\0&#39;;
+    DirWalk(fname, Disp);
+return 0; 
+}
+</code></pre></div>
+<p><code>void DirWalk(const char *path, void (*Proc) (const char *))</code> ifadesinde *path ile /etc gibi bir string ve bir fonksiyon işaretçisi alırız.</p>
+
+<p><code>struct dirent *de;</code>dirent yapısında d<em>ino ve d</em>name yapıları bulunmaktadır.Buradan readdir fonksiyonunun struct döndüğünü görebiliriz.</p>
+
+<p><code>if (strcmp(de-&gt;d_name, &quot;.&quot;) != 0 &amp;&amp; strcmp(de-&gt;d_name, &quot;..&quot;) != 0) {</code>&quot;.&quot; bulundugu dizin,&quot;..&quot; üst dizini gösterdiğinden programın tekrardan bu dizinlere girmesini engelliyor.</p>
+
+<p>strcmp fonksiyonunun harf harf karşılaştırma yapmakda yukarıdaki ifademizde dosya adı &quot;.&quot; veya &quot;..&quot; olduğunda strcmp sıfır değeri dönecektir.</p>
+
+<p><code>if (stat(fname, &amp;status) == -1) {</code> stat fonksiyonu başarısızlık durumunda -1 döner.Ve status dosya bilgilerini tutar(örnek:dosya erişimindeki izin bilgileri gibi).
+Ancak burada kullanılmasının amacı her gelişinde değişen fname ile birlikte status durumunuda set etmek ve S_ISDIR fonksiyonunda kullanmak.</p>
+
+<p><code>perror(&quot;stat&quot;);</code> perror fonksiyonunu çıktısı &quot;stat:burası errno değişkenine karşılık gelen mesaj metni&quot; şeklinde olur.
+errno değişkenine mesaj metni stat fonksiyonu tarafından yukarıdaki kontrolde set edilmiştir.</p>
+
+<p><code>if (S_ISDIR(status.st_mode))</code> Status değişkeninde dosya bilgileri tutuluyordu burada dosyanın dizin mi ? kontrolünü yapar evetse özyineli yapıya dönüşür.</p>
+
+<p><code>DirWalk(fname, Proc);</code> proc fonksiyon göstericisine ana fonksiyonda Disp&#39;i atamıştık zaten.</p>
+
+<p><code>plast = strchr(fname, &#39;\0&#39;) - 1;</code> strchr belirtilen karakteri ilk bulduğunda belirtilen karekterin adresini dönmektedir.</p>
+
+<p><code>if (*plast == &#39;/&#39;)</code> gelen path&#39;in sonundaki &quot;/&quot; ifadesini kaldırıyoruz.</p>
+
+<p><code>DirWalk(fname, Disp);</code> path&#39;i ve puts çıktısını üreten fonksiyonumuzu işaret ediyoruz.</p>
+
+</div>
+
+<!-- Disqus start -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /*
+   * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+   */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://19notlar.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Lütfen bu sayfaya gelen <a href="http://disqus.com/?ref_noscript=19notlar">yorumları</a> görmek için tarayıcınızın JavaScript desteğini etkinleştirin.</noscript>
+<!-- Disqus end -->
+
         </div>
     </div>
 

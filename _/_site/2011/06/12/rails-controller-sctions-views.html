@@ -187,58 +187,106 @@
           </section>
         </aside>
         <div class="twelve columns">
-          <h2>Tüm Girdiler</h2>
-<ul class="arrow-list">
-    
-        <li>
-            <time style="color:#a4a4a4;">July , 23 - 2012 >> </time><a style="color:#069; font-size:20px;" href="/2012/07/23/huawei-modem.html">Huawei E177 modem'in Ubuntu 11.10 'a tanıtılması</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">July , 05 - 2012 >> </time><a style="color:#069; font-size:20px;" href="/2012/07/05/git-tag.html">Github version takibi ve version oluşturma</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">July , 19 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/07/19/drupal-jquery-kurulumu.html">Drupal sistemine jquery-ui paketini ekleme</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">June , 12 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/06/12/rails-kurulumu.html">Rails-1</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">June , 12 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/06/12/rails-controller-sctions-views.html">Rails-2</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">April , 30 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/04/30/wordpress-tema.html">Wordpress'de temanın page.php'sinde sayfa çağırmak</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 21 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/21/subshell-cut.html">Subshell ve Cut komutu</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 14 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/14/fsck-kurtarma.html">Güncelleme  Yöneticisine dikkat</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 12 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/12/c-sistem-programlama-dizin-dolas.html">C sistem programlama dizin dolaşmak</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 11 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/11/clonezilla-kars%CC%A7%C4%B1las%CC%A7t%C4%B1g%CC%86%C4%B1m-problem.html">Clonezilla'da karşılaştığım problem</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">November , 26 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/11/26/clonezilla-disk-imaji-alma.html">Clonezilla ile Disk imajı almak ve alınan imajı kullanmak</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">November , 24 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/11/24/clonezilla-ile-tan%C4%B1s%CC%A7mak.html">Clonezilla ile tanışmak</a>
-        </li>
-    
-</ul>
+          <h2>Rails-2</h2>
+<p class="meta">12 Jun 2011</p>
+
+<div class="post">
+<p>İlk olarak projemizin isminde veritabanı oluşturmalıyız. Projenizin içindeyken</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">rake db:create
+</code></pre></div>
+<p>komutunu çalıştırarak veritabanında <code>&lt;proje-adi&gt;_development ve &lt;proje-adi&gt;_test</code> adında iki tane database&#39;in oluşturuldugunu görebilirsiniz.</p>
+
+<p>Bu noktadan sonra <code>public/index.html</code> default sayfamızı silemiz gerekmektedir.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">rails generate controller home
+</code></pre></div>
+<p>komutunu çalıştırdığımızda </p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">create  app/controllers/home_controller.rb
+invoke  erb
+create    app/views/home
+invoke  test_unit
+create    test/functional/home_controller_test.rb
+invoke  helper
+create    app/helpers/home_helper.rb
+invoke    test_unit
+create      test/unit/helpers/home_helper_test.rb
+</code></pre></div>
+<p>çıktısındada görüldüğü gibi <code>app/</code> altında <code>controller</code> ve <code>views</code> alanlarında <code>home</code> isimlerini içeren çeşitli dosyalarımız oluşturuldu şimdilik
+biz controller ve view alanları ile ilgileneceğiz. home bölümünü anasayafa yapacağımız göz önunde bulundurarak içinde <code>index.html.erb</code> dosyamızı oluşturabiliriz.
+erb uzantısı ruby kodları içereceği anlamındadır. Eğer bu index sayfamızı kendimiz oluşturur isek <code>config/routes.rb</code> dosyamızın içeriğine <code>get &quot;home/index&quot;</code>
+kodunu yerleştirmeliyiz ve home&#39;un control dosyasının içerisine index methodu( def index ) eklemeliyiz bu method home/index çağırıldıgında çalışacak olan methoddur yada</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">rails generate controller home index
+</code></pre></div>
+<p>komutu ile <code>routes.rb</code> , <code>home_controller.rb</code> içeriğine index&#39;e bağlı komutlarımızı otomatik olarak eklenip <code>app/views/home/index.html.erb</code> dosyasıda bizim
+için otomatik olarak oluşturulacaktır.</p>
+
+<p>Controller ile View arasındaki bağlantıyı azda olsa anlayabilmek için <code>app/controller/home_controller.rb</code> dosyamızın içerisindeki <code>index</code> methodunda
+<code>@deneme = &quot;Hello Rails&quot;</code> deneme adında oluşturdugumuz sınıf değişkenimize atadıgımız stringi <code>/home/index</code> içinde göstermek istersek eğer.</p>
+
+<p><code>app/views/home/index.html.erb</code> içeriğinde <code>&lt;%</code> <code>%&gt;</code> ruby kodlarının yazılacağı ayraçların arasına <code>&lt;%= @deneme %&gt;</code> yazıp <code>localhost:3000/home/index</code> &#39;de ekranda Hello Rails yazdıgını 
+görebiliriz.</p>
+
+<p>Eğer Hello Rails yazımızın 5 defa gösterilmesi istersek, <code>index.html.erb</code> dosyamızın içeriğini:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;%
+            5.times do
+        %&gt;
+        &lt;h1&gt; &lt;% @deneme %&gt;&lt;/h1&gt;
+        &lt;%
+            end
+        %&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+<p>olarak değiştirebiliriz.</p>
+
+<p>peki biz <code>home</code> altında başka bir html dosyası yaratmak istediğimizde bu html&#39;ler için kullanılcak methodları nereden çağırmalıyız. İndex&#39;ten mi? ..Hayır</p>
+
+<p>Rails &#39;in basit ama mantıklı bir yapısı var bu noktada <code>home</code> altında oluşturulacak her html dosyası için <code>controller/home_controller.rb</code> içinde method yaratmalıyız.
+Yani diyelimki kullanıcı index sayfamızda çıkış linkine tıkladıgında <code>exit.html.erb</code> &#39;yi çağırmasını ve buna bağlı olarak ekranda çıkarken görmesini istediğimiz metni bastırmak istediğimizde
+ilk olarak <code>home/exit.html.erb</code> dosyasını oluşturduktan sonra <code>home_controller.rb</code> dosyasında </p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">def exit
+    @cikis = &quot;gule gule&quot;
+end
+</code></pre></div>
+<p>eklemesini yapıp , exit.html.erb&#39;yi</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;%= @cikis %&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+<p>index.html.erb &#39;içinden <code>link_to</code> fonksiyonunu kullanarak link verirsek eğer:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">&lt;%= link_to &quot;Cıkış yapınız.&quot; , :action =&gt; &quot;exit&quot; %&gt; 
+</code></pre></div>
+<p>ifadesinde görüldüğü gibi exit sayfası çağrılıyor ve bu sayfa çağırıldıgında controller kısmındaki değişkenlere hakim olunabilir. İlerleyen konularda
+sayfa çağırılırken değer gönderme konularınıda yazmaya çalışacağım.</p>
+
+<p>Ve bu aşamada sunucumuzu çalıştırdığımız zaman yönlerdirme hatası alacağız
+nedeni ise <code>config/routes.rb</code> içinde <code>get home/exit</code> satırını eklemediğimiz
+için.</p>
+
+</div>
+
+<!-- Disqus start -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /*
+   * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+   */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://19notlar.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Lütfen bu sayfaya gelen <a href="http://disqus.com/?ref_noscript=19notlar">yorumları</a> görmek için tarayıcınızın JavaScript desteğini etkinleştirin.</noscript>
+<!-- Disqus end -->
+
         </div>
     </div>
 
