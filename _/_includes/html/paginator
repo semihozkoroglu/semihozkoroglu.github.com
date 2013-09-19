@@ -1,9 +1,6 @@
 {% for post in paginator.posts %}
 <article class="post">
   <div class="side">
-    <div class="post-type">
-      <i class="icon-pen"></i>
-    </div>
     <div class="date">
       <span class="day">{{ post.date | date: "%d" }}</span>
       <span class="month">{{ post.date | date: "%B" }}</span>

@@ -2,7 +2,7 @@
 <html lang="tr">
 
 {% include html/head %}
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 var animate, left=0, imgObj=null, imgObj2=null;
 
 function getOffset( el ) {
@@ -50,6 +50,7 @@ function stop(){
    clearTimeout(animate);
 }
 </script>
+-->
 <body>
 
   <!-- Color Customizer, remove if not needed -->
@@ -86,10 +87,10 @@ function stop(){
                         class="circle" style="background-image: 
                         url('/assets/img/{{site.image}}')">
                     </div>
-                    <div id="img2" style="display:none;" onClick="displayMenu()"
+                    <!-- <div id="img2" style="display:none;" onClick="displayMenu()"
                         class="circle" style="background-image: 
                         url('/assets/img/{{site.image}}')">
-                    </div>
+                    </div> -->
                   </td>
                   {% for nav in site.accounts %}
                     <td>
