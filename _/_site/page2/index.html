@@ -21,7 +21,54 @@
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700" rel="stylesheet">
 <link href="/assets/css/fonts/glyphicons/style.css" rel="stylesheet">
 </head>
+<script type="text/javascript">
+var animate, left=0, imgObj=null, imgObj2=null;
 
+function getOffset( el ) {
+    var _x = 0;
+    var _y = 0;
+    while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
+        _x += el.offsetLeft - el.scrollLeft;
+        _y += el.offsetTop - el.scrollTop;
+        el = el.offsetParent;
+    }
+    return { top: _y, left: _x };
+}
+
+function displayMenu(){
+
+   imgObj = document.getElementById('img');
+   imgObj2 = document.getElementById('img2');
+
+   imgObj.style.position= 'absolute';
+   imgObj.style.top = getOffset( document.getElementById('img') ).top + 'px';
+   imgObj.style.left = getOffset( document.getElementById('img') ).left + 'px';
+   imgObj.style.visibility='hidden';
+   imgObj2.style.display='block';
+
+   moveRight();
+}
+
+function moveRight(){
+    left = parseInt(imgObj.style.left, 10);
+
+    if (left + 100 >= left) {
+        imgObj.style.left = (left + 5) + 'px';
+        imgObj.style.visibility='visible';
+
+        animate = setTimeout(function(){moveRight();},20); // call moveRight in 20msec
+
+        //stopanimate = setTimeout(moveRight,20);
+    } else {
+        stop();
+    }
+    //f();
+}
+
+function stop(){
+   clearTimeout(animate);
+}
+</script>
 <body>
 
   <!-- Color Customizer, remove if not needed -->
@@ -54,7 +101,12 @@
               <table border="0">
                 <tr>
                   <td>
-                    <div class="circle" style="background-image: 
+                    <div id="img" onClick="displayMenu()"
+                        class="circle" style="background-image: 
+                        url('/assets/img/sem.jpg')">
+                    </div>
+                    <div id="img2" style="display:none;" onClick="displayMenu()"
+                        class="circle" style="background-image: 
                         url('/assets/img/sem.jpg')">
                     </div>
                   </td>
@@ -165,23 +217,23 @@
 </div>
 <ul class="tag-labels">
   
-    <li><a href="/tag/linux" title="linux" class="label label-default">linux</a>
+    <li><a href="/tag/bash" title="bash" class="label label-default">bash</a>
   
-    <li><a href="/tag/clonezilla" title="clonezilla" class="label label-default">clonezilla</a>
-  
-    <li><a href="/tag/drupal" title="drupal" class="label label-default">drupal</a>
+    <li><a href="/tag/c" title="c" class="label label-default">c</a>
   
     <li><a href="/tag/git" title="git" class="label label-default">git</a>
   
     <li><a href="/tag/wordpress" title="wordpress" class="label label-default">wordpress</a>
   
-    <li><a href="/tag/bash" title="bash" class="label label-default">bash</a>
-  
-    <li><a href="/tag/c" title="c" class="label label-default">c</a>
-  
     <li><a href="/tag/rails" title="rails" class="label label-default">rails</a>
   
+    <li><a href="/tag/clonezilla" title="clonezilla" class="label label-default">clonezilla</a>
+  
+    <li><a href="/tag/drupal" title="drupal" class="label label-default">drupal</a>
+  
     <li><a href="/tag/huawei modem" title="huawei modem" class="label label-default">huawei modem</a>
+  
+    <li><a href="/tag/linux" title="linux" class="label label-default">linux</a>
   </li>
 </ul>
           </section>
@@ -201,7 +253,7 @@
   </div>
   <div class="wrap">
     <div class="content">
-      <h2 class="title"><a href="/2011/04/30/wordpress-tema.html">Wordpress'de temanın page.php'sinde sayfa çağırmak</a></h2>
+      <h2 class="title"><a href="/2011/04/30/wordpress-tema.html">Wordpress'de temanın page.php'sinde sayfa çağırmak</a></h2><br>
       <p>
         
           Temanın admin panelinden oluşturulan tüm sayfalar tema klasöründeki page.php şablonundan türetilmektedir. Eğer siz sadece tek bir sayfa için özellikler eklemek istiyorsanız mesela forum sayfası dışında tüm sayfalarda comment bloglarını kapatmak istiyor iseniz comments_template() fonksiyonunu forum sayfası id&#39;si için kullanabilirsiniz yada...
@@ -226,7 +278,7 @@
   </div>
   <div class="wrap">
     <div class="content">
-      <h2 class="title"><a href="/2010/12/21/subshell-cut.html">Subshell ve Cut komutu</a></h2>
+      <h2 class="title"><a href="/2010/12/21/subshell-cut.html">Subshell ve Cut komutu</a></h2><br>
       <p>
         
           Subshell Subshell xterm emilatöründeyken yeni bir bash prosesinin forklanmasıdır.yani: budizin=$( pwd ; echo &quot;hımm&quot; ) echo $budizin  dediğimizde $( pwd ; echo &quot;hımm&quot; ) ifadesinde bir çocuk prosesi üretilir ve komut burada yorumlanır.ancak <code...
@@ -251,7 +303,7 @@
   </div>
   <div class="wrap">
     <div class="content">
-      <h2 class="title"><a href="/2010/12/14/fsck-kurtarma.html">Güncelleme  Yöneticisine dikkat</a></h2>
+      <h2 class="title"><a href="/2010/12/14/fsck-kurtarma.html">Güncelleme  Yöneticisine dikkat</a></h2><br>
       <p>
         
           Bugün çok garip bir durumla karşılaştım aslında karşılaştığım durum basit ama karşılaşma zamanı garip oldu.. yaklaşık olarak 3 saat önce bir blog&#39;ta adamın karşılaştığı ilginç bir olayı okuyordum yani adama göre beklenmeyen bir durum olduğu için ilginçmiş dosya sistemini çok...
@@ -276,7 +328,7 @@
   </div>
   <div class="wrap">
     <div class="content">
-      <h2 class="title"><a href="/2010/12/12/c-sistem-programlama-dizin-dolas.html">C sistem programlama dizin dolaşmak</a></h2>
+      <h2 class="title"><a href="/2010/12/12/c-sistem-programlama-dizin-dolas.html">C sistem programlama dizin dolaşmak</a></h2><br>
       <p>
         
           #include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; #include &lt;dirent.h&gt; #include &lt;string.h&gt; #include &lt;sys/stat.h&gt; #define MAX_PATH_SIZE 1024 void DirWalk(const char *path, void (*Proc) (const char *)) { char fname[MAX_PATH_SIZE]; struct dirent *de; struct stat status; DIR *dir; if ((dir =...
@@ -301,7 +353,7 @@
   </div>
   <div class="wrap">
     <div class="content">
-      <h2 class="title"><a href="/2010/12/11/clonezilla-kars%CC%A7%C4%B1las%CC%A7t%C4%B1g%CC%86%C4%B1m-problem.html">Clonezilla'da karşılaştığım problem</a></h2>
+      <h2 class="title"><a href="/2010/12/11/clonezilla-kars%CC%A7%C4%B1las%CC%A7t%C4%B1g%CC%86%C4%B1m-problem.html">Clonezilla'da karşılaştığım problem</a></h2><br>
       <p>
         
           Endüstri labında clonezilla ile imajı alıp diğer bilgisayarlara sistemi kopyalıyordum. Ancak iki tanesinde problemle karşılaştım.Şunu da belirtim sistemlerin hepsi aynı yani lenovanın sıfır bilgisayarlar ancak bir tanesinde ekran bozuklugu var yani görüntü bios&#39;a girdiğimde de kötü ve sistemler açılırken kilitleniyor.Bundaki...

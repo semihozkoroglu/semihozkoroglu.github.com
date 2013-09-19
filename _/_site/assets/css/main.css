@@ -402,9 +402,10 @@
 }
 
 .blog .post .side {
-	width: 140px;
+	width: 90px;
 	float: right;
-	/*float: left;*/
+	padding-right: 15px;
+	padding-bottom: 15px;
 }
 
 .blog .post .wrap {
@@ -436,7 +437,7 @@
 	background-color: #565656;
 	/*background-color: #333;*/
 	text-align: center;
-	margin-left: 60px;
+	/*margin-left: 60px;*/
 	padding: 7px 0;
 }
 

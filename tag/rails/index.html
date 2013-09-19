@@ -21,7 +21,54 @@
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700" rel="stylesheet">
 <link href="/assets/css/fonts/glyphicons/style.css" rel="stylesheet">
 </head>
+<script type="text/javascript">
+var animate, left=0, imgObj=null, imgObj2=null;
 
+function getOffset( el ) {
+    var _x = 0;
+    var _y = 0;
+    while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
+        _x += el.offsetLeft - el.scrollLeft;
+        _y += el.offsetTop - el.scrollTop;
+        el = el.offsetParent;
+    }
+    return { top: _y, left: _x };
+}
+
+function displayMenu(){
+
+   imgObj = document.getElementById('img');
+   imgObj2 = document.getElementById('img2');
+
+   imgObj.style.position= 'absolute';
+   imgObj.style.top = getOffset( document.getElementById('img') ).top + 'px';
+   imgObj.style.left = getOffset( document.getElementById('img') ).left + 'px';
+   imgObj.style.visibility='hidden';
+   imgObj2.style.display='block';
+
+   moveRight();
+}
+
+function moveRight(){
+    left = parseInt(imgObj.style.left, 10);
+
+    if (left + 100 >= left) {
+        imgObj.style.left = (left + 5) + 'px';
+        imgObj.style.visibility='visible';
+
+        animate = setTimeout(function(){moveRight();},20); // call moveRight in 20msec
+
+        //stopanimate = setTimeout(moveRight,20);
+    } else {
+        stop();
+    }
+    //f();
+}
+
+function stop(){
+   clearTimeout(animate);
+}
+</script>
 <body>
 
   <!-- Color Customizer, remove if not needed -->
@@ -54,7 +101,12 @@
               <table border="0">
                 <tr>
                   <td>
-                    <div class="circle" style="background-image: 
+                    <div id="img" onClick="displayMenu()"
+                        class="circle" style="background-image: 
+                        url('/assets/img/sem.jpg')">
+                    </div>
+                    <div id="img2" style="display:none;" onClick="displayMenu()"
+                        class="circle" style="background-image: 
                         url('/assets/img/sem.jpg')">
                     </div>
                   </td>
@@ -165,23 +217,23 @@
 </div>
 <ul class="tag-labels">
   
-    <li><a href="/tag/linux" title="linux" class="label label-default">linux</a>
+    <li><a href="/tag/bash" title="bash" class="label label-default">bash</a>
   
-    <li><a href="/tag/clonezilla" title="clonezilla" class="label label-default">clonezilla</a>
-  
-    <li><a href="/tag/drupal" title="drupal" class="label label-default">drupal</a>
+    <li><a href="/tag/c" title="c" class="label label-default">c</a>
   
     <li><a href="/tag/git" title="git" class="label label-default">git</a>
   
     <li><a href="/tag/wordpress" title="wordpress" class="label label-default">wordpress</a>
   
-    <li><a href="/tag/bash" title="bash" class="label label-default">bash</a>
-  
-    <li><a href="/tag/c" title="c" class="label label-default">c</a>
-  
     <li><a href="/tag/rails" title="rails" class="label label-default">rails</a>
   
+    <li><a href="/tag/clonezilla" title="clonezilla" class="label label-default">clonezilla</a>
+  
+    <li><a href="/tag/drupal" title="drupal" class="label label-default">drupal</a>
+  
     <li><a href="/tag/huawei modem" title="huawei modem" class="label label-default">huawei modem</a>
+  
+    <li><a href="/tag/linux" title="linux" class="label label-default">linux</a>
   </li>
 </ul>
           </section>
