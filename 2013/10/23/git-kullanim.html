@@ -242,66 +242,139 @@ function stop(){
           </section>
         </aside>
         <div class="twelve columns">
-          <h2>Tüm Girdiler</h2>
-<ul class="arrow-list">
-    
-        <li>
-            <time style="color:#a4a4a4;">October , 23 - 2013 >> </time><a style="color:#069; font-size:20px;" href="/2013/10/23/git-kullanim.html">Source Tree ile Git Kullanımı</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">October , 23 - 2013 >> </time><a style="color:#069; font-size:20px;" href="/2013/10/23/git-flow.html">Git Flow Akışı ve Source Tree</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">July , 23 - 2012 >> </time><a style="color:#069; font-size:20px;" href="/2012/07/23/huawei-modem.html">Huawei E177 modem'in Ubuntu 11.10 'a tanıtılması</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">July , 05 - 2012 >> </time><a style="color:#069; font-size:20px;" href="/2012/07/05/git-tag.html">Github version takibi ve version oluşturma</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">July , 19 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/07/19/drupal-jquery-kurulumu.html">Drupal sistemine jquery-ui paketini ekleme</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">June , 12 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/06/12/rails-kurulumu.html">Rails-1</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">June , 12 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/06/12/rails-controller-sctions-views.html">Rails-2</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">April , 30 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/04/30/wordpress-tema.html">Wordpress'de temanın page.php'sinde sayfa çağırmak</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 21 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/21/subshell-cut.html">Subshell ve Cut komutu</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 14 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/14/fsck-kurtarma.html">Güncelleme  Yöneticisine dikkat</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 12 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/12/c-sistem-programlama-dizin-dolas.html">C sistem programlama dizin dolaşmak</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 11 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/11/clonezilla-kars%CC%A7%C4%B1las%CC%A7t%C4%B1g%CC%86%C4%B1m-problem.html">Clonezilla'da karşılaştığım problem</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">November , 26 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/11/26/clonezilla-disk-imaji-alma.html">Clonezilla ile Disk imajı almak ve alınan imajı kullanmak</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">November , 24 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/11/24/clonezilla-ile-tan%C4%B1s%CC%A7mak.html">Clonezilla ile tanışmak</a>
-        </li>
-    
+          <h2>Source Tree ile Git Kullanımı</h2>
+<p class="meta">23 Oct 2013</p>
+
+<div class="post">
+<h1>Git Kullanımı</h1>
+
+<p>İlk olarak <a href="http://www.sourcetreeapp.com/download/">SourceTree</a> &#39;den github ile bağlantı kuracağımız tool &#39;u indiriyoruz.</p>
+
+<p>Kurulum Aşamaları;</p>
+
+<ul>
+<li>İlk gelen ekrandaki bilgiler commit aşamasında kullanılacak</li>
 </ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/SourceTree/1.png" alt="İlk Aşama"></p>
+
+<ul>
+<li>İkinci ekranda bitbucket bilgilerimizi giriyoruz.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/SourceTree/2.png" alt="İkinci Aşama"></p>
+
+<ul>
+<li>Bu aşamada istersek localde mevcut git depolarını keşfetmesini sağlayabiliriz.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/SourceTree/3.png" alt="Üçüncü Aşama"></p>
+
+<ul>
+<li>Bu aşamada ister sol üst köşedeki button &#39;dan repo &#39;yu kendimiz manuel olarak ekleyebiliriz. Yada bir sonraki adımdaki işlemi uygulayabiliriz. Burda manuel olarak eklerken kullanacağımız url bir sonraki adımda gösterildi.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/SourceTree/4.png" alt="Dördüncü Aşama"></p>
+
+<ul>
+<li>Bitbucket üzerindeki mevcut repoda clone kısmında terminal üzerinden manuel olarak clone etmemizi sağlayan komutu uygulayabiliriz. Yukarıdaki aşamada repo eklerken kullanacağımız url de burdaki url dir. Yada ekteki görselde belirtilen <code>Clone in SourceTree</code> tıklayarak direk SourceTree &#39;den clone yaptırabiliriz.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/SourceTree/5.png" alt="Beşinci Aşama"></p>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/SourceTree/6.png" alt="Altıncı Aşama"></p>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/SourceTree/7.png" alt="Yedinci Aşama"></p>
+
+<ul>
+<li>Bitbucket parolamızı giriyoruz.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/SourceTree/8.png" alt="Sekizinci Aşama"></p>
+
+<ul>
+<li>Clone diyerek projeyi locale alıyoruz.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/SourceTree/9.png" alt="Dokuzuncu Aşama"></p>
+
+<ul>
+<li>Mevcut repolar ana menüde görünür halde, işlem yapmak istediğimiz repoyu seçiyoruz.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/SourceTree/10.png" alt="Onuncu Aşama"></p>
+
+<ul>
+<li>Repoda mevcut brach &#39;lar görünmekte master brach &#39;ı default olarak gelmekte. Bu brach &#39;a tıkladığımız zaman son zamanda yapılan commitler ve commitler de yapılan değişikliklere ulaşabiliyoruz.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/SourceTree/11.png" alt="Onbirinci Aşama"></p>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/SourceTree/12.png" alt="Onikinci Aşama"></p>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/SourceTree/13.png" alt="Onüçüncü Aşama"></p>
+
+<ul>
+<li>Projemiz üzerinde değişiklik yaptığımız zaman eğer master branch üzerindeysek <code>Uncommitted changes</code> olarak görünmektedir</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/SourceTree/14.png" alt="Ondördüncü Aşama"></p>
+
+<ul>
+<li><p>Bu commitlenmemiş değişikliği <code>commit</code> edebilmek için öncelikle <code>add</code> işlemini yapmalıyız. Bunun için commitlenmemiş satırı seçip üst menüden add iconuna tıklayarak commit edilmek için hazır hale getirmeliyiz.</p></li>
+<li><p>Burda asıl dikkat edilmesi gereken nokta <code>Uncommited changes</code> satırı seçildiği zaman şuanda working directory içinde yapılan tüm dosyalardaki değişiklikleri <code>files in working tree</code> kısmından görebiliriz. Yani burdaki kısım projemizdeki değişiklik yapılmış dosyaları göstermektedir. Biz burdan hangi dosyaları commitlemek istiyorsak önce onu seçip üst menüden <code>add</code> diyerek <code>files staged in index</code> kısmına geçirmeliyiz. Yani üst menüden <code>commit</code> butonuna tıkladığımız zaman bu kısımdaki dosyalar commitlenicektir. O zaman commitleme esnasında yaptığımız değişikliklerin hepsini birden commitlemek yerine yapılan işlemleri parçalara ayırıp ilişkili dosyaları commitlemek daha temiz bir commit yapısı sunar.</p></li>
+<li><p>Yani eğer değişiklik yaptığımız tüm dosyaları commitlemek istiyorsak <code>files in working tree</code> kısmındaki tüm dosyaları seçip <code>add</code> dememiz gerekmektedir. Bundan sonra commit yapabiliriz.</p></li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/SourceTree/22.png" alt="Onbeşinci Aşama"></p>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/SourceTree/23.png" alt="Onbeşinci Aşama"></p>
+
+<ul>
+<li><code>files staged in index</code> kısmındaki dosyaları commitlemek için üst menüden <code>commit</code> butonuna tıklamalıyız.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/SourceTree/16.png" alt="Onaltıncı Aşama"></p>
+
+<ul>
+<li>Commit mesajını girmeliyiz. Bu kısmı boş bırakmamalıyız.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/SourceTree/17.png" alt="Onyedinci Aşama"></p>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/SourceTree/18.png" alt="Onyedinci Aşama"></p>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/SourceTree/19.png" alt="Onyedinci Aşama"></p>
+
+<ul>
+<li>Commit işlemi aslında hangi dosyalarda ne değişiklik yapılmış bu bilgiyi entegre etme aşamasıdır. Değişikliklerimizi tam olarak göndermek için üst menüden <code>push</code> butonuna tıklamalıyız.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/SourceTree/20.png" alt="Onsekizinci Aşama"></p>
+
+<ul>
+<li>Repo üzerinde yapılan değişiklikleri çekmek için üst menüden <code>pull</code> butonuna tıklıyoruz.</li>
+</ul>
+
+<p>işlem tamamdır.</p>
+
+</div>
+
+<!-- Disqus start -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /*
+   * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+   */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://19notlar.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Lütfen bu sayfaya gelen <a href="http://disqus.com/?ref_noscript=19notlar">yorumları</a> görmek için tarayıcınızın JavaScript desteğini etkinleştirin.</noscript>
+<!-- Disqus end -->
+
         </div>
     </div>
 

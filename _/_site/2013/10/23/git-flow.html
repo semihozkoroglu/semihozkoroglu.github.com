@@ -242,66 +242,174 @@ function stop(){
           </section>
         </aside>
         <div class="twelve columns">
-          <h2>Tüm Girdiler</h2>
-<ul class="arrow-list">
-    
-        <li>
-            <time style="color:#a4a4a4;">October , 23 - 2013 >> </time><a style="color:#069; font-size:20px;" href="/2013/10/23/git-kullanim.html">Source Tree ile Git Kullanımı</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">October , 23 - 2013 >> </time><a style="color:#069; font-size:20px;" href="/2013/10/23/git-flow.html">Git Flow Akışı ve Source Tree</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">July , 23 - 2012 >> </time><a style="color:#069; font-size:20px;" href="/2012/07/23/huawei-modem.html">Huawei E177 modem'in Ubuntu 11.10 'a tanıtılması</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">July , 05 - 2012 >> </time><a style="color:#069; font-size:20px;" href="/2012/07/05/git-tag.html">Github version takibi ve version oluşturma</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">July , 19 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/07/19/drupal-jquery-kurulumu.html">Drupal sistemine jquery-ui paketini ekleme</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">June , 12 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/06/12/rails-kurulumu.html">Rails-1</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">June , 12 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/06/12/rails-controller-sctions-views.html">Rails-2</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">April , 30 - 2011 >> </time><a style="color:#069; font-size:20px;" href="/2011/04/30/wordpress-tema.html">Wordpress'de temanın page.php'sinde sayfa çağırmak</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 21 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/21/subshell-cut.html">Subshell ve Cut komutu</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 14 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/14/fsck-kurtarma.html">Güncelleme  Yöneticisine dikkat</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 12 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/12/c-sistem-programlama-dizin-dolas.html">C sistem programlama dizin dolaşmak</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">December , 11 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/12/11/clonezilla-kars%CC%A7%C4%B1las%CC%A7t%C4%B1g%CC%86%C4%B1m-problem.html">Clonezilla'da karşılaştığım problem</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">November , 26 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/11/26/clonezilla-disk-imaji-alma.html">Clonezilla ile Disk imajı almak ve alınan imajı kullanmak</a>
-        </li>
-    
-        <li>
-            <time style="color:#a4a4a4;">November , 24 - 2010 >> </time><a style="color:#069; font-size:20px;" href="/2010/11/24/clonezilla-ile-tan%C4%B1s%CC%A7mak.html">Clonezilla ile tanışmak</a>
-        </li>
-    
+          <h2>Git Flow Akışı ve Source Tree</h2>
+<p class="meta">23 Oct 2013</p>
+
+<div class="post">
+<h1>Git Flow</h1>
+
+<ul>
+<li><p>Bu dökümanın <a href="https://gist.github.com/semihozkoroglu/5932541">Burdaki</a> dökümandan sonra yazıldığı unutulmamalı.</p></li>
+<li><p>Git flow mekanizmasını anlamak için <a href="http://www.sourcetreeapp.com/download/">SourceTree</a> tool &#39;unda mevcut olan gitflow eklentisi kullanıldı.</p></li>
+<li><p>Bu dökümanı oluşturmak için <a href="http://www.atlassian.com/git/workflows#!workflow-gitflow">atlassian</a> , <a href="http://nvie.com/posts/a-successful-git-branching-model/">nvie</a> dökümanlarından yararlanıldı. Daha fazla bilgi için incelemenizi öneririm.</p></li>
+<li><p>ilk olarak mevcut depomuzu <code>Clone in SourceTree</code> butonuna tıklayarak clone ediyoruz.</p></li>
 </ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/1.png" alt="İlk Aşama"></p>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/2.png" alt="İlk Aşama"></p>
+
+<ul>
+<li>İkinci olarak SourceTree tool &#39;unda sağ üst tarafta bulunan gitflow eklentisini kullanarak repomuzu ilklendiriyoruz.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/3.png" alt="İlk Aşama"></p>
+
+<ul>
+<li>localde depoları takip edersek</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/4.png" alt="İlk Aşama"></p>
+
+<ul>
+<li>Şimdi <code>Git Flow</code> butonuna tıklayarak yeni bir feature oluşturuyoruz.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/5.png" alt="İlk Aşama"></p>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/6.png" alt="İlk Aşama"></p>
+
+<ul>
+<li>localde takip edelim</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/7.png" alt="İlk Aşama"></p>
+
+<ul>
+<li>feature üzerinde değişiklik yapıyoruz.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/8.png" alt="İlk Aşama"></p>
+
+<ul>
+<li>Değişiklik <code>SourceTree</code> tool &#39;u tarafından algılandı.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/9.png" alt="İlk Aşama"></p>
+
+<ul>
+<li>Commit edilecek dosyayı seçip <code>Add</code> diyoruz.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/10.png" alt="İlk Aşama"></p>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/11.png" alt="İlk Aşama"></p>
+
+<ul>
+<li><code>Commit</code> diyerek commitliyoruz.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/12.png" alt="İlk Aşama"></p>
+
+<ul>
+<li><code>Git Flow</code> &#39;a tıklayarak mevcut feature &#39;ı kapatıyoruz.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/13.png" alt="İlk Aşama"></p>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/14.png" alt="İlk Aşama"></p>
+
+<ul>
+<li>localden takip edersek</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/15.png" alt="İlk Aşama"></p>
+
+<ul>
+<li>Açtığımız feature branch &#39;ını finish yaptığımız zaman yaptığımız eklemeler develop dalına merge ediliyor. Bu durumda Feature branch &#39;ını kapattıktan sonra develop dalında push yapmamız gerekmektedir.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/16.png" alt="İlk Aşama"></p>
+
+<ul>
+<li>Bitbucket &#39;a değişikliklerimiz gitmiş durumda.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/17.png" alt="İlk Aşama"></p>
+
+<ul>
+<li>Şimdi geliştirmemizi developta tamamladık ve yeni bir versiyon çıkma zamanı geldi. <code>Git Flow</code> butonundan <code>Start new a Release</code> diyoruz.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/18.png" alt="İlk Aşama"></p>
+
+<ul>
+<li>Ve versiyon numaramızı giriyoruz.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/19.png" alt="İlk Aşama"></p>
+
+<ul>
+<li>localden takip edersek</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/20.png" alt="İlk Aşama"></p>
+
+<ul>
+<li>Ve şimdi sadece bu release branch &#39;ını oluşturduktan sonra finish yaptığımız zaman develop dalındaki tüm çalışmalarımız master dalına merge olucaktır.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/21.png" alt="İlk Aşama"></p>
+
+<ul>
+<li>Yeni versiyonumuz için minik bir açıklama ekliyoruz.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/22.png" alt="İlk Aşama"></p>
+
+<ul>
+<li>localden takip edelim</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/23.png" alt="İlk Aşama"></p>
+
+<ul>
+<li>Ancak şuanda develop brach &#39;ı sadece master &#39;a merge olmuş durumda bunu push yapmamız gerekmektedir.</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/24.png" alt="İlk Aşama"></p>
+
+<ul>
+<li>Branch ve Tag &#39;lerimizin son durumu</li>
+</ul>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/25.png" alt="İlk Aşama"></p>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/26.png" alt="İlk Aşama"></p>
+
+<p><img src="https://raw.github.com/semihozkoroglu/File/master/gitflow/27.png" alt="İlk Aşama"></p>
+
+<ul>
+<li>Kısaca amacımızı özetlemek gerekirse ana geliştirmemizi Develop dalında yapıyoruz. Ve Release edip master dalına geçirdiğimiz zaman aslında projemizin tamamen stabil olduğunu varsayıp bir versiyon tag &#39;i ekliyoruz. Develop dalında geliştirme yaparken ise projeyi parçalara ayırıp (veya bug, cr maddelerinin gelme durumunda) Feature brach &#39;ında tamamlayıp testinide yaptıktan sonra develop dalına merge işlemini yapıyoruz. Ve develop dalında geliştirdiğimiz proje mevcut özellikleri ile stabil duruma vardığında Release işlemini yapıyoruz. Master dalındaki projede bug bulunduğu zaman Hotfix branch &#39;ı açıp gerekli düzenlemeleri yaptıktan sonra kapatıldığında direk master &#39;a merge olucaktır.</li>
+</ul>
+
+</div>
+
+<!-- Disqus start -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /*
+   * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+   */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://19notlar.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Lütfen bu sayfaya gelen <a href="http://disqus.com/?ref_noscript=19notlar">yorumları</a> görmek için tarayıcınızın JavaScript desteğini etkinleştirin.</noscript>
+<!-- Disqus end -->
+
         </div>
     </div>
 
