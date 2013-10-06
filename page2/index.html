@@ -21,55 +21,19 @@
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700" rel="stylesheet">
 <link href="/assets/css/fonts/glyphicons/style.css" rel="stylesheet">
 </head>
-<!-- <script type="text/javascript">
-var animate, left=0, imgObj=null, imgObj2=null;
+<script type="text/javascript">
 
-function getOffset( el ) {
-    var _x = 0;
-    var _y = 0;
-    while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
-        _x += el.offsetLeft - el.scrollLeft;
-        _y += el.offsetTop - el.scrollTop;
-        el = el.offsetParent;
-    }
-    return { top: _y, left: _x };
-}
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23160847-2']);
+  _gaq.push(['_trackPageview']);
 
-function displayMenu(){
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 
-   imgObj = document.getElementById('img');
-   imgObj2 = document.getElementById('img2');
-
-   imgObj.style.position= 'absolute';
-   imgObj.style.top = getOffset( document.getElementById('img') ).top + 'px';
-   imgObj.style.left = getOffset( document.getElementById('img') ).left + 'px';
-   imgObj.style.visibility='hidden';
-   imgObj2.style.display='block';
-
-   moveRight();
-}
-
-function moveRight(){
-    left = parseInt(imgObj.style.left, 10);
-
-    if (left + 100 >= left) {
-        imgObj.style.left = (left + 5) + 'px';
-        imgObj.style.visibility='visible';
-
-        animate = setTimeout(function(){moveRight();},20); // call moveRight in 20msec
-
-        //stopanimate = setTimeout(moveRight,20);
-    } else {
-        stop();
-    }
-    //f();
-}
-
-function stop(){
-   clearTimeout(animate);
-}
 </script>
--->
 <body>
 
   <!-- Color Customizer, remove if not needed -->
@@ -198,15 +162,15 @@ function stop(){
         </li>
     
         <li>
+            <a style="color:#a4a4a4; font-size:15px;" href="/2013/10/06/jira-install-amazon.html">How to install Jira on Amazon EC2 server</a>
+        </li>
+    
+        <li>
             <a style="color:#a4a4a4; font-size:15px;" href="/2012/07/23/huawei-modem.html">Huawei E177 modem'in Ubuntu 11.10 'a tanıtılması</a>
         </li>
     
         <li>
             <a style="color:#a4a4a4; font-size:15px;" href="/2012/07/05/git-tag.html">Github version takibi ve version oluşturma</a>
-        </li>
-    
-        <li>
-            <a style="color:#a4a4a4; font-size:15px;" href="/2011/07/19/drupal-jquery-kurulumu.html">Drupal sistemine jquery-ui paketini ekleme</a>
         </li>
     
 </ul>
@@ -220,23 +184,25 @@ function stop(){
   
     <li><a href="/tag/git-flow" title="git-flow" class="label label-default">git-flow</a>
   
-    <li><a href="/tag/git" title="git" class="label label-default">git</a>
-  
     <li><a href="/tag/c" title="c" class="label label-default">c</a>
+  
+    <li><a href="/tag/rails" title="rails" class="label label-default">rails</a>
   
     <li><a href="/tag/wordpress" title="wordpress" class="label label-default">wordpress</a>
   
-    <li><a href="/tag/huawei modem" title="huawei modem" class="label label-default">huawei modem</a>
+    <li><a href="/tag/clonezilla" title="clonezilla" class="label label-default">clonezilla</a>
   
     <li><a href="/tag/drupal" title="drupal" class="label label-default">drupal</a>
   
-    <li><a href="/tag/bash" title="bash" class="label label-default">bash</a>
-  
-    <li><a href="/tag/clonezilla" title="clonezilla" class="label label-default">clonezilla</a>
-  
     <li><a href="/tag/linux" title="linux" class="label label-default">linux</a>
   
-    <li><a href="/tag/rails" title="rails" class="label label-default">rails</a>
+    <li><a href="/tag/jira" title="jira" class="label label-default">jira</a>
+  
+    <li><a href="/tag/bash" title="bash" class="label label-default">bash</a>
+  
+    <li><a href="/tag/git" title="git" class="label label-default">git</a>
+  
+    <li><a href="/tag/huawei modem" title="huawei modem" class="label label-default">huawei modem</a>
   </li>
 </ul>
           </section>
@@ -244,6 +210,28 @@ function stop(){
         <div class="twelve columns">
           <div class="twelve columns blog blog-index">
 	
+<article class="post">
+  <div class="side">
+    <div class="date">
+      <span class="day">19</span>
+      <span class="month">July</span>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="content">
+      <h2 class="title"><a href="/2011/07/19/drupal-jquery-kurulumu.html">Drupal sistemine jquery-ui paketini ekleme</a></h2><br>
+      <p>
+        
+          Bu paket birçok eklenti tarafından kullanıldıgını belirtmek istiyorum. Kurulumun nasıl yapılacagını paket içindeki Readme dosyasında da görebilirsiniz. Öncelikle jquery_ui paketinin kütüphanesini http://code.google.com/p/jquery-ui/downloads/list?q=1.6 adresten sürümünüz hangisiyse indirin ben 1.6 kurulumunu anlatacağım. İndirme işleminden sonra jquery_ui modules dosyalarının arasına çıkarın ve sites/all...
+        
+      </p>
+    </div>
+    <div class="read-more">
+      <a href="/2011/07/19/drupal-jquery-kurulumu.html">Read More</a>
+    </div>
+  </div>
+</article>
+
 <article class="post">
   <div class="side">
     <div class="date">
@@ -328,28 +316,6 @@ function stop(){
     </div>
     <div class="read-more">
       <a href="/2010/12/21/subshell-cut.html">Read More</a>
-    </div>
-  </div>
-</article>
-
-<article class="post">
-  <div class="side">
-    <div class="date">
-      <span class="day">14</span>
-      <span class="month">December</span>
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="content">
-      <h2 class="title"><a href="/2010/12/14/fsck-kurtarma.html">Güncelleme  Yöneticisine dikkat</a></h2><br>
-      <p>
-        
-          Bugün çok garip bir durumla karşılaştım aslında karşılaştığım durum basit ama karşılaşma zamanı garip oldu.. yaklaşık olarak 3 saat önce bir blog&#39;ta adamın karşılaştığı ilginç bir olayı okuyordum yani adama göre beklenmeyen bir durum olduğu için ilginçmiş dosya sistemini çok...
-        
-      </p>
-    </div>
-    <div class="read-more">
-      <a href="/2010/12/14/fsck-kurtarma.html">Read More</a>
     </div>
   </div>
 </article>

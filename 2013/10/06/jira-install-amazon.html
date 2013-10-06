@@ -208,44 +208,11 @@
           </section>
         </aside>
         <div class="twelve columns">
-          <h2>Rails-1</h2>
-<p class="meta">12 Jun 2011</p>
+          <h2>How to install Jira on Amazon EC2 server</h2>
+<p class="meta">06 Oct 2013</p>
 
 <div class="post">
-<p>Rails&#39;in default ayarları sayesinde xml bir dosyayı düzenlemek ve çalıştırmak için fazla zaman harcamayız.
-Railsde modeller, controller, view , images, style sheets, Javascript ve ayar dosyaları olmak üzere herşeyin yeri bellidir.</p>
-
-<p>Rails MVC mimarisi ruby tarafından derlerdiğin için esnek ve hızlıdır.Genel olarak mimariden bahsedecek olursak</p>
-
-<ul>
-<li><p>Model : Database&#39;e yazılacak olan veriyi belli kurallara tabi tutulmasıdır örnek olarak doldurulması gereken alanlardan istediğimizi zorunlu kılabilmemize olanak sağlamaktadır.</p></li>
-<li><p>Controller : Aldığı komutu çalıştırır ve dönüş değerini view&#39;e geçer. Controller de bulunan methodlara gelen get , post gibi istekleri yönlendirmeden sorumludur.</p></li>
-<li><p>View : Verinin gösterilmesinden sorumludur. View complex mantık işlemlerinin içermemelidir. View contoller actionlarından gelen verilerin gösterilmesiden sorumludur.Controller ve View yapısı birbirine bağlı yapılardır.</p></li>
-</ul>
-
-<p>rails mimarisinde veritabanındaki tabloların alanları sınıfların özelliğiymiş gibi atanıp active record sayesinde de veri üzerinde arama kaydetme gibi methodları kullanabiliriz.</p>
-
-<p>kurulumu</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">    gem install rails
-</code></pre></div>
-<p>güncelleme</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">gem update rails
-</code></pre></div>
-<p>veritabanı olarak mysql haricindeki veritabanı yöneticelerinde veritabanı sürücülerinin kurulması gerekmektedir.</p>
-
-<p>Bütün kurulumlarmız tamamlandı ise eksik bileşenimizin olup olmadıgını <code>bundle install</code> komutu ile kontrol edebiliriz.Eğer mysql veritabanı kullanacak
-iseniz sqlite3 eksikliğini göz ardı edebilirsiniz.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">rails new my-blog
-</code></pre></div>
-<p>diyerek blog uygulamamızı yarattıgımız zaman <code>config/database.yml</code> dosyamız default olarak sqlite3 &#39;bağlı olarak gelecektir.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">rails new my-blog -d mysql
-</code></pre></div>
-<p>dediğimizde ise <code>-d</code> parametresinden sonra kullanacağımız veritabanımızı ismini girebiliriz.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">cd my-blog
-</code></pre></div>
-<p>uygulamamızın içinde <code>config/database.yml</code> dosyamızı düzenledikten sonra <code>rails server</code> diyerek rails ile gelen webrick&#39;i başlatabiliriz bunun için projemizi oluşturduğumuz yerin önemi yoktur.
-ve default olarak localhost&#39;un 3000 portunda çalışmaktadır.Eğer istersen <code>-p</code> parametresi ile <code>rails server -p 27000</code> gibi istediğimiz ancak kullanılmayan portlar üzerinde çalıştırabiliriz.
-tarayıcımızda <code>localhost:3000</code> adresine giderek çalıştıgından emin olabiliriz.</p>
+<h1>TODO</h1>
 
 </div>
 
