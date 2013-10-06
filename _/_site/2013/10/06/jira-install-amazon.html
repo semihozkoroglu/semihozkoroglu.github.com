@@ -151,7 +151,7 @@
 <ul class="arrow-list">
     
         <li>
-            <a style="color:#a4a4a4; font-size:15px;" href="/2013/10/06/jira-install-amazon.html">How to install Jira on Amazon EC2 server</a>
+            <a style="color:#a4a4a4; font-size:15px;" href="/2013/10/06/jira-install-amazon.html">How to install Jira on Linux Amazon EC2 server</a>
         </li>
     
         <li>
@@ -179,37 +179,69 @@
 </div>
 <ul class="tag-labels">
   
-    <li><a href="/tag/wordpress" title="wordpress" class="label label-default">wordpress</a>
-  
-    <li><a href="/tag/clonezilla" title="clonezilla" class="label label-default">clonezilla</a>
-  
-    <li><a href="/tag/huawei modem" title="huawei modem" class="label label-default">huawei modem</a>
+    <li><a href="/tag/git" title="git" class="label label-default">git</a>
   
     <li><a href="/tag/linux" title="linux" class="label label-default">linux</a>
   
+    <li><a href="/tag/bash" title="bash" class="label label-default">bash</a>
+  
+    <li><a href="/tag/clonezilla" title="clonezilla" class="label label-default">clonezilla</a>
+  
     <li><a href="/tag/jira" title="jira" class="label label-default">jira</a>
   
-    <li><a href="/tag/drupal" title="drupal" class="label label-default">drupal</a>
+    <li><a href="/tag/git-flow" title="git-flow" class="label label-default">git-flow</a>
   
     <li><a href="/tag/rails" title="rails" class="label label-default">rails</a>
   
-    <li><a href="/tag/bash" title="bash" class="label label-default">bash</a>
+    <li><a href="/tag/huawei modem" title="huawei modem" class="label label-default">huawei modem</a>
   
-    <li><a href="/tag/git" title="git" class="label label-default">git</a>
+    <li><a href="/tag/drupal" title="drupal" class="label label-default">drupal</a>
   
     <li><a href="/tag/c" title="c" class="label label-default">c</a>
   
-    <li><a href="/tag/git-flow" title="git-flow" class="label label-default">git-flow</a>
+    <li><a href="/tag/wordpress" title="wordpress" class="label label-default">wordpress</a>
   </li>
 </ul>
           </section>
         </aside>
         <div class="twelve columns">
-          <h2>How to install Jira on Amazon EC2 server</h2>
+          <h2>How to install Jira on Linux Amazon EC2 server</h2>
 <p class="meta">06 Oct 2013</p>
 
 <div class="post">
-<h1>TODO</h1>
+<p>Firstly we must pull linux installer of jira</p>
+
+<p><code>wget https://www.atlassian.com/software/jira/download</code></p>
+
+<p>Change permission of file for execute</p>
+
+<p><code>chmod a+x atlassian-jira-6.1-x64.bin</code></p>
+
+<p>And execute</p>
+
+<p><code>./atlassian-jira-6.1-x64.bin</code></p>
+
+<p>Now we will install apache for listen 80 port, because linux installer will create jira user and this user cannot access 80 port. But tomcat listening 8080 port and we must forward request to 8080 from 80. So we will install apache for open 80 port.</p>
+
+<p><code>sudo apt-get install apache2</code>
+<code>sudo a2enmod proxy_http</code>
+sudo service apache2 start // New configuration</p>
+
+<p>Lets see opened port.</p>
+
+<p><code>netstat -ln</code></p>
+
+<p>And you can create virtual host on apache for forward but i want to select that use with iptables</p>
+
+<p><code>iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to 8080</code></p>
+
+<p>For remove this rules</p>
+
+<p><code>iptables -t nat -D PREROUTING -p tcp --dport 80 -j REDIRECT --to 8080</code></p>
+
+<p>Lets see iptavbles rules</p>
+
+<p>iptables -L</p>
 
 </div>
 
