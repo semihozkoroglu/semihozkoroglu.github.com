@@ -151,6 +151,10 @@
 <ul class="arrow-list">
     
         <li>
+            <a style="color:#a4a4a4; font-size:15px;" href="/2013/12/15/test.html">TEST</a>
+        </li>
+    
+        <li>
             <a style="color:#a4a4a4; font-size:15px;" href="/2013/10/06/jira-install-amazon.html">How to install Jira on Linux Amazon EC2 server</a>
         </li>
     
@@ -166,10 +170,6 @@
             <a style="color:#a4a4a4; font-size:15px;" href="/2012/07/23/huawei-modem.html">Huawei E177 modem'in Ubuntu 11.10 'a tanıtılması</a>
         </li>
     
-        <li>
-            <a style="color:#a4a4a4; font-size:15px;" href="/2012/07/05/git-tag.html">Github version takibi ve version oluşturma</a>
-        </li>
-    
 </ul>
 <div class="read-more">
     <a href="/posts.html">Show more >></a>
@@ -179,27 +179,29 @@
 </div>
 <ul class="tag-labels">
   
-    <li><a href="/tag/git" title="git" class="label label-default">git</a>
-  
-    <li><a href="/tag/linux" title="linux" class="label label-default">linux</a>
-  
-    <li><a href="/tag/bash" title="bash" class="label label-default">bash</a>
-  
     <li><a href="/tag/clonezilla" title="clonezilla" class="label label-default">clonezilla</a>
-  
-    <li><a href="/tag/jira" title="jira" class="label label-default">jira</a>
-  
-    <li><a href="/tag/git-flow" title="git-flow" class="label label-default">git-flow</a>
-  
-    <li><a href="/tag/rails" title="rails" class="label label-default">rails</a>
-  
-    <li><a href="/tag/huawei modem" title="huawei modem" class="label label-default">huawei modem</a>
-  
-    <li><a href="/tag/drupal" title="drupal" class="label label-default">drupal</a>
   
     <li><a href="/tag/c" title="c" class="label label-default">c</a>
   
+    <li><a href="/tag/bashlinux" title="bashlinux" class="label label-default">bashlinux</a>
+  
+    <li><a href="/tag/bash" title="bash" class="label label-default">bash</a>
+  
     <li><a href="/tag/wordpress" title="wordpress" class="label label-default">wordpress</a>
+  
+    <li><a href="/tag/rails" title="rails" class="label label-default">rails</a>
+  
+    <li><a href="/tag/drupal" title="drupal" class="label label-default">drupal</a>
+  
+    <li><a href="/tag/git" title="git" class="label label-default">git</a>
+  
+    <li><a href="/tag/huawei modem" title="huawei modem" class="label label-default">huawei modem</a>
+  
+    <li><a href="/tag/gitgit-flow" title="gitgit-flow" class="label label-default">gitgit-flow</a>
+  
+    <li><a href="/tag/jira" title="jira" class="label label-default">jira</a>
+  
+    <li><a href="/tag/test" title="test" class="label label-default">test</a>
   </li>
 </ul>
           </section>
@@ -210,15 +212,20 @@
 
 <div class="post">
 <p>İlk olarak projemizin isminde veritabanı oluşturmalıyız. Projenizin içindeyken</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">rake db:create
-</code></pre></div>
+
+<pre><code>rake db:create
+</code></pre>
+
 <p>komutunu çalıştırarak veritabanında <code>&lt;proje-adi&gt;_development ve &lt;proje-adi&gt;_test</code> adında iki tane database&#39;in oluşturuldugunu görebilirsiniz.</p>
 
 <p>Bu noktadan sonra <code>public/index.html</code> default sayfamızı silemiz gerekmektedir.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">rails generate controller home
-</code></pre></div>
+
+<pre><code>rails generate controller home
+</code></pre>
+
 <p>komutunu çalıştırdığımızda </p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">create  app/controllers/home_controller.rb
+
+<pre><code>create  app/controllers/home_controller.rb
 invoke  erb
 create    app/views/home
 invoke  test_unit
@@ -227,13 +234,16 @@ invoke  helper
 create    app/helpers/home_helper.rb
 invoke    test_unit
 create      test/unit/helpers/home_helper_test.rb
-</code></pre></div>
+</code></pre>
+
 <p>çıktısındada görüldüğü gibi <code>app/</code> altında <code>controller</code> ve <code>views</code> alanlarında <code>home</code> isimlerini içeren çeşitli dosyalarımız oluşturuldu şimdilik
 biz controller ve view alanları ile ilgileneceğiz. home bölümünü anasayafa yapacağımız göz önunde bulundurarak içinde <code>index.html.erb</code> dosyamızı oluşturabiliriz.
 erb uzantısı ruby kodları içereceği anlamındadır. Eğer bu index sayfamızı kendimiz oluşturur isek <code>config/routes.rb</code> dosyamızın içeriğine <code>get &quot;home/index&quot;</code>
 kodunu yerleştirmeliyiz ve home&#39;un control dosyasının içerisine index methodu( def index ) eklemeliyiz bu method home/index çağırıldıgında çalışacak olan methoddur yada</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">rails generate controller home index
-</code></pre></div>
+
+<pre><code>rails generate controller home index
+</code></pre>
+
 <p>komutu ile <code>routes.rb</code> , <code>home_controller.rb</code> içeriğine index&#39;e bağlı komutlarımızı otomatik olarak eklenip <code>app/views/home/index.html.erb</code> dosyasıda bizim
 için otomatik olarak oluşturulacaktır.</p>
 
@@ -244,7 +254,8 @@ için otomatik olarak oluşturulacaktır.</p>
 görebiliriz.</p>
 
 <p>Eğer Hello Rails yazımızın 5 defa gösterilmesi istersek, <code>index.html.erb</code> dosyamızın içeriğini:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">&lt;html&gt;
+
+<pre><code>&lt;html&gt;
     &lt;head&gt;
     &lt;/head&gt;
     &lt;body&gt;
@@ -257,7 +268,8 @@ görebiliriz.</p>
         %&gt;
     &lt;/body&gt;
 &lt;/html&gt;
-</code></pre></div>
+</code></pre>
+
 <p>olarak değiştirebiliriz.</p>
 
 <p>peki biz <code>home</code> altında başka bir html dosyası yaratmak istediğimizde bu html&#39;ler için kullanılcak methodları nereden çağırmalıyız. İndex&#39;ten mi? ..Hayır</p>
@@ -265,22 +277,28 @@ görebiliriz.</p>
 <p>Rails &#39;in basit ama mantıklı bir yapısı var bu noktada <code>home</code> altında oluşturulacak her html dosyası için <code>controller/home_controller.rb</code> içinde method yaratmalıyız.
 Yani diyelimki kullanıcı index sayfamızda çıkış linkine tıkladıgında <code>exit.html.erb</code> &#39;yi çağırmasını ve buna bağlı olarak ekranda çıkarken görmesini istediğimiz metni bastırmak istediğimizde
 ilk olarak <code>home/exit.html.erb</code> dosyasını oluşturduktan sonra <code>home_controller.rb</code> dosyasında </p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">def exit
+
+<pre><code>def exit
     @cikis = &quot;gule gule&quot;
 end
-</code></pre></div>
+</code></pre>
+
 <p>eklemesini yapıp , exit.html.erb&#39;yi</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">&lt;html&gt;
+
+<pre><code>&lt;html&gt;
     &lt;head&gt;
     &lt;/head&gt;
     &lt;body&gt;
         &lt;%= @cikis %&gt;
     &lt;/body&gt;
 &lt;/html&gt;
-</code></pre></div>
+</code></pre>
+
 <p>index.html.erb &#39;içinden <code>link_to</code> fonksiyonunu kullanarak link verirsek eğer:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">&lt;%= link_to &quot;Cıkış yapınız.&quot; , :action =&gt; &quot;exit&quot; %&gt; 
-</code></pre></div>
+
+<pre><code>&lt;%= link_to &quot;Cıkış yapınız.&quot; , :action =&gt; &quot;exit&quot; %&gt; 
+</code></pre>
+
 <p>ifadesinde görüldüğü gibi exit sayfası çağrılıyor ve bu sayfa çağırıldıgında controller kısmındaki değişkenlere hakim olunabilir. İlerleyen konularda
 sayfa çağırılırken değer gönderme konularınıda yazmaya çalışacağım.</p>
 
