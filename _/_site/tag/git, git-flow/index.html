@@ -207,84 +207,112 @@
           </section>
         </aside>
         <div class="twelve columns">
-          <h2>Github version takibi ve version oluşturma</h2>
-<p class="meta">05 Jul 2012</p>
-
-<div class="post">
-<p>Yaptığınız uygulamayı geliştirmeye devam ediyorsanız bunu github sistemi üzerinde versionlar şeklinde dağıtmak istiyorsanız
-tag&#39;ler oluşturmanız gerekmektedir.</p>
-
-<p>ilk olarak düzenleme yaptığınız uygulamada etiket oluşturuyoruz.</p>
-
-<ul>
-<li><code>git tag -a v1.0 -m &#39;version 1.0&#39;</code></li>
-</ul>
-
-<p>diyerek version 1.0 &#39;ı oluşturmuş oluyoruz. ve add, commit işleminden sonra push yapacağımız zaman etiketleri dikkate al
-dememiz gerekiyor.</p>
-
-<ul>
-<li><code>git push --tags</code></li>
-</ul>
-
-<p>diyerek depomuza değişiklikleri yeni etiket ile gönderiyoruz, ancak son sürüm üzerinde yapılan değişikliği o etikete nasıl göndereceğimi çözemedim
-ancak <a href="https://github.com/WordPress/WordPress">wordpress</a> &#39;in deposunu incelediğimde, 1.5, 3.3 , 3.4 gibi sürümlerini branch olarak koymuş fakat, 3.3.1 , 3.3.2 , 3.4.1 gibi sürümleri tag olarak yerleştirmiş, yani aslında taglar her değişiklik için kullanılıyor olabilir, var olan tag üzerinde gönderme yapamadığım için böyle bir kanıya vardım</p>
-
-<hr>
-
-<p>kullanıcı tarafında etiketdeki değişikliği nasıl alıyoruz?</p>
-
-<ul>
-<li><code>git fetch --tags</code></li>
-</ul>
-
-<p>diyerek etiketleri listeliyoruz.</p>
-
-<ul>
-<li><code>git merge tags/v1.0</code></li>
-</ul>
-
-<p>diyerek o versiyonu elimizdeki ile merge ediyoruz.</p>
-
-<ul>
-<li><code>git tag</code></li>
-</ul>
-
-<p>ile elimizdeki tag&#39;leri görebilir ve geçmek istediğimiz etiketi</p>
-
-<ul>
-<li><code>git checkout v1.0</code></li>
-</ul>
-
-<p>şeklinde belirtebiliriz.</p>
-
-<p>Tagleri silmek için</p>
-
-<ul>
-<li><code>git push origin :refs/tags/v1.0</code></li>
-</ul>
-
-<p>diyebiliriz.</p>
-
-<h3>TODO</h3>
-
+          <div class="row">
+  <div class="sixteen">
+    <div class="underline-heading">
+      <h2>Posts Tagged &ldquo;git, git-flow&rdquo;</h2>
+    </div>
+    
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+              <div class="testimonial">
+                <div class="author">
+                  <div class="highlights bold clearfix">
+                    <div class="one-third column highlight-item">
+                      <table>
+                        <tr>
+                          <td>
+                            <div class="icon">
+                              <i class="icon-embed-close"></i>
+                            </div>
+                          </td>
+                          <td>
+                            <div>
+                              <br>
+                              <h3>
+                                <a href="/2013/09/23/git-flow.html">
+                                <small><em>09/23/13</em></small>
+                                Git Flow Akışı ve Source Tree
+                                </a>
+                              </h3>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="body">
+                  
+                      # Git Flow - Bu dökümanın [Burdaki](https://gist.github.com/semihozkoroglu/5932541) dökümandan sonra yazıldığı unutulmamalı. - Git flow mekanizmasını anlamak için [SourceTree](http://www.sourcetreeapp.com/download/) tool 'unda mevcut olan gitflow eklentisi kullanıldı. - Bu dökümanı oluşturmak için...
+                   
+                </div>
+              </div>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+  </div>
 </div>
-
-<!-- Disqus start -->
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-  /*
-   * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
-   */
-  (function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    dsq.src = 'http://19notlar.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-<noscript>Lütfen bu sayfaya gelen <a href="http://disqus.com/?ref_noscript=19notlar">yorumları</a> görmek için tarayıcınızın JavaScript desteğini etkinleştirin.</noscript>
-<!-- Disqus end -->
-
         </div>
     </div>
 
