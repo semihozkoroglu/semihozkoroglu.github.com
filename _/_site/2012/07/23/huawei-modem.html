@@ -179,29 +179,1772 @@
 </div>
 <ul class="tag-labels">
   
-    <li><a href="/tag/clonezilla" title="clonezilla" class="label label-default">clonezilla</a>
+	  
+	    <li><a href="/tag/" title="" class="label label-default"></a>
+	  
+	    <li><a href="/tag/<p>Endüstri labında clonezilla ile imajı alıp diğer bilgisayarlara sistemi kopyalıyordum.
+Ancak iki tanesinde problemle karşılaştım.Şunu da belirtim sistemlerin hepsi aynı yani lenovanın
+sıfır bilgisayarlar ancak bir tanesinde ekran bozuklugu var yani görüntü bios&#39;a girdiğimde de kötü ve sistemler açılırken
+kilitleniyor.Bundaki durumu ekran kartı sıkıntılıdır şeklinde düşünmüştüm ama diğerindeki durum gerçekten ilginc
+imajın bulundugu diskten başlattıgımda açılıyor ama kendi diskine kopyalamayı yaptıktan sonra windows açılırken logo&#39;da,
+ubuntu ise siyah ekranda çakılıp kalıyor donanımsal bir problemin olması muhtemel.Bu durumun çözümünü buldugumda burada paylaşıcam.
+Harici diskten başlattığımda açılıp kendi diskinden açılmamasının nedenini anlyabilirsem durum çözülmüş olur sanırım.</p>
+
+<p>Bu yazımın altında devam ediyorum..İşletim sistemlerinin açlırken donmasının ve sadece güvenli modda açmasının sebebi
+ekran kartı arızalı oldugundan dolayı imişş.Çünkü güvenli modda açabiliyorsa harddiskin sağlam olduğu ortada ve cd&#39;den kuruluma başlarkende aynı durumlarla
+karşılaşınca ekran kartında problem olma olasılığı maximum dereceye ulaşmıştı.Basit bir denemeyle kendisini ele verdi zaten..</p>
+" title="<p>Endüstri labında clonezilla ile imajı alıp diğer bilgisayarlara sistemi kopyalıyordum.
+Ancak iki tanesinde problemle karşılaştım.Şunu da belirtim sistemlerin hepsi aynı yani lenovanın
+sıfır bilgisayarlar ancak bir tanesinde ekran bozuklugu var yani görüntü bios&#39;a girdiğimde de kötü ve sistemler açılırken
+kilitleniyor.Bundaki durumu ekran kartı sıkıntılıdır şeklinde düşünmüştüm ama diğerindeki durum gerçekten ilginc
+imajın bulundugu diskten başlattıgımda açılıyor ama kendi diskine kopyalamayı yaptıktan sonra windows açılırken logo&#39;da,
+ubuntu ise siyah ekranda çakılıp kalıyor donanımsal bir problemin olması muhtemel.Bu durumun çözümünü buldugumda burada paylaşıcam.
+Harici diskten başlattığımda açılıp kendi diskinden açılmamasının nedenini anlyabilirsem durum çözülmüş olur sanırım.</p>
+
+<p>Bu yazımın altında devam ediyorum..İşletim sistemlerinin açlırken donmasının ve sadece güvenli modda açmasının sebebi
+ekran kartı arızalı oldugundan dolayı imişş.Çünkü güvenli modda açabiliyorsa harddiskin sağlam olduğu ortada ve cd&#39;den kuruluma başlarkende aynı durumlarla
+karşılaşınca ekran kartında problem olma olasılığı maximum dereceye ulaşmıştı.Basit bir denemeyle kendisini ele verdi zaten..</p>
+" class="label label-default"><p>Endüstri labında clonezilla ile imajı alıp diğer bilgisayarlara sistemi kopyalıyordum.
+Ancak iki tanesinde problemle karşılaştım.Şunu da belirtim sistemlerin hepsi aynı yani lenovanın
+sıfır bilgisayarlar ancak bir tanesinde ekran bozuklugu var yani görüntü bios&#39;a girdiğimde de kötü ve sistemler açılırken
+kilitleniyor.Bundaki durumu ekran kartı sıkıntılıdır şeklinde düşünmüştüm ama diğerindeki durum gerçekten ilginc
+imajın bulundugu diskten başlattıgımda açılıyor ama kendi diskine kopyalamayı yaptıktan sonra windows açılırken logo&#39;da,
+ubuntu ise siyah ekranda çakılıp kalıyor donanımsal bir problemin olması muhtemel.Bu durumun çözümünü buldugumda burada paylaşıcam.
+Harici diskten başlattığımda açılıp kendi diskinden açılmamasının nedenini anlyabilirsem durum çözülmüş olur sanırım.</p>
+
+<p>Bu yazımın altında devam ediyorum..İşletim sistemlerinin açlırken donmasının ve sadece güvenli modda açmasının sebebi
+ekran kartı arızalı oldugundan dolayı imişş.Çünkü güvenli modda açabiliyorsa harddiskin sağlam olduğu ortada ve cd&#39;den kuruluma başlarkende aynı durumlarla
+karşılaşınca ekran kartında problem olma olasılığı maximum dereceye ulaşmıştı.Basit bir denemeyle kendisini ele verdi zaten..</p>
+</a>
+	  
   
-    <li><a href="/tag/c" title="c" class="label label-default">c</a>
+	  
+	    <li><a href="/tag/" title="" class="label label-default"></a>
+	  
+	    <li><a href="/tag/<pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;dirent.h&gt;
+#include &lt;string.h&gt;
+#include &lt;sys/stat.h&gt;
+#define MAX_PATH_SIZE 1024
+void DirWalk(const char *path, void (*Proc) (const char *))
+{
+    char fname[MAX_PATH_SIZE];
+    struct dirent *de;
+    struct stat status;
+    DIR *dir;
+    if ((dir = opendir(path)) == NULL) {
+        perror(&quot;opendir&quot;);
+        return;
+    }
+    while ((de = readdir(dir)) != NULL) {
+        sprintf(fname, &quot;%s/%s&quot;, path, de->d_name);
+        Proc(fname);
+        if (strcmp(de->d_name, &quot;.&quot;) != 0 &amp;&amp; strcmp(de->d_name, &quot;..&quot;) != 0) {
+            if (stat(fname, &amp;status) == -1) {
+                perror(&quot;stat&quot;);
+                break;
+            }
+            if (S_ISDIR(status.st_mode))
+                DirWalk(fname, Proc);
+        }   
+    }
+    closedir(dir);
+}
+void Disp(const char *name)
+{
+    puts(name);
+}
+int main(int argc, char *argv[])
+{
+    char fname[MAX_PATH_SIZE];
+    char *plast;
+    if (argc != 2) {
+        printf(&quot;Usage: dirtree &lt;path&gt;\n&quot;);
+        exit(1);
+    }
+    strcpy(fname, argv[1]);
+    plast = strchr(fname, &#39;\0&#39;) - 1;
+    if (*plast == &#39;/&#39;)
+        *plast = &#39;\0&#39;;
+    DirWalk(fname, Disp);
+return 0; 
+}
+</code></pre>
+
+<p><code>void DirWalk(const char *path, void (*Proc) (const char *))</code> ifadesinde *path ile /etc gibi bir string ve bir fonksiyon işaretçisi alırız.</p>
+
+<p><code>struct dirent *de;</code>dirent yapısında d<em>ino ve d</em>name yapıları bulunmaktadır.Buradan readdir fonksiyonunun struct döndüğünü görebiliriz.</p>
+
+<p><code>if (strcmp(de->d_name, &quot;.&quot;) != 0 &amp;&amp; strcmp(de->d_name, &quot;..&quot;) != 0) {</code>&quot;.&quot; bulundugu dizin,&quot;..&quot; üst dizini gösterdiğinden programın tekrardan bu dizinlere girmesini engelliyor.</p>
+
+<p>strcmp fonksiyonunun harf harf karşılaştırma yapmakda yukarıdaki ifademizde dosya adı &quot;.&quot; veya &quot;..&quot; olduğunda strcmp sıfır değeri dönecektir.</p>
+
+<p><code>if (stat(fname, &amp;status) == -1) {</code> stat fonksiyonu başarısızlık durumunda -1 döner.Ve status dosya bilgilerini tutar(örnek:dosya erişimindeki izin bilgileri gibi).
+Ancak burada kullanılmasının amacı her gelişinde değişen fname ile birlikte status durumunuda set etmek ve S_ISDIR fonksiyonunda kullanmak.</p>
+
+<p><code>perror(&quot;stat&quot;);</code> perror fonksiyonunu çıktısı &quot;stat:burası errno değişkenine karşılık gelen mesaj metni&quot; şeklinde olur.
+errno değişkenine mesaj metni stat fonksiyonu tarafından yukarıdaki kontrolde set edilmiştir.</p>
+
+<p><code>if (S_ISDIR(status.st_mode))</code> Status değişkeninde dosya bilgileri tutuluyordu burada dosyanın dizin mi ? kontrolünü yapar evetse özyineli yapıya dönüşür.</p>
+
+<p><code>DirWalk(fname, Proc);</code> proc fonksiyon göstericisine ana fonksiyonda Disp&#39;i atamıştık zaten.</p>
+
+<p><code>plast = strchr(fname, &#39;\0&#39;) - 1;</code> strchr belirtilen karakteri ilk bulduğunda belirtilen karekterin adresini dönmektedir.</p>
+
+<p><code>if (*plast == &#39;/&#39;)</code> gelen path&#39;in sonundaki &quot;/&quot; ifadesini kaldırıyoruz.</p>
+
+<p><code>DirWalk(fname, Disp);</code> path&#39;i ve puts çıktısını üreten fonksiyonumuzu işaret ediyoruz.</p>
+" title="<pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;dirent.h&gt;
+#include &lt;string.h&gt;
+#include &lt;sys/stat.h&gt;
+#define MAX_PATH_SIZE 1024
+void DirWalk(const char *path, void (*Proc) (const char *))
+{
+    char fname[MAX_PATH_SIZE];
+    struct dirent *de;
+    struct stat status;
+    DIR *dir;
+    if ((dir = opendir(path)) == NULL) {
+        perror(&quot;opendir&quot;);
+        return;
+    }
+    while ((de = readdir(dir)) != NULL) {
+        sprintf(fname, &quot;%s/%s&quot;, path, de->d_name);
+        Proc(fname);
+        if (strcmp(de->d_name, &quot;.&quot;) != 0 &amp;&amp; strcmp(de->d_name, &quot;..&quot;) != 0) {
+            if (stat(fname, &amp;status) == -1) {
+                perror(&quot;stat&quot;);
+                break;
+            }
+            if (S_ISDIR(status.st_mode))
+                DirWalk(fname, Proc);
+        }   
+    }
+    closedir(dir);
+}
+void Disp(const char *name)
+{
+    puts(name);
+}
+int main(int argc, char *argv[])
+{
+    char fname[MAX_PATH_SIZE];
+    char *plast;
+    if (argc != 2) {
+        printf(&quot;Usage: dirtree &lt;path&gt;\n&quot;);
+        exit(1);
+    }
+    strcpy(fname, argv[1]);
+    plast = strchr(fname, &#39;\0&#39;) - 1;
+    if (*plast == &#39;/&#39;)
+        *plast = &#39;\0&#39;;
+    DirWalk(fname, Disp);
+return 0; 
+}
+</code></pre>
+
+<p><code>void DirWalk(const char *path, void (*Proc) (const char *))</code> ifadesinde *path ile /etc gibi bir string ve bir fonksiyon işaretçisi alırız.</p>
+
+<p><code>struct dirent *de;</code>dirent yapısında d<em>ino ve d</em>name yapıları bulunmaktadır.Buradan readdir fonksiyonunun struct döndüğünü görebiliriz.</p>
+
+<p><code>if (strcmp(de->d_name, &quot;.&quot;) != 0 &amp;&amp; strcmp(de->d_name, &quot;..&quot;) != 0) {</code>&quot;.&quot; bulundugu dizin,&quot;..&quot; üst dizini gösterdiğinden programın tekrardan bu dizinlere girmesini engelliyor.</p>
+
+<p>strcmp fonksiyonunun harf harf karşılaştırma yapmakda yukarıdaki ifademizde dosya adı &quot;.&quot; veya &quot;..&quot; olduğunda strcmp sıfır değeri dönecektir.</p>
+
+<p><code>if (stat(fname, &amp;status) == -1) {</code> stat fonksiyonu başarısızlık durumunda -1 döner.Ve status dosya bilgilerini tutar(örnek:dosya erişimindeki izin bilgileri gibi).
+Ancak burada kullanılmasının amacı her gelişinde değişen fname ile birlikte status durumunuda set etmek ve S_ISDIR fonksiyonunda kullanmak.</p>
+
+<p><code>perror(&quot;stat&quot;);</code> perror fonksiyonunu çıktısı &quot;stat:burası errno değişkenine karşılık gelen mesaj metni&quot; şeklinde olur.
+errno değişkenine mesaj metni stat fonksiyonu tarafından yukarıdaki kontrolde set edilmiştir.</p>
+
+<p><code>if (S_ISDIR(status.st_mode))</code> Status değişkeninde dosya bilgileri tutuluyordu burada dosyanın dizin mi ? kontrolünü yapar evetse özyineli yapıya dönüşür.</p>
+
+<p><code>DirWalk(fname, Proc);</code> proc fonksiyon göstericisine ana fonksiyonda Disp&#39;i atamıştık zaten.</p>
+
+<p><code>plast = strchr(fname, &#39;\0&#39;) - 1;</code> strchr belirtilen karakteri ilk bulduğunda belirtilen karekterin adresini dönmektedir.</p>
+
+<p><code>if (*plast == &#39;/&#39;)</code> gelen path&#39;in sonundaki &quot;/&quot; ifadesini kaldırıyoruz.</p>
+
+<p><code>DirWalk(fname, Disp);</code> path&#39;i ve puts çıktısını üreten fonksiyonumuzu işaret ediyoruz.</p>
+" class="label label-default"><pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;dirent.h&gt;
+#include &lt;string.h&gt;
+#include &lt;sys/stat.h&gt;
+#define MAX_PATH_SIZE 1024
+void DirWalk(const char *path, void (*Proc) (const char *))
+{
+    char fname[MAX_PATH_SIZE];
+    struct dirent *de;
+    struct stat status;
+    DIR *dir;
+    if ((dir = opendir(path)) == NULL) {
+        perror(&quot;opendir&quot;);
+        return;
+    }
+    while ((de = readdir(dir)) != NULL) {
+        sprintf(fname, &quot;%s/%s&quot;, path, de->d_name);
+        Proc(fname);
+        if (strcmp(de->d_name, &quot;.&quot;) != 0 &amp;&amp; strcmp(de->d_name, &quot;..&quot;) != 0) {
+            if (stat(fname, &amp;status) == -1) {
+                perror(&quot;stat&quot;);
+                break;
+            }
+            if (S_ISDIR(status.st_mode))
+                DirWalk(fname, Proc);
+        }   
+    }
+    closedir(dir);
+}
+void Disp(const char *name)
+{
+    puts(name);
+}
+int main(int argc, char *argv[])
+{
+    char fname[MAX_PATH_SIZE];
+    char *plast;
+    if (argc != 2) {
+        printf(&quot;Usage: dirtree &lt;path&gt;\n&quot;);
+        exit(1);
+    }
+    strcpy(fname, argv[1]);
+    plast = strchr(fname, &#39;\0&#39;) - 1;
+    if (*plast == &#39;/&#39;)
+        *plast = &#39;\0&#39;;
+    DirWalk(fname, Disp);
+return 0; 
+}
+</code></pre>
+
+<p><code>void DirWalk(const char *path, void (*Proc) (const char *))</code> ifadesinde *path ile /etc gibi bir string ve bir fonksiyon işaretçisi alırız.</p>
+
+<p><code>struct dirent *de;</code>dirent yapısında d<em>ino ve d</em>name yapıları bulunmaktadır.Buradan readdir fonksiyonunun struct döndüğünü görebiliriz.</p>
+
+<p><code>if (strcmp(de->d_name, &quot;.&quot;) != 0 &amp;&amp; strcmp(de->d_name, &quot;..&quot;) != 0) {</code>&quot;.&quot; bulundugu dizin,&quot;..&quot; üst dizini gösterdiğinden programın tekrardan bu dizinlere girmesini engelliyor.</p>
+
+<p>strcmp fonksiyonunun harf harf karşılaştırma yapmakda yukarıdaki ifademizde dosya adı &quot;.&quot; veya &quot;..&quot; olduğunda strcmp sıfır değeri dönecektir.</p>
+
+<p><code>if (stat(fname, &amp;status) == -1) {</code> stat fonksiyonu başarısızlık durumunda -1 döner.Ve status dosya bilgilerini tutar(örnek:dosya erişimindeki izin bilgileri gibi).
+Ancak burada kullanılmasının amacı her gelişinde değişen fname ile birlikte status durumunuda set etmek ve S_ISDIR fonksiyonunda kullanmak.</p>
+
+<p><code>perror(&quot;stat&quot;);</code> perror fonksiyonunu çıktısı &quot;stat:burası errno değişkenine karşılık gelen mesaj metni&quot; şeklinde olur.
+errno değişkenine mesaj metni stat fonksiyonu tarafından yukarıdaki kontrolde set edilmiştir.</p>
+
+<p><code>if (S_ISDIR(status.st_mode))</code> Status değişkeninde dosya bilgileri tutuluyordu burada dosyanın dizin mi ? kontrolünü yapar evetse özyineli yapıya dönüşür.</p>
+
+<p><code>DirWalk(fname, Proc);</code> proc fonksiyon göstericisine ana fonksiyonda Disp&#39;i atamıştık zaten.</p>
+
+<p><code>plast = strchr(fname, &#39;\0&#39;) - 1;</code> strchr belirtilen karakteri ilk bulduğunda belirtilen karekterin adresini dönmektedir.</p>
+
+<p><code>if (*plast == &#39;/&#39;)</code> gelen path&#39;in sonundaki &quot;/&quot; ifadesini kaldırıyoruz.</p>
+
+<p><code>DirWalk(fname, Disp);</code> path&#39;i ve puts çıktısını üreten fonksiyonumuzu işaret ediyoruz.</p>
+</a>
+	  
   
-    <li><a href="/tag/bashlinux" title="bashlinux" class="label label-default">bashlinux</a>
+	  
+	    <li><a href="/tag/bash" title="bash" class="label label-default">bash</a>
+	  
+	    <li><a href="/tag/<p>Bugün çok garip bir durumla karşılaştım aslında karşılaştığım durum basit ama karşılaşma zamanı garip oldu..</p>
+
+<p>yaklaşık olarak 3 saat önce bir blog&#39;ta adamın karşılaştığı ilginç bir olayı okuyordum yani adama göre beklenmeyen
+bir durum olduğu için ilginçmiş dosya sistemini çok dikkatli kullanmasına rağmen nedini bilmediği bir şekilde terminale düşmüş</p>
+
+<p>terminal diyorum terminal eminlatörü değil yani =) herneyse ondan sonra dosya sistemini düzenlemesi için fsck komutunun oldugunu görmüş.
+Yani fsck dosya sistemindeki küçük hataları giderir gideremediği büyük hatalar içinde kullanıcıya uyarı veren bir programdır.
+Bu şekilde oturumuna geri dönmüş.Beni ilgilendiren kısmı bu yazıyı okuduktan 15 dk sonra bilgisayarımın güncelleme yöneticisinin karşıma çıkıp
+donmasıyla başladı.Bu durumda gayet sogukkanlı bir şekilde ana şartele basılı tutarak kapattım ancak açtığım zaman disk&#39;i check ediyor fakat açılmıyordu
+2. denememde bu sefer okuduğum şahsın düştüğü terminale bende düştüm ve dedim bu arkadaşı fsck kurtardıysa beni neden kurtarmasın ve tabiki bunları sogukkanlı
+bir şekilde yapıyorum.Ve bende oturumuma dönmeyi başardım.</p>
+
+<p>Burada dikkat etmemiz gereken nokta bilgisayarı düzgün kapatmadığımdır ve bu durumda superblocklara düzgün kapanmadıgına dair işaret biti yerleşmekte ve
+check etme durumu bu şekilde başlamaktadır.Ext3 dosya sistemleri günlüklü yapıda olduklarından check ile düzgün yapısına dönüşür.Peki ya check etme esnasında fsck&#39;nın yaptıgı
+durumun aynısını gerçekleştirmedi mi ? </p>
+
+<p>işte böyle bir garip durumla karşılaştım eğer bunu okuyorsanız dikkat edin sizde terminale düşebilirsiniz o durumda
+fsck kurtarıyor</p>
+" title="<p>Bugün çok garip bir durumla karşılaştım aslında karşılaştığım durum basit ama karşılaşma zamanı garip oldu..</p>
+
+<p>yaklaşık olarak 3 saat önce bir blog&#39;ta adamın karşılaştığı ilginç bir olayı okuyordum yani adama göre beklenmeyen
+bir durum olduğu için ilginçmiş dosya sistemini çok dikkatli kullanmasına rağmen nedini bilmediği bir şekilde terminale düşmüş</p>
+
+<p>terminal diyorum terminal eminlatörü değil yani =) herneyse ondan sonra dosya sistemini düzenlemesi için fsck komutunun oldugunu görmüş.
+Yani fsck dosya sistemindeki küçük hataları giderir gideremediği büyük hatalar içinde kullanıcıya uyarı veren bir programdır.
+Bu şekilde oturumuna geri dönmüş.Beni ilgilendiren kısmı bu yazıyı okuduktan 15 dk sonra bilgisayarımın güncelleme yöneticisinin karşıma çıkıp
+donmasıyla başladı.Bu durumda gayet sogukkanlı bir şekilde ana şartele basılı tutarak kapattım ancak açtığım zaman disk&#39;i check ediyor fakat açılmıyordu
+2. denememde bu sefer okuduğum şahsın düştüğü terminale bende düştüm ve dedim bu arkadaşı fsck kurtardıysa beni neden kurtarmasın ve tabiki bunları sogukkanlı
+bir şekilde yapıyorum.Ve bende oturumuma dönmeyi başardım.</p>
+
+<p>Burada dikkat etmemiz gereken nokta bilgisayarı düzgün kapatmadığımdır ve bu durumda superblocklara düzgün kapanmadıgına dair işaret biti yerleşmekte ve
+check etme durumu bu şekilde başlamaktadır.Ext3 dosya sistemleri günlüklü yapıda olduklarından check ile düzgün yapısına dönüşür.Peki ya check etme esnasında fsck&#39;nın yaptıgı
+durumun aynısını gerçekleştirmedi mi ? </p>
+
+<p>işte böyle bir garip durumla karşılaştım eğer bunu okuyorsanız dikkat edin sizde terminale düşebilirsiniz o durumda
+fsck kurtarıyor</p>
+" class="label label-default"><p>Bugün çok garip bir durumla karşılaştım aslında karşılaştığım durum basit ama karşılaşma zamanı garip oldu..</p>
+
+<p>yaklaşık olarak 3 saat önce bir blog&#39;ta adamın karşılaştığı ilginç bir olayı okuyordum yani adama göre beklenmeyen
+bir durum olduğu için ilginçmiş dosya sistemini çok dikkatli kullanmasına rağmen nedini bilmediği bir şekilde terminale düşmüş</p>
+
+<p>terminal diyorum terminal eminlatörü değil yani =) herneyse ondan sonra dosya sistemini düzenlemesi için fsck komutunun oldugunu görmüş.
+Yani fsck dosya sistemindeki küçük hataları giderir gideremediği büyük hatalar içinde kullanıcıya uyarı veren bir programdır.
+Bu şekilde oturumuna geri dönmüş.Beni ilgilendiren kısmı bu yazıyı okuduktan 15 dk sonra bilgisayarımın güncelleme yöneticisinin karşıma çıkıp
+donmasıyla başladı.Bu durumda gayet sogukkanlı bir şekilde ana şartele basılı tutarak kapattım ancak açtığım zaman disk&#39;i check ediyor fakat açılmıyordu
+2. denememde bu sefer okuduğum şahsın düştüğü terminale bende düştüm ve dedim bu arkadaşı fsck kurtardıysa beni neden kurtarmasın ve tabiki bunları sogukkanlı
+bir şekilde yapıyorum.Ve bende oturumuma dönmeyi başardım.</p>
+
+<p>Burada dikkat etmemiz gereken nokta bilgisayarı düzgün kapatmadığımdır ve bu durumda superblocklara düzgün kapanmadıgına dair işaret biti yerleşmekte ve
+check etme durumu bu şekilde başlamaktadır.Ext3 dosya sistemleri günlüklü yapıda olduklarından check ile düzgün yapısına dönüşür.Peki ya check etme esnasında fsck&#39;nın yaptıgı
+durumun aynısını gerçekleştirmedi mi ? </p>
+
+<p>işte böyle bir garip durumla karşılaştım eğer bunu okuyorsanız dikkat edin sizde terminale düşebilirsiniz o durumda
+fsck kurtarıyor</p>
+</a>
+	  
   
-    <li><a href="/tag/bash" title="bash" class="label label-default">bash</a>
+	  
+	    <li><a href="/tag/" title="" class="label label-default"></a>
+	  
+	    <li><a href="/tag/<h4>Subshell</h4>
+
+<p>Subshell xterm emilatöründeyken yeni bir bash prosesinin forklanmasıdır.yani:</p>
+
+<pre><code>budizin=$( pwd ; echo &quot;hımm&quot; )
+echo $budizin
+</code></pre>
+
+<p>dediğimizde <code>$( pwd ; echo &quot;hımm&quot; )</code> ifadesinde bir çocuk prosesi üretilir ve komut burada yorumlanır.ancak</p>
+
+<pre><code>budizin=$( pwd ; var=&quot;hımm&quot; )
+echo $budizin
+</code></pre>
+
+<p>dediğimizde anaprosese döndüğünde <code>$budizin</code> ifadesini yazdırdığında <code>var=&quot;hıımm&quot;</code> değişkenini göremez çünkü
+subshell&#39;de yaratılan değişkenler local olarak oluşturulmaktadır.
+Bu durumun ne gibi kullanımı vardır ?
+örnek : <code>echo &quot;sistem adi : $( uname -n ) &#39;dir .&quot;</code>  dediğimizde subshell&#39;e girip sistem adını basıp çıkıcaktır.</p>
+
+<p>export komutuyla anaprosesten subshell&#39;e değişiken gönderebilriz.</p>
+
+<pre><code>export var=&quot;merhaba&quot;
+bash #subshell&#39;e giriyoruz.
+echo $var 
+</code></pre>
+
+<p>yada</p>
+
+<pre><code>var=&quot;merhaba&quot;
+export var
+bash
+echo $var
+</code></pre>
+
+<p>dediğimizde subshell gönderdiğimiz var değişkenini görmektedir.Ancak
+Subshell&#39;deyken export yapamayız ana prosesteyken export yapabiliriz buda subshell&#39;in variable listesine ekleme yapar.</p>
+
+<p>Yada <code>var=&quot;merhaba&quot; bash</code> diyerek export etmeden direk değişkeni gönderebiliriz ancak bu durumda ana proses tarafından bu değişken tanımlı olmucaktır.</p>
+
+<h4>Shell değişken değiştirme</h4>
+
+<p>Burada değişkenimizin karekterleri üzerinde oynamalar yapabilicez.Örnek :</p>
+
+<pre><code>var=/foo/bar/baz
+
+echo &quot;${ var##*/ }&quot;
+</code></pre>
+
+<p>Dediğimizde değişkenimizin başından itibaren tarayarak ilerle ve gidebileceğin en son yerdeki <code>/</code> karekterinden sonrasını döndür anlamındadır.
+çıktısı &gt;&gt; baz</p>
+
+<pre><code>echo &quot;${var#*/}&quot;
+</code></pre>
+
+<p>Bu durumda ise değişkenin başından itibaren tarayarak ilerle ve gidebileceğin en az mesafedeki <code>/</code> karakterinden sonrasını döndür.
+çıktısı &gt;&gt; foo/bar/baz </p>
+
+<pre><code>echo &quot;${var%/*}&quot;
+</code></pre>
+
+<p>Burada ise değişkenin sonundan itibaren tarayarak ilerle ve gidebileceğin en az mesafedeki <code>/</code> karakterinden sonrasını döndür.
+çıktı &gt;&gt; /foo/bar</p>
+
+<pre><code>echo &quot;${var%%/*}&quot;
+</code></pre>
+
+<p>Dediğimizde değişkenimizin sonundan itibaren tarayarak ilerle ve gidebileceğin en son yerdeki <code>/</code> karekterinden sonrasını döndür anlamındadır.
+çıktı &gt;&gt; &quot;boş&quot;</p>
+
+<p>Anlaşılacağı üzere taradıgı alan haricini döndürmektedir ve de <code>#</code> ile <code>%</code> karakterleri en az mesafeyi <code>##</code> ile <code>##</code> karakterleride en fazla mesafeyi ifade etmektedir.</p>
+
+<h4>Cut komutu</h4>
+
+<p>Cut komutu default olarak tab&#39;a göre ayarlanmıştır. <code>cut  -f2</code> komutu&#39;na gelen girdide tab karekteri varsa tab&#39;a göre ayraçlık yapar ve ikinci kısmını geri döner.
+Eğer tab karekteri yoksa metnin kendisini döndürür.</p>
+
+<p><code>cut -d &#39; : &#39; -f3</code> ifadesindeki <code>-d</code> paremetresi ayraç vereceğimizi bildirmektedir ve tırnaklar içinde verilen <code>:</code>  karakterine göre ayıracağını ve 3. parçasını döndürmektedir.
+Bunu:
+    cut -d &#39; &#39; -f2-4
+olacak şekildede yazabiliriz.<code>-f2-4</code> ifadesi parçalardan 2 ve 4 dahil olmak üzere o aralığı döndürmektedir.</p>
+
+<pre><code>line=&quot;a:b:c:d&quot;
+karakter=$( echo $line | cut -d &#39;:&#39; -f3 )
+echo $karakter 
+</code></pre>
+
+<p>Dediğimizde <code>c</code> &#39;yi döndürecektir.</p>
+
+<p>Bu şekilde girdiyi istediğimiz karaktere göre ayırabiliriz.Awk programıyla&#39;da benzer işi yapabiliriz ve awk programı daha kapsamlı olmasına rağmen cut komutu ile neredeyse 
+eşdeğer çalışmaktadır.Awk programının kullanımını daha sonradan bahsedicem ancak basit olarak </p>
+
+<pre><code>echo &quot;a ? b ? c ? d:e &quot; | awk -F ? &#39; { print $4 } &#39;
+</code></pre>
+
+<p>çıktı -> d:e</p>
+
+<p>Dediğimizde <code>-F</code> paremetresi alan ayıraçı anlamında yani default olarak değilde verdiğimiz <code>?</code> karekterine göre ayırmamızı sağlamaktadır.
+<code>&#39;{print $4}&#39;</code> ifadesindeki <code>$4</code> parçalamadan sonraki 4. parçamızı ifade etmektedir.</p>
+
+<p>Bu şekil cut ve awk programlarını kullanarak işlemimizi gerçekleştirebiliriz ancak bunun için shell&#39;in kendi imkanlarını kullanmak daha mantıklı olacaktır.
+Her seferinde cut ve awk&#39;nın forklanması için ayrı bir sürede harcamamış olucaz.Bunu şu şekilde gösterebiliriz.</p>
+
+<pre><code>#!/bin/bash
+
+    ifs_save=$IFS
+    IFS=:
+    while read line ; do
+            set $line
+            echo &quot;kabuk : $7&quot;
+    done &lt; /etc/passwd
+</code></pre>
+
+<p>Burada doğrudan shell&#39;in kendi imkanlarını kullandık ve passwd dosyasının kullanıcıların kullandıkları kabuk programları listelemiş olduk.</p>
+" title="<h4>Subshell</h4>
+
+<p>Subshell xterm emilatöründeyken yeni bir bash prosesinin forklanmasıdır.yani:</p>
+
+<pre><code>budizin=$( pwd ; echo &quot;hımm&quot; )
+echo $budizin
+</code></pre>
+
+<p>dediğimizde <code>$( pwd ; echo &quot;hımm&quot; )</code> ifadesinde bir çocuk prosesi üretilir ve komut burada yorumlanır.ancak</p>
+
+<pre><code>budizin=$( pwd ; var=&quot;hımm&quot; )
+echo $budizin
+</code></pre>
+
+<p>dediğimizde anaprosese döndüğünde <code>$budizin</code> ifadesini yazdırdığında <code>var=&quot;hıımm&quot;</code> değişkenini göremez çünkü
+subshell&#39;de yaratılan değişkenler local olarak oluşturulmaktadır.
+Bu durumun ne gibi kullanımı vardır ?
+örnek : <code>echo &quot;sistem adi : $( uname -n ) &#39;dir .&quot;</code>  dediğimizde subshell&#39;e girip sistem adını basıp çıkıcaktır.</p>
+
+<p>export komutuyla anaprosesten subshell&#39;e değişiken gönderebilriz.</p>
+
+<pre><code>export var=&quot;merhaba&quot;
+bash #subshell&#39;e giriyoruz.
+echo $var 
+</code></pre>
+
+<p>yada</p>
+
+<pre><code>var=&quot;merhaba&quot;
+export var
+bash
+echo $var
+</code></pre>
+
+<p>dediğimizde subshell gönderdiğimiz var değişkenini görmektedir.Ancak
+Subshell&#39;deyken export yapamayız ana prosesteyken export yapabiliriz buda subshell&#39;in variable listesine ekleme yapar.</p>
+
+<p>Yada <code>var=&quot;merhaba&quot; bash</code> diyerek export etmeden direk değişkeni gönderebiliriz ancak bu durumda ana proses tarafından bu değişken tanımlı olmucaktır.</p>
+
+<h4>Shell değişken değiştirme</h4>
+
+<p>Burada değişkenimizin karekterleri üzerinde oynamalar yapabilicez.Örnek :</p>
+
+<pre><code>var=/foo/bar/baz
+
+echo &quot;${ var##*/ }&quot;
+</code></pre>
+
+<p>Dediğimizde değişkenimizin başından itibaren tarayarak ilerle ve gidebileceğin en son yerdeki <code>/</code> karekterinden sonrasını döndür anlamındadır.
+çıktısı &gt;&gt; baz</p>
+
+<pre><code>echo &quot;${var#*/}&quot;
+</code></pre>
+
+<p>Bu durumda ise değişkenin başından itibaren tarayarak ilerle ve gidebileceğin en az mesafedeki <code>/</code> karakterinden sonrasını döndür.
+çıktısı &gt;&gt; foo/bar/baz </p>
+
+<pre><code>echo &quot;${var%/*}&quot;
+</code></pre>
+
+<p>Burada ise değişkenin sonundan itibaren tarayarak ilerle ve gidebileceğin en az mesafedeki <code>/</code> karakterinden sonrasını döndür.
+çıktı &gt;&gt; /foo/bar</p>
+
+<pre><code>echo &quot;${var%%/*}&quot;
+</code></pre>
+
+<p>Dediğimizde değişkenimizin sonundan itibaren tarayarak ilerle ve gidebileceğin en son yerdeki <code>/</code> karekterinden sonrasını döndür anlamındadır.
+çıktı &gt;&gt; &quot;boş&quot;</p>
+
+<p>Anlaşılacağı üzere taradıgı alan haricini döndürmektedir ve de <code>#</code> ile <code>%</code> karakterleri en az mesafeyi <code>##</code> ile <code>##</code> karakterleride en fazla mesafeyi ifade etmektedir.</p>
+
+<h4>Cut komutu</h4>
+
+<p>Cut komutu default olarak tab&#39;a göre ayarlanmıştır. <code>cut  -f2</code> komutu&#39;na gelen girdide tab karekteri varsa tab&#39;a göre ayraçlık yapar ve ikinci kısmını geri döner.
+Eğer tab karekteri yoksa metnin kendisini döndürür.</p>
+
+<p><code>cut -d &#39; : &#39; -f3</code> ifadesindeki <code>-d</code> paremetresi ayraç vereceğimizi bildirmektedir ve tırnaklar içinde verilen <code>:</code>  karakterine göre ayıracağını ve 3. parçasını döndürmektedir.
+Bunu:
+    cut -d &#39; &#39; -f2-4
+olacak şekildede yazabiliriz.<code>-f2-4</code> ifadesi parçalardan 2 ve 4 dahil olmak üzere o aralığı döndürmektedir.</p>
+
+<pre><code>line=&quot;a:b:c:d&quot;
+karakter=$( echo $line | cut -d &#39;:&#39; -f3 )
+echo $karakter 
+</code></pre>
+
+<p>Dediğimizde <code>c</code> &#39;yi döndürecektir.</p>
+
+<p>Bu şekilde girdiyi istediğimiz karaktere göre ayırabiliriz.Awk programıyla&#39;da benzer işi yapabiliriz ve awk programı daha kapsamlı olmasına rağmen cut komutu ile neredeyse 
+eşdeğer çalışmaktadır.Awk programının kullanımını daha sonradan bahsedicem ancak basit olarak </p>
+
+<pre><code>echo &quot;a ? b ? c ? d:e &quot; | awk -F ? &#39; { print $4 } &#39;
+</code></pre>
+
+<p>çıktı -> d:e</p>
+
+<p>Dediğimizde <code>-F</code> paremetresi alan ayıraçı anlamında yani default olarak değilde verdiğimiz <code>?</code> karekterine göre ayırmamızı sağlamaktadır.
+<code>&#39;{print $4}&#39;</code> ifadesindeki <code>$4</code> parçalamadan sonraki 4. parçamızı ifade etmektedir.</p>
+
+<p>Bu şekil cut ve awk programlarını kullanarak işlemimizi gerçekleştirebiliriz ancak bunun için shell&#39;in kendi imkanlarını kullanmak daha mantıklı olacaktır.
+Her seferinde cut ve awk&#39;nın forklanması için ayrı bir sürede harcamamış olucaz.Bunu şu şekilde gösterebiliriz.</p>
+
+<pre><code>#!/bin/bash
+
+    ifs_save=$IFS
+    IFS=:
+    while read line ; do
+            set $line
+            echo &quot;kabuk : $7&quot;
+    done &lt; /etc/passwd
+</code></pre>
+
+<p>Burada doğrudan shell&#39;in kendi imkanlarını kullandık ve passwd dosyasının kullanıcıların kullandıkları kabuk programları listelemiş olduk.</p>
+" class="label label-default"><h4>Subshell</h4>
+
+<p>Subshell xterm emilatöründeyken yeni bir bash prosesinin forklanmasıdır.yani:</p>
+
+<pre><code>budizin=$( pwd ; echo &quot;hımm&quot; )
+echo $budizin
+</code></pre>
+
+<p>dediğimizde <code>$( pwd ; echo &quot;hımm&quot; )</code> ifadesinde bir çocuk prosesi üretilir ve komut burada yorumlanır.ancak</p>
+
+<pre><code>budizin=$( pwd ; var=&quot;hımm&quot; )
+echo $budizin
+</code></pre>
+
+<p>dediğimizde anaprosese döndüğünde <code>$budizin</code> ifadesini yazdırdığında <code>var=&quot;hıımm&quot;</code> değişkenini göremez çünkü
+subshell&#39;de yaratılan değişkenler local olarak oluşturulmaktadır.
+Bu durumun ne gibi kullanımı vardır ?
+örnek : <code>echo &quot;sistem adi : $( uname -n ) &#39;dir .&quot;</code>  dediğimizde subshell&#39;e girip sistem adını basıp çıkıcaktır.</p>
+
+<p>export komutuyla anaprosesten subshell&#39;e değişiken gönderebilriz.</p>
+
+<pre><code>export var=&quot;merhaba&quot;
+bash #subshell&#39;e giriyoruz.
+echo $var 
+</code></pre>
+
+<p>yada</p>
+
+<pre><code>var=&quot;merhaba&quot;
+export var
+bash
+echo $var
+</code></pre>
+
+<p>dediğimizde subshell gönderdiğimiz var değişkenini görmektedir.Ancak
+Subshell&#39;deyken export yapamayız ana prosesteyken export yapabiliriz buda subshell&#39;in variable listesine ekleme yapar.</p>
+
+<p>Yada <code>var=&quot;merhaba&quot; bash</code> diyerek export etmeden direk değişkeni gönderebiliriz ancak bu durumda ana proses tarafından bu değişken tanımlı olmucaktır.</p>
+
+<h4>Shell değişken değiştirme</h4>
+
+<p>Burada değişkenimizin karekterleri üzerinde oynamalar yapabilicez.Örnek :</p>
+
+<pre><code>var=/foo/bar/baz
+
+echo &quot;${ var##*/ }&quot;
+</code></pre>
+
+<p>Dediğimizde değişkenimizin başından itibaren tarayarak ilerle ve gidebileceğin en son yerdeki <code>/</code> karekterinden sonrasını döndür anlamındadır.
+çıktısı &gt;&gt; baz</p>
+
+<pre><code>echo &quot;${var#*/}&quot;
+</code></pre>
+
+<p>Bu durumda ise değişkenin başından itibaren tarayarak ilerle ve gidebileceğin en az mesafedeki <code>/</code> karakterinden sonrasını döndür.
+çıktısı &gt;&gt; foo/bar/baz </p>
+
+<pre><code>echo &quot;${var%/*}&quot;
+</code></pre>
+
+<p>Burada ise değişkenin sonundan itibaren tarayarak ilerle ve gidebileceğin en az mesafedeki <code>/</code> karakterinden sonrasını döndür.
+çıktı &gt;&gt; /foo/bar</p>
+
+<pre><code>echo &quot;${var%%/*}&quot;
+</code></pre>
+
+<p>Dediğimizde değişkenimizin sonundan itibaren tarayarak ilerle ve gidebileceğin en son yerdeki <code>/</code> karekterinden sonrasını döndür anlamındadır.
+çıktı &gt;&gt; &quot;boş&quot;</p>
+
+<p>Anlaşılacağı üzere taradıgı alan haricini döndürmektedir ve de <code>#</code> ile <code>%</code> karakterleri en az mesafeyi <code>##</code> ile <code>##</code> karakterleride en fazla mesafeyi ifade etmektedir.</p>
+
+<h4>Cut komutu</h4>
+
+<p>Cut komutu default olarak tab&#39;a göre ayarlanmıştır. <code>cut  -f2</code> komutu&#39;na gelen girdide tab karekteri varsa tab&#39;a göre ayraçlık yapar ve ikinci kısmını geri döner.
+Eğer tab karekteri yoksa metnin kendisini döndürür.</p>
+
+<p><code>cut -d &#39; : &#39; -f3</code> ifadesindeki <code>-d</code> paremetresi ayraç vereceğimizi bildirmektedir ve tırnaklar içinde verilen <code>:</code>  karakterine göre ayıracağını ve 3. parçasını döndürmektedir.
+Bunu:
+    cut -d &#39; &#39; -f2-4
+olacak şekildede yazabiliriz.<code>-f2-4</code> ifadesi parçalardan 2 ve 4 dahil olmak üzere o aralığı döndürmektedir.</p>
+
+<pre><code>line=&quot;a:b:c:d&quot;
+karakter=$( echo $line | cut -d &#39;:&#39; -f3 )
+echo $karakter 
+</code></pre>
+
+<p>Dediğimizde <code>c</code> &#39;yi döndürecektir.</p>
+
+<p>Bu şekilde girdiyi istediğimiz karaktere göre ayırabiliriz.Awk programıyla&#39;da benzer işi yapabiliriz ve awk programı daha kapsamlı olmasına rağmen cut komutu ile neredeyse 
+eşdeğer çalışmaktadır.Awk programının kullanımını daha sonradan bahsedicem ancak basit olarak </p>
+
+<pre><code>echo &quot;a ? b ? c ? d:e &quot; | awk -F ? &#39; { print $4 } &#39;
+</code></pre>
+
+<p>çıktı -> d:e</p>
+
+<p>Dediğimizde <code>-F</code> paremetresi alan ayıraçı anlamında yani default olarak değilde verdiğimiz <code>?</code> karekterine göre ayırmamızı sağlamaktadır.
+<code>&#39;{print $4}&#39;</code> ifadesindeki <code>$4</code> parçalamadan sonraki 4. parçamızı ifade etmektedir.</p>
+
+<p>Bu şekil cut ve awk programlarını kullanarak işlemimizi gerçekleştirebiliriz ancak bunun için shell&#39;in kendi imkanlarını kullanmak daha mantıklı olacaktır.
+Her seferinde cut ve awk&#39;nın forklanması için ayrı bir sürede harcamamış olucaz.Bunu şu şekilde gösterebiliriz.</p>
+
+<pre><code>#!/bin/bash
+
+    ifs_save=$IFS
+    IFS=:
+    while read line ; do
+            set $line
+            echo &quot;kabuk : $7&quot;
+    done &lt; /etc/passwd
+</code></pre>
+
+<p>Burada doğrudan shell&#39;in kendi imkanlarını kullandık ve passwd dosyasının kullanıcıların kullandıkları kabuk programları listelemiş olduk.</p>
+</a>
+	  
   
-    <li><a href="/tag/wordpress" title="wordpress" class="label label-default">wordpress</a>
+	  
+	    <li><a href="/tag/" title="" class="label label-default"></a>
+	  
+	    <li><a href="/tag/<p>Temanın admin panelinden oluşturulan tüm sayfalar tema klasöründeki page.php şablonundan türetilmektedir.
+Eğer siz sadece tek bir sayfa için özellikler eklemek istiyorsanız mesela forum sayfası dışında tüm sayfalarda comment bloglarını kapatmak
+istiyor iseniz <code>comments_template()</code> fonksiyonunu forum sayfası id&#39;si için kullanabilirsiniz yada katı bağlantı kullanıp <code>$page_id</code> değişkeni
+yerine sayfanın isminide page.php içinde if koşulu altına alıp sadece bu id&#39;ye veya isime sahip sayfalara yorum bloglarını açabilirsiniz.</p>
+
+<p>Eğer sayfa şablonlarında yapacağınız değişiklik bu denli küçük çapta değil ise yani diyelim ki footer&#39;ın hemen üstüne javascript ile akan
+bir duyuru koymak istiyorsanız.Örneğin duyuru.php sayfası oluşturdunuz ancak bunda sadece duyuru kısmı ( yani banner vs. kısımları yok ) var ve js kodunu duyuru.js &#39;den ve css&#39;inide
+duyuru.css &#39;den aldıgınız varsayalım bu durumda page.php içinde <code>include(&quot;duyuru.php&quot;)</code> çağrısı duyuru.js ve duyuru.css dosyalarını görmeyecektir.
+Bunları duyuru.php içinde değilde temanın içinde bulunan <code>header.php</code> tanıtmalıyız.</p>
+
+<p>Not: include fonksiyonu yerine require fonksiyonuda kullanılabilir. </p>
+" title="<p>Temanın admin panelinden oluşturulan tüm sayfalar tema klasöründeki page.php şablonundan türetilmektedir.
+Eğer siz sadece tek bir sayfa için özellikler eklemek istiyorsanız mesela forum sayfası dışında tüm sayfalarda comment bloglarını kapatmak
+istiyor iseniz <code>comments_template()</code> fonksiyonunu forum sayfası id&#39;si için kullanabilirsiniz yada katı bağlantı kullanıp <code>$page_id</code> değişkeni
+yerine sayfanın isminide page.php içinde if koşulu altına alıp sadece bu id&#39;ye veya isime sahip sayfalara yorum bloglarını açabilirsiniz.</p>
+
+<p>Eğer sayfa şablonlarında yapacağınız değişiklik bu denli küçük çapta değil ise yani diyelim ki footer&#39;ın hemen üstüne javascript ile akan
+bir duyuru koymak istiyorsanız.Örneğin duyuru.php sayfası oluşturdunuz ancak bunda sadece duyuru kısmı ( yani banner vs. kısımları yok ) var ve js kodunu duyuru.js &#39;den ve css&#39;inide
+duyuru.css &#39;den aldıgınız varsayalım bu durumda page.php içinde <code>include(&quot;duyuru.php&quot;)</code> çağrısı duyuru.js ve duyuru.css dosyalarını görmeyecektir.
+Bunları duyuru.php içinde değilde temanın içinde bulunan <code>header.php</code> tanıtmalıyız.</p>
+
+<p>Not: include fonksiyonu yerine require fonksiyonuda kullanılabilir. </p>
+" class="label label-default"><p>Temanın admin panelinden oluşturulan tüm sayfalar tema klasöründeki page.php şablonundan türetilmektedir.
+Eğer siz sadece tek bir sayfa için özellikler eklemek istiyorsanız mesela forum sayfası dışında tüm sayfalarda comment bloglarını kapatmak
+istiyor iseniz <code>comments_template()</code> fonksiyonunu forum sayfası id&#39;si için kullanabilirsiniz yada katı bağlantı kullanıp <code>$page_id</code> değişkeni
+yerine sayfanın isminide page.php içinde if koşulu altına alıp sadece bu id&#39;ye veya isime sahip sayfalara yorum bloglarını açabilirsiniz.</p>
+
+<p>Eğer sayfa şablonlarında yapacağınız değişiklik bu denli küçük çapta değil ise yani diyelim ki footer&#39;ın hemen üstüne javascript ile akan
+bir duyuru koymak istiyorsanız.Örneğin duyuru.php sayfası oluşturdunuz ancak bunda sadece duyuru kısmı ( yani banner vs. kısımları yok ) var ve js kodunu duyuru.js &#39;den ve css&#39;inide
+duyuru.css &#39;den aldıgınız varsayalım bu durumda page.php içinde <code>include(&quot;duyuru.php&quot;)</code> çağrısı duyuru.js ve duyuru.css dosyalarını görmeyecektir.
+Bunları duyuru.php içinde değilde temanın içinde bulunan <code>header.php</code> tanıtmalıyız.</p>
+
+<p>Not: include fonksiyonu yerine require fonksiyonuda kullanılabilir. </p>
+</a>
+	  
   
-    <li><a href="/tag/rails" title="rails" class="label label-default">rails</a>
+	  
+	    <li><a href="/tag/" title="" class="label label-default"></a>
+	  
+	    <li><a href="/tag/<p>Rails&#39;in default ayarları sayesinde xml bir dosyayı düzenlemek ve çalıştırmak için fazla zaman harcamayız.
+Railsde modeller, controller, view , images, style sheets, Javascript ve ayar dosyaları olmak üzere herşeyin yeri bellidir.</p>
+
+<p>Rails MVC mimarisi ruby tarafından derlerdiğin için esnek ve hızlıdır.Genel olarak mimariden bahsedecek olursak</p>
+
+<ul>
+<li><p>Model : Database&#39;e yazılacak olan veriyi belli kurallara tabi tutulmasıdır örnek olarak doldurulması gereken alanlardan istediğimizi zorunlu kılabilmemize olanak sağlamaktadır.</p></li>
+<li><p>Controller : Aldığı komutu çalıştırır ve dönüş değerini view&#39;e geçer. Controller de bulunan methodlara gelen get , post gibi istekleri yönlendirmeden sorumludur.</p></li>
+<li><p>View : Verinin gösterilmesinden sorumludur. View complex mantık işlemlerinin içermemelidir. View contoller actionlarından gelen verilerin gösterilmesiden sorumludur.Controller ve View yapısı birbirine bağlı yapılardır.</p></li>
+</ul>
+
+<p>rails mimarisinde veritabanındaki tabloların alanları sınıfların özelliğiymiş gibi atanıp active record sayesinde de veri üzerinde arama kaydetme gibi methodları kullanabiliriz.</p>
+
+<p>kurulumu</p>
+
+<pre><code>gem install rails
+</code></pre>
+
+<p>güncelleme</p>
+
+<pre><code>gem update rails
+</code></pre>
+
+<p>veritabanı olarak mysql haricindeki veritabanı yöneticelerinde veritabanı sürücülerinin kurulması gerekmektedir.</p>
+
+<p>Bütün kurulumlarmız tamamlandı ise eksik bileşenimizin olup olmadıgını <code>bundle install</code> komutu ile kontrol edebiliriz.Eğer mysql veritabanı kullanacak
+iseniz sqlite3 eksikliğini göz ardı edebilirsiniz.</p>
+
+<pre><code>rails new my-blog
+</code></pre>
+
+<p>diyerek blog uygulamamızı yarattıgımız zaman <code>config/database.yml</code> dosyamız default olarak sqlite3 &#39;bağlı olarak gelecektir.</p>
+
+<pre><code>rails new my-blog -d mysql
+</code></pre>
+
+<p>dediğimizde ise <code>-d</code> parametresinden sonra kullanacağımız veritabanımızı ismini girebiliriz.</p>
+
+<pre><code>cd my-blog
+</code></pre>
+
+<p>uygulamamızın içinde <code>config/database.yml</code> dosyamızı düzenledikten sonra <code>rails server</code> diyerek rails ile gelen webrick&#39;i başlatabiliriz bunun için projemizi oluşturduğumuz yerin önemi yoktur.
+ve default olarak localhost&#39;un 3000 portunda çalışmaktadır.Eğer istersen <code>-p</code> parametresi ile <code>rails server -p 27000</code> gibi istediğimiz ancak kullanılmayan portlar üzerinde çalıştırabiliriz.
+tarayıcımızda <code>localhost:3000</code> adresine giderek çalıştıgından emin olabiliriz.</p>
+" title="<p>Rails&#39;in default ayarları sayesinde xml bir dosyayı düzenlemek ve çalıştırmak için fazla zaman harcamayız.
+Railsde modeller, controller, view , images, style sheets, Javascript ve ayar dosyaları olmak üzere herşeyin yeri bellidir.</p>
+
+<p>Rails MVC mimarisi ruby tarafından derlerdiğin için esnek ve hızlıdır.Genel olarak mimariden bahsedecek olursak</p>
+
+<ul>
+<li><p>Model : Database&#39;e yazılacak olan veriyi belli kurallara tabi tutulmasıdır örnek olarak doldurulması gereken alanlardan istediğimizi zorunlu kılabilmemize olanak sağlamaktadır.</p></li>
+<li><p>Controller : Aldığı komutu çalıştırır ve dönüş değerini view&#39;e geçer. Controller de bulunan methodlara gelen get , post gibi istekleri yönlendirmeden sorumludur.</p></li>
+<li><p>View : Verinin gösterilmesinden sorumludur. View complex mantık işlemlerinin içermemelidir. View contoller actionlarından gelen verilerin gösterilmesiden sorumludur.Controller ve View yapısı birbirine bağlı yapılardır.</p></li>
+</ul>
+
+<p>rails mimarisinde veritabanındaki tabloların alanları sınıfların özelliğiymiş gibi atanıp active record sayesinde de veri üzerinde arama kaydetme gibi methodları kullanabiliriz.</p>
+
+<p>kurulumu</p>
+
+<pre><code>gem install rails
+</code></pre>
+
+<p>güncelleme</p>
+
+<pre><code>gem update rails
+</code></pre>
+
+<p>veritabanı olarak mysql haricindeki veritabanı yöneticelerinde veritabanı sürücülerinin kurulması gerekmektedir.</p>
+
+<p>Bütün kurulumlarmız tamamlandı ise eksik bileşenimizin olup olmadıgını <code>bundle install</code> komutu ile kontrol edebiliriz.Eğer mysql veritabanı kullanacak
+iseniz sqlite3 eksikliğini göz ardı edebilirsiniz.</p>
+
+<pre><code>rails new my-blog
+</code></pre>
+
+<p>diyerek blog uygulamamızı yarattıgımız zaman <code>config/database.yml</code> dosyamız default olarak sqlite3 &#39;bağlı olarak gelecektir.</p>
+
+<pre><code>rails new my-blog -d mysql
+</code></pre>
+
+<p>dediğimizde ise <code>-d</code> parametresinden sonra kullanacağımız veritabanımızı ismini girebiliriz.</p>
+
+<pre><code>cd my-blog
+</code></pre>
+
+<p>uygulamamızın içinde <code>config/database.yml</code> dosyamızı düzenledikten sonra <code>rails server</code> diyerek rails ile gelen webrick&#39;i başlatabiliriz bunun için projemizi oluşturduğumuz yerin önemi yoktur.
+ve default olarak localhost&#39;un 3000 portunda çalışmaktadır.Eğer istersen <code>-p</code> parametresi ile <code>rails server -p 27000</code> gibi istediğimiz ancak kullanılmayan portlar üzerinde çalıştırabiliriz.
+tarayıcımızda <code>localhost:3000</code> adresine giderek çalıştıgından emin olabiliriz.</p>
+" class="label label-default"><p>Rails&#39;in default ayarları sayesinde xml bir dosyayı düzenlemek ve çalıştırmak için fazla zaman harcamayız.
+Railsde modeller, controller, view , images, style sheets, Javascript ve ayar dosyaları olmak üzere herşeyin yeri bellidir.</p>
+
+<p>Rails MVC mimarisi ruby tarafından derlerdiğin için esnek ve hızlıdır.Genel olarak mimariden bahsedecek olursak</p>
+
+<ul>
+<li><p>Model : Database&#39;e yazılacak olan veriyi belli kurallara tabi tutulmasıdır örnek olarak doldurulması gereken alanlardan istediğimizi zorunlu kılabilmemize olanak sağlamaktadır.</p></li>
+<li><p>Controller : Aldığı komutu çalıştırır ve dönüş değerini view&#39;e geçer. Controller de bulunan methodlara gelen get , post gibi istekleri yönlendirmeden sorumludur.</p></li>
+<li><p>View : Verinin gösterilmesinden sorumludur. View complex mantık işlemlerinin içermemelidir. View contoller actionlarından gelen verilerin gösterilmesiden sorumludur.Controller ve View yapısı birbirine bağlı yapılardır.</p></li>
+</ul>
+
+<p>rails mimarisinde veritabanındaki tabloların alanları sınıfların özelliğiymiş gibi atanıp active record sayesinde de veri üzerinde arama kaydetme gibi methodları kullanabiliriz.</p>
+
+<p>kurulumu</p>
+
+<pre><code>gem install rails
+</code></pre>
+
+<p>güncelleme</p>
+
+<pre><code>gem update rails
+</code></pre>
+
+<p>veritabanı olarak mysql haricindeki veritabanı yöneticelerinde veritabanı sürücülerinin kurulması gerekmektedir.</p>
+
+<p>Bütün kurulumlarmız tamamlandı ise eksik bileşenimizin olup olmadıgını <code>bundle install</code> komutu ile kontrol edebiliriz.Eğer mysql veritabanı kullanacak
+iseniz sqlite3 eksikliğini göz ardı edebilirsiniz.</p>
+
+<pre><code>rails new my-blog
+</code></pre>
+
+<p>diyerek blog uygulamamızı yarattıgımız zaman <code>config/database.yml</code> dosyamız default olarak sqlite3 &#39;bağlı olarak gelecektir.</p>
+
+<pre><code>rails new my-blog -d mysql
+</code></pre>
+
+<p>dediğimizde ise <code>-d</code> parametresinden sonra kullanacağımız veritabanımızı ismini girebiliriz.</p>
+
+<pre><code>cd my-blog
+</code></pre>
+
+<p>uygulamamızın içinde <code>config/database.yml</code> dosyamızı düzenledikten sonra <code>rails server</code> diyerek rails ile gelen webrick&#39;i başlatabiliriz bunun için projemizi oluşturduğumuz yerin önemi yoktur.
+ve default olarak localhost&#39;un 3000 portunda çalışmaktadır.Eğer istersen <code>-p</code> parametresi ile <code>rails server -p 27000</code> gibi istediğimiz ancak kullanılmayan portlar üzerinde çalıştırabiliriz.
+tarayıcımızda <code>localhost:3000</code> adresine giderek çalıştıgından emin olabiliriz.</p>
+</a>
+	  
   
-    <li><a href="/tag/drupal" title="drupal" class="label label-default">drupal</a>
+	  
+	    <li><a href="/tag/" title="" class="label label-default"></a>
+	  
+	    <li><a href="/tag/<p>Bu paket birçok eklenti tarafından kullanıldıgını belirtmek istiyorum. Kurulumun nasıl yapılacagını paket içindeki <code>Readme</code> dosyasında da 
+görebilirsiniz.</p>
+
+<p>Öncelikle jquery_ui paketinin kütüphanesini http://code.google.com/p/jquery-ui/downloads/list?q=1.6 adresten sürümünüz hangisiyse indirin
+ben 1.6 kurulumunu anlatacağım.</p>
+
+<p>İndirme işleminden sonra jquery_ui modules dosyalarının arasına çıkarın ve sites/all altında modules isimli klasör oluşturup bir kopyasınıda oraya koyun
+kurulum esnasında buraya yönlendiriliyor. Siz o yüzden bir kopyasını koyun çünkü diğer türlü modul olarak görünmüyor.</p>
+
+<p>jquery.ui kütüphanesinide yukarıda verdiğim adresten indirdikten sonra sites/all altında libraries klasörü oluşturup içine adı jquery.ui olacak şekilde
+çıkartın bu aşamadan sonra eklentiler bölümünde kullanılabilir hale gelecektir.</p>
+" title="<p>Bu paket birçok eklenti tarafından kullanıldıgını belirtmek istiyorum. Kurulumun nasıl yapılacagını paket içindeki <code>Readme</code> dosyasında da 
+görebilirsiniz.</p>
+
+<p>Öncelikle jquery_ui paketinin kütüphanesini http://code.google.com/p/jquery-ui/downloads/list?q=1.6 adresten sürümünüz hangisiyse indirin
+ben 1.6 kurulumunu anlatacağım.</p>
+
+<p>İndirme işleminden sonra jquery_ui modules dosyalarının arasına çıkarın ve sites/all altında modules isimli klasör oluşturup bir kopyasınıda oraya koyun
+kurulum esnasında buraya yönlendiriliyor. Siz o yüzden bir kopyasını koyun çünkü diğer türlü modul olarak görünmüyor.</p>
+
+<p>jquery.ui kütüphanesinide yukarıda verdiğim adresten indirdikten sonra sites/all altında libraries klasörü oluşturup içine adı jquery.ui olacak şekilde
+çıkartın bu aşamadan sonra eklentiler bölümünde kullanılabilir hale gelecektir.</p>
+" class="label label-default"><p>Bu paket birçok eklenti tarafından kullanıldıgını belirtmek istiyorum. Kurulumun nasıl yapılacagını paket içindeki <code>Readme</code> dosyasında da 
+görebilirsiniz.</p>
+
+<p>Öncelikle jquery_ui paketinin kütüphanesini http://code.google.com/p/jquery-ui/downloads/list?q=1.6 adresten sürümünüz hangisiyse indirin
+ben 1.6 kurulumunu anlatacağım.</p>
+
+<p>İndirme işleminden sonra jquery_ui modules dosyalarının arasına çıkarın ve sites/all altında modules isimli klasör oluşturup bir kopyasınıda oraya koyun
+kurulum esnasında buraya yönlendiriliyor. Siz o yüzden bir kopyasını koyun çünkü diğer türlü modul olarak görünmüyor.</p>
+
+<p>jquery.ui kütüphanesinide yukarıda verdiğim adresten indirdikten sonra sites/all altında libraries klasörü oluşturup içine adı jquery.ui olacak şekilde
+çıkartın bu aşamadan sonra eklentiler bölümünde kullanılabilir hale gelecektir.</p>
+</a>
+	  
   
-    <li><a href="/tag/git" title="git" class="label label-default">git</a>
+	  
+	    <li><a href="/tag/" title="" class="label label-default"></a>
+	  
+	    <li><a href="/tag/# Git Kullanımı
+
+İlk olarak [SourceTree](http://www.sourcetreeapp.com/download/) 'den github ile bağlantı kuracağımız tool 'u indiriyoruz.
+
+Kurulum Aşamaları;
+
+- İlk gelen ekrandaki bilgiler commit aşamasında kullanılacak
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/1.png)
+
+- İkinci ekranda bitbucket bilgilerimizi giriyoruz.
+
+![İkinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/2.png)
+
+- Bu aşamada istersek localde mevcut git depolarını keşfetmesini sağlayabiliriz.
+
+![Üçüncü Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/3.png)
+
+- Bu aşamada ister sol üst köşedeki button 'dan repo 'yu kendimiz manuel olarak ekleyebiliriz. Yada bir sonraki adımdaki işlemi uygulayabiliriz. Burda manuel olarak eklerken kullanacağımız url bir sonraki adımda gösterildi.
+
+![Dördüncü Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/4.png)
+
+- Bitbucket üzerindeki mevcut repoda clone kısmında terminal üzerinden manuel olarak clone etmemizi sağlayan komutu uygulayabiliriz. Yukarıdaki aşamada repo eklerken kullanacağımız url de burdaki url dir. Yada ekteki görselde belirtilen `Clone in SourceTree` tıklayarak direk SourceTree 'den clone yaptırabiliriz.
+
+![Beşinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/5.png)
+
+![Altıncı Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/6.png)
+
+![Yedinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/7.png)
+
+- Bitbucket parolamızı giriyoruz.
+
+![Sekizinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/8.png)
+
+- Clone diyerek projeyi locale alıyoruz.
+
+![Dokuzuncu Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/9.png)
+
+- Mevcut repolar ana menüde görünür halde, işlem yapmak istediğimiz repoyu seçiyoruz.
+
+![Onuncu Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/10.png)
+
+- Repoda mevcut brach 'lar görünmekte master brach 'ı default olarak gelmekte. Bu brach 'a tıkladığımız zaman son zamanda yapılan commitler ve commitler de yapılan değişikliklere ulaşabiliyoruz.
+
+![Onbirinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/11.png)
+
+![Onikinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/12.png)
+
+![Onüçüncü Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/13.png)
+
+- Projemiz üzerinde değişiklik yaptığımız zaman eğer master branch üzerindeysek `Uncommitted changes` olarak görünmektedir
+
+![Ondördüncü Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/14.png)
+
+- Bu commitlenmemiş değişikliği `commit` edebilmek için öncelikle `add` işlemini yapmalıyız. Bunun için commitlenmemiş satırı seçip üst menüden add iconuna tıklayarak commit edilmek için hazır hale getirmeliyiz.
+
+- Burda asıl dikkat edilmesi gereken nokta `Uncommited changes` satırı seçildiği zaman şuanda working directory içinde yapılan tüm dosyalardaki değişiklikleri `files in working tree` kısmından görebiliriz. Yani burdaki kısım projemizdeki değişiklik yapılmış dosyaları göstermektedir. Biz burdan hangi dosyaları commitlemek istiyorsak önce onu seçip üst menüden `add` diyerek `files staged in index` kısmına geçirmeliyiz. Yani üst menüden `commit` butonuna tıkladığımız zaman bu kısımdaki dosyalar commitlenicektir. O zaman commitleme esnasında yaptığımız değişikliklerin hepsini birden commitlemek yerine yapılan işlemleri parçalara ayırıp ilişkili dosyaları commitlemek daha temiz bir commit yapısı sunar.
+
+- Yani eğer değişiklik yaptığımız tüm dosyaları commitlemek istiyorsak `files in working tree` kısmındaki tüm dosyaları seçip `add` dememiz gerekmektedir. Bundan sonra commit yapabiliriz.
+
+
+![Onbeşinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/22.png)
+
+![Onbeşinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/23.png)
+
+- `files staged in index` kısmındaki dosyaları commitlemek için üst menüden `commit` butonuna tıklamalıyız.
+
+![Onaltıncı Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/16.png)
+
+- Commit mesajını girmeliyiz. Bu kısmı boş bırakmamalıyız.
+
+![Onyedinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/17.png)
+
+![Onyedinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/18.png)
+
+![Onyedinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/19.png)
+
+- Commit işlemi aslında hangi dosyalarda ne değişiklik yapılmış bu bilgiyi entegre etme aşamasıdır. Değişikliklerimizi tam olarak göndermek için üst menüden `push` butonuna tıklamalıyız.
+
+![Onsekizinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/20.png)
+
+
+- Repo üzerinde yapılan değişiklikleri çekmek için üst menüden `pull` butonuna tıklıyoruz.
+
+işlem tamamdır." title="# Git Kullanımı
+
+İlk olarak [SourceTree](http://www.sourcetreeapp.com/download/) 'den github ile bağlantı kuracağımız tool 'u indiriyoruz.
+
+Kurulum Aşamaları;
+
+- İlk gelen ekrandaki bilgiler commit aşamasında kullanılacak
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/1.png)
+
+- İkinci ekranda bitbucket bilgilerimizi giriyoruz.
+
+![İkinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/2.png)
+
+- Bu aşamada istersek localde mevcut git depolarını keşfetmesini sağlayabiliriz.
+
+![Üçüncü Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/3.png)
+
+- Bu aşamada ister sol üst köşedeki button 'dan repo 'yu kendimiz manuel olarak ekleyebiliriz. Yada bir sonraki adımdaki işlemi uygulayabiliriz. Burda manuel olarak eklerken kullanacağımız url bir sonraki adımda gösterildi.
+
+![Dördüncü Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/4.png)
+
+- Bitbucket üzerindeki mevcut repoda clone kısmında terminal üzerinden manuel olarak clone etmemizi sağlayan komutu uygulayabiliriz. Yukarıdaki aşamada repo eklerken kullanacağımız url de burdaki url dir. Yada ekteki görselde belirtilen `Clone in SourceTree` tıklayarak direk SourceTree 'den clone yaptırabiliriz.
+
+![Beşinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/5.png)
+
+![Altıncı Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/6.png)
+
+![Yedinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/7.png)
+
+- Bitbucket parolamızı giriyoruz.
+
+![Sekizinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/8.png)
+
+- Clone diyerek projeyi locale alıyoruz.
+
+![Dokuzuncu Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/9.png)
+
+- Mevcut repolar ana menüde görünür halde, işlem yapmak istediğimiz repoyu seçiyoruz.
+
+![Onuncu Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/10.png)
+
+- Repoda mevcut brach 'lar görünmekte master brach 'ı default olarak gelmekte. Bu brach 'a tıkladığımız zaman son zamanda yapılan commitler ve commitler de yapılan değişikliklere ulaşabiliyoruz.
+
+![Onbirinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/11.png)
+
+![Onikinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/12.png)
+
+![Onüçüncü Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/13.png)
+
+- Projemiz üzerinde değişiklik yaptığımız zaman eğer master branch üzerindeysek `Uncommitted changes` olarak görünmektedir
+
+![Ondördüncü Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/14.png)
+
+- Bu commitlenmemiş değişikliği `commit` edebilmek için öncelikle `add` işlemini yapmalıyız. Bunun için commitlenmemiş satırı seçip üst menüden add iconuna tıklayarak commit edilmek için hazır hale getirmeliyiz.
+
+- Burda asıl dikkat edilmesi gereken nokta `Uncommited changes` satırı seçildiği zaman şuanda working directory içinde yapılan tüm dosyalardaki değişiklikleri `files in working tree` kısmından görebiliriz. Yani burdaki kısım projemizdeki değişiklik yapılmış dosyaları göstermektedir. Biz burdan hangi dosyaları commitlemek istiyorsak önce onu seçip üst menüden `add` diyerek `files staged in index` kısmına geçirmeliyiz. Yani üst menüden `commit` butonuna tıkladığımız zaman bu kısımdaki dosyalar commitlenicektir. O zaman commitleme esnasında yaptığımız değişikliklerin hepsini birden commitlemek yerine yapılan işlemleri parçalara ayırıp ilişkili dosyaları commitlemek daha temiz bir commit yapısı sunar.
+
+- Yani eğer değişiklik yaptığımız tüm dosyaları commitlemek istiyorsak `files in working tree` kısmındaki tüm dosyaları seçip `add` dememiz gerekmektedir. Bundan sonra commit yapabiliriz.
+
+
+![Onbeşinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/22.png)
+
+![Onbeşinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/23.png)
+
+- `files staged in index` kısmındaki dosyaları commitlemek için üst menüden `commit` butonuna tıklamalıyız.
+
+![Onaltıncı Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/16.png)
+
+- Commit mesajını girmeliyiz. Bu kısmı boş bırakmamalıyız.
+
+![Onyedinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/17.png)
+
+![Onyedinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/18.png)
+
+![Onyedinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/19.png)
+
+- Commit işlemi aslında hangi dosyalarda ne değişiklik yapılmış bu bilgiyi entegre etme aşamasıdır. Değişikliklerimizi tam olarak göndermek için üst menüden `push` butonuna tıklamalıyız.
+
+![Onsekizinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/20.png)
+
+
+- Repo üzerinde yapılan değişiklikleri çekmek için üst menüden `pull` butonuna tıklıyoruz.
+
+işlem tamamdır." class="label label-default"># Git Kullanımı
+
+İlk olarak [SourceTree](http://www.sourcetreeapp.com/download/) 'den github ile bağlantı kuracağımız tool 'u indiriyoruz.
+
+Kurulum Aşamaları;
+
+- İlk gelen ekrandaki bilgiler commit aşamasında kullanılacak
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/1.png)
+
+- İkinci ekranda bitbucket bilgilerimizi giriyoruz.
+
+![İkinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/2.png)
+
+- Bu aşamada istersek localde mevcut git depolarını keşfetmesini sağlayabiliriz.
+
+![Üçüncü Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/3.png)
+
+- Bu aşamada ister sol üst köşedeki button 'dan repo 'yu kendimiz manuel olarak ekleyebiliriz. Yada bir sonraki adımdaki işlemi uygulayabiliriz. Burda manuel olarak eklerken kullanacağımız url bir sonraki adımda gösterildi.
+
+![Dördüncü Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/4.png)
+
+- Bitbucket üzerindeki mevcut repoda clone kısmında terminal üzerinden manuel olarak clone etmemizi sağlayan komutu uygulayabiliriz. Yukarıdaki aşamada repo eklerken kullanacağımız url de burdaki url dir. Yada ekteki görselde belirtilen `Clone in SourceTree` tıklayarak direk SourceTree 'den clone yaptırabiliriz.
+
+![Beşinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/5.png)
+
+![Altıncı Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/6.png)
+
+![Yedinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/7.png)
+
+- Bitbucket parolamızı giriyoruz.
+
+![Sekizinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/8.png)
+
+- Clone diyerek projeyi locale alıyoruz.
+
+![Dokuzuncu Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/9.png)
+
+- Mevcut repolar ana menüde görünür halde, işlem yapmak istediğimiz repoyu seçiyoruz.
+
+![Onuncu Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/10.png)
+
+- Repoda mevcut brach 'lar görünmekte master brach 'ı default olarak gelmekte. Bu brach 'a tıkladığımız zaman son zamanda yapılan commitler ve commitler de yapılan değişikliklere ulaşabiliyoruz.
+
+![Onbirinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/11.png)
+
+![Onikinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/12.png)
+
+![Onüçüncü Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/13.png)
+
+- Projemiz üzerinde değişiklik yaptığımız zaman eğer master branch üzerindeysek `Uncommitted changes` olarak görünmektedir
+
+![Ondördüncü Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/14.png)
+
+- Bu commitlenmemiş değişikliği `commit` edebilmek için öncelikle `add` işlemini yapmalıyız. Bunun için commitlenmemiş satırı seçip üst menüden add iconuna tıklayarak commit edilmek için hazır hale getirmeliyiz.
+
+- Burda asıl dikkat edilmesi gereken nokta `Uncommited changes` satırı seçildiği zaman şuanda working directory içinde yapılan tüm dosyalardaki değişiklikleri `files in working tree` kısmından görebiliriz. Yani burdaki kısım projemizdeki değişiklik yapılmış dosyaları göstermektedir. Biz burdan hangi dosyaları commitlemek istiyorsak önce onu seçip üst menüden `add` diyerek `files staged in index` kısmına geçirmeliyiz. Yani üst menüden `commit` butonuna tıkladığımız zaman bu kısımdaki dosyalar commitlenicektir. O zaman commitleme esnasında yaptığımız değişikliklerin hepsini birden commitlemek yerine yapılan işlemleri parçalara ayırıp ilişkili dosyaları commitlemek daha temiz bir commit yapısı sunar.
+
+- Yani eğer değişiklik yaptığımız tüm dosyaları commitlemek istiyorsak `files in working tree` kısmındaki tüm dosyaları seçip `add` dememiz gerekmektedir. Bundan sonra commit yapabiliriz.
+
+
+![Onbeşinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/22.png)
+
+![Onbeşinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/23.png)
+
+- `files staged in index` kısmındaki dosyaları commitlemek için üst menüden `commit` butonuna tıklamalıyız.
+
+![Onaltıncı Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/16.png)
+
+- Commit mesajını girmeliyiz. Bu kısmı boş bırakmamalıyız.
+
+![Onyedinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/17.png)
+
+![Onyedinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/18.png)
+
+![Onyedinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/19.png)
+
+- Commit işlemi aslında hangi dosyalarda ne değişiklik yapılmış bu bilgiyi entegre etme aşamasıdır. Değişikliklerimizi tam olarak göndermek için üst menüden `push` butonuna tıklamalıyız.
+
+![Onsekizinci Aşama](https://raw.github.com/semihozkoroglu/File/master/SourceTree/20.png)
+
+
+- Repo üzerinde yapılan değişiklikleri çekmek için üst menüden `pull` butonuna tıklıyoruz.
+
+işlem tamamdır.</a>
+	  
   
-    <li><a href="/tag/huawei modem" title="huawei modem" class="label label-default">huawei modem</a>
+	  
+	    <li><a href="/tag/" title="" class="label label-default"></a>
+	  
+	    <li><a href="/tag/<p>Turkcell modem kullanıyorum ve ubuntu 11.10 üzerinde bu modemi çalıştıramadım, yaptığım araştırmalar neticesinde Huawei E177 modellerinin sanal cdrom özelliği açık gelmekte ve bu sebeble ubuntu üzerinde bunu bir modem olarak göremiyoruz, ve şimdi modemimizin sanal cdrom özelliğini kapatmak için windows üzerinde birkaç işlem yapıcaz.</p>
+
+<p>Bunun için öncelikle Putty programını şu adresten <a href="http://the.earth.li/%7Esgtatham/putty/latest/x86/putty.exe">indirin</a></p>
+
+<p>Şimdi putty ile modemimize seri bir bağlantı yaparak ayarlarını değiştiricez</p>
+
+<p>Modemimizin hangi usb com&#39;una bağlı oldugunu bulmak için Device manager&#39;dan modem kısmından Huawei özelliklerine bakarak portunu buluyoruz.</p>
+
+<p>Putty&#39;i çalıştırdıktan sonra karşımıza çıkan pencerede serial kısmını seçerek ve portunu ( yani modem hangi slot&#39;a takılı ise ) yazarak open diyoruz</p>
+
+<p>Tabi bu arada <code>unable to connect</code> hatası alırsanız, şuanda sizin bir yandan modem üzerinden internet bağlantısını kullanmanızdan kaynaklanacak, bunun için öncelikle modemin internet bağlantısını kesiniz</p>
+
+<p>putty ile modemimize bağlantı kurduğumuzda karşımıza açılan terminalde sırası ile şu komutları kullanın</p>
+
+<ul>
+<li><p><code>ATX</code></p></li>
+<li><p><code>AT^U2DIAG=0</code></p></li>
+</ul>
+
+<p>sanal özelliğinin açmak için ise <code>AT^U2DIAG=1</code> diyebiliriz.</p>
+
+<p>Bundan sonra ubuntu üzerinde <code>Edit connection</code> kısmından <code>Mobile Broadband</code> bölümünü seçin ve ordan da yeni bağlantı eklemek için <code>add</code> seçeneğini seçin</p>
+
+<p>Karşılaştıgımız kurulum penceresinde <code>Create a connection for this mobile broadband device</code> kısmında Huawei modemi görüyor olucaksınız,
+ödeme planı kısmında ise APN mgb olarak belirtikten sonra ( Tabi bu modeme göre değişebilir ) bağlantınızı kurabilirsiniz.</p>
+" title="<p>Turkcell modem kullanıyorum ve ubuntu 11.10 üzerinde bu modemi çalıştıramadım, yaptığım araştırmalar neticesinde Huawei E177 modellerinin sanal cdrom özelliği açık gelmekte ve bu sebeble ubuntu üzerinde bunu bir modem olarak göremiyoruz, ve şimdi modemimizin sanal cdrom özelliğini kapatmak için windows üzerinde birkaç işlem yapıcaz.</p>
+
+<p>Bunun için öncelikle Putty programını şu adresten <a href="http://the.earth.li/%7Esgtatham/putty/latest/x86/putty.exe">indirin</a></p>
+
+<p>Şimdi putty ile modemimize seri bir bağlantı yaparak ayarlarını değiştiricez</p>
+
+<p>Modemimizin hangi usb com&#39;una bağlı oldugunu bulmak için Device manager&#39;dan modem kısmından Huawei özelliklerine bakarak portunu buluyoruz.</p>
+
+<p>Putty&#39;i çalıştırdıktan sonra karşımıza çıkan pencerede serial kısmını seçerek ve portunu ( yani modem hangi slot&#39;a takılı ise ) yazarak open diyoruz</p>
+
+<p>Tabi bu arada <code>unable to connect</code> hatası alırsanız, şuanda sizin bir yandan modem üzerinden internet bağlantısını kullanmanızdan kaynaklanacak, bunun için öncelikle modemin internet bağlantısını kesiniz</p>
+
+<p>putty ile modemimize bağlantı kurduğumuzda karşımıza açılan terminalde sırası ile şu komutları kullanın</p>
+
+<ul>
+<li><p><code>ATX</code></p></li>
+<li><p><code>AT^U2DIAG=0</code></p></li>
+</ul>
+
+<p>sanal özelliğinin açmak için ise <code>AT^U2DIAG=1</code> diyebiliriz.</p>
+
+<p>Bundan sonra ubuntu üzerinde <code>Edit connection</code> kısmından <code>Mobile Broadband</code> bölümünü seçin ve ordan da yeni bağlantı eklemek için <code>add</code> seçeneğini seçin</p>
+
+<p>Karşılaştıgımız kurulum penceresinde <code>Create a connection for this mobile broadband device</code> kısmında Huawei modemi görüyor olucaksınız,
+ödeme planı kısmında ise APN mgb olarak belirtikten sonra ( Tabi bu modeme göre değişebilir ) bağlantınızı kurabilirsiniz.</p>
+" class="label label-default"><p>Turkcell modem kullanıyorum ve ubuntu 11.10 üzerinde bu modemi çalıştıramadım, yaptığım araştırmalar neticesinde Huawei E177 modellerinin sanal cdrom özelliği açık gelmekte ve bu sebeble ubuntu üzerinde bunu bir modem olarak göremiyoruz, ve şimdi modemimizin sanal cdrom özelliğini kapatmak için windows üzerinde birkaç işlem yapıcaz.</p>
+
+<p>Bunun için öncelikle Putty programını şu adresten <a href="http://the.earth.li/%7Esgtatham/putty/latest/x86/putty.exe">indirin</a></p>
+
+<p>Şimdi putty ile modemimize seri bir bağlantı yaparak ayarlarını değiştiricez</p>
+
+<p>Modemimizin hangi usb com&#39;una bağlı oldugunu bulmak için Device manager&#39;dan modem kısmından Huawei özelliklerine bakarak portunu buluyoruz.</p>
+
+<p>Putty&#39;i çalıştırdıktan sonra karşımıza çıkan pencerede serial kısmını seçerek ve portunu ( yani modem hangi slot&#39;a takılı ise ) yazarak open diyoruz</p>
+
+<p>Tabi bu arada <code>unable to connect</code> hatası alırsanız, şuanda sizin bir yandan modem üzerinden internet bağlantısını kullanmanızdan kaynaklanacak, bunun için öncelikle modemin internet bağlantısını kesiniz</p>
+
+<p>putty ile modemimize bağlantı kurduğumuzda karşımıza açılan terminalde sırası ile şu komutları kullanın</p>
+
+<ul>
+<li><p><code>ATX</code></p></li>
+<li><p><code>AT^U2DIAG=0</code></p></li>
+</ul>
+
+<p>sanal özelliğinin açmak için ise <code>AT^U2DIAG=1</code> diyebiliriz.</p>
+
+<p>Bundan sonra ubuntu üzerinde <code>Edit connection</code> kısmından <code>Mobile Broadband</code> bölümünü seçin ve ordan da yeni bağlantı eklemek için <code>add</code> seçeneğini seçin</p>
+
+<p>Karşılaştıgımız kurulum penceresinde <code>Create a connection for this mobile broadband device</code> kısmında Huawei modemi görüyor olucaksınız,
+ödeme planı kısmında ise APN mgb olarak belirtikten sonra ( Tabi bu modeme göre değişebilir ) bağlantınızı kurabilirsiniz.</p>
+</a>
+	  
   
-    <li><a href="/tag/git, git-flow" title="git, git-flow" class="label label-default">git, git-flow</a>
+	  
+	    <li><a href="/tag/" title="" class="label label-default"></a>
+	  
+	    <li><a href="/tag/# Git Flow
+
+- Bu dökümanın [Burdaki](https://gist.github.com/semihozkoroglu/5932541) dökümandan sonra yazıldığı unutulmamalı.
+
+- Git flow mekanizmasını anlamak için [SourceTree](http://www.sourcetreeapp.com/download/) tool 'unda mevcut olan gitflow eklentisi kullanıldı.
+
+- Bu dökümanı oluşturmak için [atlassian](http://www.atlassian.com/git/workflows#!workflow-gitflow) , [nvie](http://nvie.com/posts/a-successful-git-branching-model/) dökümanlarından yararlanıldı. Daha fazla bilgi için incelemenizi öneririm.
+
+- ilk olarak mevcut depomuzu `Clone in SourceTree` butonuna tıklayarak clone ediyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/1.png)
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/2.png)
+
+- İkinci olarak SourceTree tool 'unda sağ üst tarafta bulunan gitflow eklentisini kullanarak repomuzu ilklendiriyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/3.png)
+
+- localde depoları takip edersek
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/4.png)
+
+- Şimdi `Git Flow` butonuna tıklayarak yeni bir feature oluşturuyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/5.png)
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/6.png)
+
+- localde takip edelim
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/7.png)
+
+- feature üzerinde değişiklik yapıyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/8.png)
+
+- Değişiklik `SourceTree` tool 'u tarafından algılandı.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/9.png)
+
+- Commit edilecek dosyayı seçip `Add` diyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/10.png)
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/11.png)
+
+- `Commit` diyerek commitliyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/12.png)
+
+- `Git Flow` 'a tıklayarak mevcut feature 'ı kapatıyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/13.png)
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/14.png)
+
+- localden takip edersek
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/15.png)
+
+- Açtığımız feature branch 'ını finish yaptığımız zaman yaptığımız eklemeler develop dalına merge ediliyor. Bu durumda Feature branch 'ını kapattıktan sonra develop dalında push yapmamız gerekmektedir.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/16.png)
+
+- Bitbucket 'a değişikliklerimiz gitmiş durumda.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/17.png)
+
+- Şimdi geliştirmemizi developta tamamladık ve yeni bir versiyon çıkma zamanı geldi. `Git Flow` butonundan `Start new a Release` diyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/18.png)
+
+- Ve versiyon numaramızı giriyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/19.png)
+
+- localden takip edersek
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/20.png)
+
+- Ve şimdi sadece bu release branch 'ını oluşturduktan sonra finish yaptığımız zaman develop dalındaki tüm çalışmalarımız master dalına merge olucaktır.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/21.png)
+
+- Yeni versiyonumuz için minik bir açıklama ekliyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/22.png)
+
+- localden takip edelim
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/23.png)
+
+- Ancak şuanda develop brach 'ı sadece master 'a merge olmuş durumda bunu push yapmamız gerekmektedir.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/24.png)
+
+- Branch ve Tag 'lerimizin son durumu
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/25.png)
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/26.png)
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/27.png)
+
+- Kısaca amacımızı özetlemek gerekirse ana geliştirmemizi Develop dalında yapıyoruz. Ve Release edip master dalına geçirdiğimiz zaman aslında projemizin tamamen stabil olduğunu varsayıp bir versiyon tag 'i ekliyoruz. Develop dalında geliştirme yaparken ise projeyi parçalara ayırıp (veya bug, cr maddelerinin gelme durumunda) Feature brach 'ında tamamlayıp testinide yaptıktan sonra develop dalına merge işlemini yapıyoruz. Ve develop dalında geliştirdiğimiz proje mevcut özellikleri ile stabil duruma vardığında Release işlemini yapıyoruz. Master dalındaki projede bug bulunduğu zaman Hotfix branch 'ı açıp gerekli düzenlemeleri yaptıktan sonra kapatıldığında direk master 'a merge olucaktır." title="# Git Flow
+
+- Bu dökümanın [Burdaki](https://gist.github.com/semihozkoroglu/5932541) dökümandan sonra yazıldığı unutulmamalı.
+
+- Git flow mekanizmasını anlamak için [SourceTree](http://www.sourcetreeapp.com/download/) tool 'unda mevcut olan gitflow eklentisi kullanıldı.
+
+- Bu dökümanı oluşturmak için [atlassian](http://www.atlassian.com/git/workflows#!workflow-gitflow) , [nvie](http://nvie.com/posts/a-successful-git-branching-model/) dökümanlarından yararlanıldı. Daha fazla bilgi için incelemenizi öneririm.
+
+- ilk olarak mevcut depomuzu `Clone in SourceTree` butonuna tıklayarak clone ediyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/1.png)
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/2.png)
+
+- İkinci olarak SourceTree tool 'unda sağ üst tarafta bulunan gitflow eklentisini kullanarak repomuzu ilklendiriyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/3.png)
+
+- localde depoları takip edersek
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/4.png)
+
+- Şimdi `Git Flow` butonuna tıklayarak yeni bir feature oluşturuyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/5.png)
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/6.png)
+
+- localde takip edelim
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/7.png)
+
+- feature üzerinde değişiklik yapıyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/8.png)
+
+- Değişiklik `SourceTree` tool 'u tarafından algılandı.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/9.png)
+
+- Commit edilecek dosyayı seçip `Add` diyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/10.png)
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/11.png)
+
+- `Commit` diyerek commitliyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/12.png)
+
+- `Git Flow` 'a tıklayarak mevcut feature 'ı kapatıyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/13.png)
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/14.png)
+
+- localden takip edersek
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/15.png)
+
+- Açtığımız feature branch 'ını finish yaptığımız zaman yaptığımız eklemeler develop dalına merge ediliyor. Bu durumda Feature branch 'ını kapattıktan sonra develop dalında push yapmamız gerekmektedir.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/16.png)
+
+- Bitbucket 'a değişikliklerimiz gitmiş durumda.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/17.png)
+
+- Şimdi geliştirmemizi developta tamamladık ve yeni bir versiyon çıkma zamanı geldi. `Git Flow` butonundan `Start new a Release` diyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/18.png)
+
+- Ve versiyon numaramızı giriyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/19.png)
+
+- localden takip edersek
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/20.png)
+
+- Ve şimdi sadece bu release branch 'ını oluşturduktan sonra finish yaptığımız zaman develop dalındaki tüm çalışmalarımız master dalına merge olucaktır.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/21.png)
+
+- Yeni versiyonumuz için minik bir açıklama ekliyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/22.png)
+
+- localden takip edelim
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/23.png)
+
+- Ancak şuanda develop brach 'ı sadece master 'a merge olmuş durumda bunu push yapmamız gerekmektedir.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/24.png)
+
+- Branch ve Tag 'lerimizin son durumu
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/25.png)
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/26.png)
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/27.png)
+
+- Kısaca amacımızı özetlemek gerekirse ana geliştirmemizi Develop dalında yapıyoruz. Ve Release edip master dalına geçirdiğimiz zaman aslında projemizin tamamen stabil olduğunu varsayıp bir versiyon tag 'i ekliyoruz. Develop dalında geliştirme yaparken ise projeyi parçalara ayırıp (veya bug, cr maddelerinin gelme durumunda) Feature brach 'ında tamamlayıp testinide yaptıktan sonra develop dalına merge işlemini yapıyoruz. Ve develop dalında geliştirdiğimiz proje mevcut özellikleri ile stabil duruma vardığında Release işlemini yapıyoruz. Master dalındaki projede bug bulunduğu zaman Hotfix branch 'ı açıp gerekli düzenlemeleri yaptıktan sonra kapatıldığında direk master 'a merge olucaktır." class="label label-default"># Git Flow
+
+- Bu dökümanın [Burdaki](https://gist.github.com/semihozkoroglu/5932541) dökümandan sonra yazıldığı unutulmamalı.
+
+- Git flow mekanizmasını anlamak için [SourceTree](http://www.sourcetreeapp.com/download/) tool 'unda mevcut olan gitflow eklentisi kullanıldı.
+
+- Bu dökümanı oluşturmak için [atlassian](http://www.atlassian.com/git/workflows#!workflow-gitflow) , [nvie](http://nvie.com/posts/a-successful-git-branching-model/) dökümanlarından yararlanıldı. Daha fazla bilgi için incelemenizi öneririm.
+
+- ilk olarak mevcut depomuzu `Clone in SourceTree` butonuna tıklayarak clone ediyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/1.png)
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/2.png)
+
+- İkinci olarak SourceTree tool 'unda sağ üst tarafta bulunan gitflow eklentisini kullanarak repomuzu ilklendiriyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/3.png)
+
+- localde depoları takip edersek
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/4.png)
+
+- Şimdi `Git Flow` butonuna tıklayarak yeni bir feature oluşturuyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/5.png)
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/6.png)
+
+- localde takip edelim
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/7.png)
+
+- feature üzerinde değişiklik yapıyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/8.png)
+
+- Değişiklik `SourceTree` tool 'u tarafından algılandı.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/9.png)
+
+- Commit edilecek dosyayı seçip `Add` diyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/10.png)
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/11.png)
+
+- `Commit` diyerek commitliyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/12.png)
+
+- `Git Flow` 'a tıklayarak mevcut feature 'ı kapatıyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/13.png)
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/14.png)
+
+- localden takip edersek
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/15.png)
+
+- Açtığımız feature branch 'ını finish yaptığımız zaman yaptığımız eklemeler develop dalına merge ediliyor. Bu durumda Feature branch 'ını kapattıktan sonra develop dalında push yapmamız gerekmektedir.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/16.png)
+
+- Bitbucket 'a değişikliklerimiz gitmiş durumda.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/17.png)
+
+- Şimdi geliştirmemizi developta tamamladık ve yeni bir versiyon çıkma zamanı geldi. `Git Flow` butonundan `Start new a Release` diyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/18.png)
+
+- Ve versiyon numaramızı giriyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/19.png)
+
+- localden takip edersek
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/20.png)
+
+- Ve şimdi sadece bu release branch 'ını oluşturduktan sonra finish yaptığımız zaman develop dalındaki tüm çalışmalarımız master dalına merge olucaktır.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/21.png)
+
+- Yeni versiyonumuz için minik bir açıklama ekliyoruz.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/22.png)
+
+- localden takip edelim
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/23.png)
+
+- Ancak şuanda develop brach 'ı sadece master 'a merge olmuş durumda bunu push yapmamız gerekmektedir.
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/24.png)
+
+- Branch ve Tag 'lerimizin son durumu
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/25.png)
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/26.png)
+
+![İlk Aşama](https://raw.github.com/semihozkoroglu/File/master/gitflow/27.png)
+
+- Kısaca amacımızı özetlemek gerekirse ana geliştirmemizi Develop dalında yapıyoruz. Ve Release edip master dalına geçirdiğimiz zaman aslında projemizin tamamen stabil olduğunu varsayıp bir versiyon tag 'i ekliyoruz. Develop dalında geliştirme yaparken ise projeyi parçalara ayırıp (veya bug, cr maddelerinin gelme durumunda) Feature brach 'ında tamamlayıp testinide yaptıktan sonra develop dalına merge işlemini yapıyoruz. Ve develop dalında geliştirdiğimiz proje mevcut özellikleri ile stabil duruma vardığında Release işlemini yapıyoruz. Master dalındaki projede bug bulunduğu zaman Hotfix branch 'ı açıp gerekli düzenlemeleri yaptıktan sonra kapatıldığında direk master 'a merge olucaktır.</a>
+	  
   
-    <li><a href="/tag/jira" title="jira" class="label label-default">jira</a>
+	  
+	    <li><a href="/tag/" title="" class="label label-default"></a>
+	  
+	    <li><a href="/tag/Firstly we must pull linux installer of jira
+
+`wget https://www.atlassian.com/software/jira/download`
+
+Change permission of file for execute
+
+`chmod a+x atlassian-jira-6.1-x64.bin`
+
+And execute
+
+`./atlassian-jira-6.1-x64.bin`
+
+Now we will install apache for listen 80 port, because linux installer will create jira user and this user cannot access 80 port. But tomcat listening 8080 port and we must forward request to 8080 from 80. So we will install apache for open 80 port.
+
+`sudo apt-get install apache2`
+
+`sudo a2enmod proxy_http`
+
+`sudo service apache2 start` // New configuration
+
+Lets see opened port.
+
+`netstat -ln`
+
+And you can create virtual host on apache for forward but i want to select that use with iptables
+
+`iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to 8080`
+
+For remove this rules
+
+`iptables -t nat -D PREROUTING -p tcp --dport 80 -j REDIRECT --to 8080`
+
+Lets see iptavbles rules
+
+iptables -L" title="Firstly we must pull linux installer of jira
+
+`wget https://www.atlassian.com/software/jira/download`
+
+Change permission of file for execute
+
+`chmod a+x atlassian-jira-6.1-x64.bin`
+
+And execute
+
+`./atlassian-jira-6.1-x64.bin`
+
+Now we will install apache for listen 80 port, because linux installer will create jira user and this user cannot access 80 port. But tomcat listening 8080 port and we must forward request to 8080 from 80. So we will install apache for open 80 port.
+
+`sudo apt-get install apache2`
+
+`sudo a2enmod proxy_http`
+
+`sudo service apache2 start` // New configuration
+
+Lets see opened port.
+
+`netstat -ln`
+
+And you can create virtual host on apache for forward but i want to select that use with iptables
+
+`iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to 8080`
+
+For remove this rules
+
+`iptables -t nat -D PREROUTING -p tcp --dport 80 -j REDIRECT --to 8080`
+
+Lets see iptavbles rules
+
+iptables -L" class="label label-default">Firstly we must pull linux installer of jira
+
+`wget https://www.atlassian.com/software/jira/download`
+
+Change permission of file for execute
+
+`chmod a+x atlassian-jira-6.1-x64.bin`
+
+And execute
+
+`./atlassian-jira-6.1-x64.bin`
+
+Now we will install apache for listen 80 port, because linux installer will create jira user and this user cannot access 80 port. But tomcat listening 8080 port and we must forward request to 8080 from 80. So we will install apache for open 80 port.
+
+`sudo apt-get install apache2`
+
+`sudo a2enmod proxy_http`
+
+`sudo service apache2 start` // New configuration
+
+Lets see opened port.
+
+`netstat -ln`
+
+And you can create virtual host on apache for forward but i want to select that use with iptables
+
+`iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to 8080`
+
+For remove this rules
+
+`iptables -t nat -D PREROUTING -p tcp --dport 80 -j REDIRECT --to 8080`
+
+Lets see iptavbles rules
+
+iptables -L</a>
+	  
   
-    <li><a href="/tag/scrollview" title="scrollview" class="label label-default">scrollview</a>
+	  
+	    <li><a href="/tag/" title="" class="label label-default"></a>
+	  
+	    <li><a href="/tag/if the theme you want to use the scrollbar entire application. We need to write custom theme. that ;
+
+	<application
+		.
+		.
+        android:theme="@style/AppTheme"
+        .
+        . >
+
+and let's add scrollbar properties to sytles.xml
+
+	<resources xmlns:android="http://schemas.android.com/apk/res/android">
+	    <style name="AppTheme" parent="Theme.Sherlock.Light.NoActionBar">
+	    	.
+	    	.
+	        <item name="android:scrollbarThumbVertical">@drawable/shape_scrollbar_style</item>
+	        <item name="android:scrollbarSize">5dp</item>
+	        .
+	        .
+	    </style>
+ 	</resources>
+
+
+and now you can add what you want visuality to `drawable/shape_scrollbar_style.xml`
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+	    <gradient
+	        android:angle="45"
+	        android:endColor="#103249"
+	        android:startColor="#FF33B5E5" />
+
+	    <corners android:radius="1dp" />
+
+	    <stroke android:width="2dp"/>
+	</shape>" title="if the theme you want to use the scrollbar entire application. We need to write custom theme. that ;
+
+	<application
+		.
+		.
+        android:theme="@style/AppTheme"
+        .
+        . >
+
+and let's add scrollbar properties to sytles.xml
+
+	<resources xmlns:android="http://schemas.android.com/apk/res/android">
+	    <style name="AppTheme" parent="Theme.Sherlock.Light.NoActionBar">
+	    	.
+	    	.
+	        <item name="android:scrollbarThumbVertical">@drawable/shape_scrollbar_style</item>
+	        <item name="android:scrollbarSize">5dp</item>
+	        .
+	        .
+	    </style>
+ 	</resources>
+
+
+and now you can add what you want visuality to `drawable/shape_scrollbar_style.xml`
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+	    <gradient
+	        android:angle="45"
+	        android:endColor="#103249"
+	        android:startColor="#FF33B5E5" />
+
+	    <corners android:radius="1dp" />
+
+	    <stroke android:width="2dp"/>
+	</shape>" class="label label-default">if the theme you want to use the scrollbar entire application. We need to write custom theme. that ;
+
+	<application
+		.
+		.
+        android:theme="@style/AppTheme"
+        .
+        . >
+
+and let's add scrollbar properties to sytles.xml
+
+	<resources xmlns:android="http://schemas.android.com/apk/res/android">
+	    <style name="AppTheme" parent="Theme.Sherlock.Light.NoActionBar">
+	    	.
+	    	.
+	        <item name="android:scrollbarThumbVertical">@drawable/shape_scrollbar_style</item>
+	        <item name="android:scrollbarSize">5dp</item>
+	        .
+	        .
+	    </style>
+ 	</resources>
+
+
+and now you can add what you want visuality to `drawable/shape_scrollbar_style.xml`
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+	    <gradient
+	        android:angle="45"
+	        android:endColor="#103249"
+	        android:startColor="#FF33B5E5" />
+
+	    <corners android:radius="1dp" />
+
+	    <stroke android:width="2dp"/>
+	</shape></a>
+	  
   </li>
 </ul>
           </section>
