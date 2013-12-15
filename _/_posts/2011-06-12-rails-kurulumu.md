@@ -19,7 +19,7 @@ rails mimarisinde veritabanındaki tabloların alanları sınıfların özelliğ
 
 kurulumu
 	
-        gem install rails
+    gem install rails
 
 güncelleme
 	
