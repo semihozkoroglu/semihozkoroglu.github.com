@@ -6,7 +6,7 @@ tag: [support-v4, android, optimization, stackoverflow]
 
 Bildiğimiz gibi fragmentler HONEYCOMB ile geldi. Eğer uygulamamız içinde HONEYCOMB 'dan önceki sürümler için destek vermeyi düşünüyorsak. support-v4 kütüphanesi ile gelen fragment'i kullanmamız gerekmektedir. Ancak support kütüphanesinin fragment'i HONEYCOMB önceki sürümlere destek verebilmek için, araya NoSaveStateFrameLayout yerleştirmektedir.
 
-[infrastructure](https://raw.githubusercontent.com/semihozkoroglu/File/master/Blog/nosavestate.jpg)
+![infrastructure](https://raw.githubusercontent.com/semihozkoroglu/File/master/Blog/nosavestate.jpg)
 
 /**
  * Pre-Honeycomb versions of the platform don't have {@link View#setSaveFromParentEnabled(boolean)},
