@@ -1,6 +1,6 @@
 #!/bin/bash
 
 cd _/  # generic dizine girelim.
-jekyll # derleyelim.
+jekyll build # derleyelim.
 cp -r _site/* ../
 

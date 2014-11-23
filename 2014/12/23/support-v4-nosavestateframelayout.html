@@ -152,6 +152,10 @@
 <ul class="arrow-list">
     
         <li>
+            <a style="color:#a4a4a4; font-size:15px;" href="/2014/12/23/support-v4-nosavestateframelayout.html">Android support v4 NoSaveStateFrameLayout layout optimization</a>
+        </li>
+    
+        <li>
             <a style="color:#a4a4a4; font-size:15px;" href="/2013/12/15/scrollview-custom-scrollbar.html">Scrollview Custom Scrollbar</a>
         </li>
     
@@ -167,10 +171,6 @@
             <a style="color:#a4a4a4; font-size:15px;" href="/2013/09/23/git-flow.html">Git Flow Akışı ve Source Tree</a>
         </li>
     
-        <li>
-            <a style="color:#a4a4a4; font-size:15px;" href="/2012/07/23/huawei-modem.html">Huawei E177 modem'in Ubuntu 11.10 'a tanıtılması</a>
-        </li>
-    
 </ul>
 <div class="read-more">
     <a href="/posts.html">Show more >></a>
@@ -184,9 +184,9 @@
   
     <li><a href="/tag/c" title="c" class="label label-default">c</a>
   
-    <li><a href="/tag/bashlinux" title="bashlinux" class="label label-default">bashlinux</a>
-  
     <li><a href="/tag/bash" title="bash" class="label label-default">bash</a>
+  
+    <li><a href="/tag/linux" title="linux" class="label label-default">linux</a>
   
     <li><a href="/tag/wordpress" title="wordpress" class="label label-default">wordpress</a>
   
@@ -203,26 +203,35 @@
     <li><a href="/tag/jira" title="jira" class="label label-default">jira</a>
   
     <li><a href="/tag/scrollview" title="scrollview" class="label label-default">scrollview</a>
+  
+    <li><a href="/tag/support-v4" title="support-v4" class="label label-default">support-v4</a>
+  
+    <li><a href="/tag/android" title="android" class="label label-default">android</a>
+  
+    <li><a href="/tag/optimization" title="optimization" class="label label-default">optimization</a>
+  
+    <li><a href="/tag/stackoverflow" title="stackoverflow" class="label label-default">stackoverflow</a>
   </li>
 </ul>
           </section>
         </aside>
         <div class="twelve columns">
-          <h2>Clonezilla'da karşılaştığım problem</h2>
-<p class="meta">11 Dec 2010</p>
+          <h2>Android support v4 NoSaveStateFrameLayout layout optimization</h2>
+<p class="meta">23 Dec 2014</p>
 
 <div class="post">
-<p>Endüstri labında clonezilla ile imajı alıp diğer bilgisayarlara sistemi kopyalıyordum.
-Ancak iki tanesinde problemle karşılaştım.Şunu da belirtim sistemlerin hepsi aynı yani lenovanın
-sıfır bilgisayarlar ancak bir tanesinde ekran bozuklugu var yani görüntü bios&#39;a girdiğimde de kötü ve sistemler açılırken
-kilitleniyor.Bundaki durumu ekran kartı sıkıntılıdır şeklinde düşünmüştüm ama diğerindeki durum gerçekten ilginc
-imajın bulundugu diskten başlattıgımda açılıyor ama kendi diskine kopyalamayı yaptıktan sonra windows açılırken logo&#39;da,
-ubuntu ise siyah ekranda çakılıp kalıyor donanımsal bir problemin olması muhtemel.Bu durumun çözümünü buldugumda burada paylaşıcam.
-Harici diskten başlattığımda açılıp kendi diskinden açılmamasının nedenini anlyabilirsem durum çözülmüş olur sanırım.</p>
+<p>Bildiğimiz gibi fragmentler HONEYCOMB ile geldi. Eğer uygulamamız içinde HONEYCOMB &#39;dan önceki sürümler için destek vermeyi düşünüyorsak. support-v4 kütüphanesi ile gelen fragment&#39;i kullanmamız gerekmektedir. Ancak support kütüphanesinin fragment&#39;i HONEYCOMB önceki sürümlere destek verebilmek için, araya NoSaveStateFrameLayout yerleştirmektedir.</p>
 
-<p>Bu yazımın altında devam ediyorum..İşletim sistemlerinin açlırken donmasının ve sadece güvenli modda açmasının sebebi
-ekran kartı arızalı oldugundan dolayı imişş.Çünkü güvenli modda açabiliyorsa harddiskin sağlam olduğu ortada ve cd&#39;den kuruluma başlarkende aynı durumlarla
-karşılaşınca ekran kartında problem olma olasılığı maximum dereceye ulaşmıştı.Basit bir denemeyle kendisini ele verdi zaten..</p>
+<p><a href="https://raw.githubusercontent.com/semihozkoroglu/File/master/Blog/nosavestate.jpg">infrastructure</a></p>
+
+<p>/**
+ * Pre-Honeycomb versions of the platform don&#39;t have {@link View#setSaveFromParentEnabled(boolean)},
+ * so instead we insert this between the view and its parent.
+ */</p>
+
+<p><a href="https://github.com/android/platform_frameworks_support/blob/master/v4/java/android/support/v4/app/NoSaveStateFrameLayout.java">NoSaveStateFrameLayout.java</a></p>
+
+<p>Özellikle 4.0.3 ve 4.0.4 sürümlerinde stackoverflow hatası ile karşılaşıyorsanız. Support library &#39;den gelen bu framelayout sebebi ile oluşabilir. Bu hatayı düzeltmek için iki çözüm mevcut. Ya support kullanmayıp sürümü 3.0 &#39;a yükseltmeniz. Veya kullandığınız layoutların derinliğini azaltmanızdır.</p>
 
 </div>
 

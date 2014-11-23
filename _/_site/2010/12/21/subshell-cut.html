@@ -152,6 +152,10 @@
 <ul class="arrow-list">
     
         <li>
+            <a style="color:#a4a4a4; font-size:15px;" href="/2014/12/23/support-v4-nosavestateframelayout.html">Android support v4 NoSaveStateFrameLayout layout optimization</a>
+        </li>
+    
+        <li>
             <a style="color:#a4a4a4; font-size:15px;" href="/2013/12/15/scrollview-custom-scrollbar.html">Scrollview Custom Scrollbar</a>
         </li>
     
@@ -167,10 +171,6 @@
             <a style="color:#a4a4a4; font-size:15px;" href="/2013/09/23/git-flow.html">Git Flow Akışı ve Source Tree</a>
         </li>
     
-        <li>
-            <a style="color:#a4a4a4; font-size:15px;" href="/2012/07/23/huawei-modem.html">Huawei E177 modem'in Ubuntu 11.10 'a tanıtılması</a>
-        </li>
-    
 </ul>
 <div class="read-more">
     <a href="/posts.html">Show more >></a>
@@ -184,9 +184,9 @@
   
     <li><a href="/tag/c" title="c" class="label label-default">c</a>
   
-    <li><a href="/tag/bashlinux" title="bashlinux" class="label label-default">bashlinux</a>
-  
     <li><a href="/tag/bash" title="bash" class="label label-default">bash</a>
+  
+    <li><a href="/tag/linux" title="linux" class="label label-default">linux</a>
   
     <li><a href="/tag/wordpress" title="wordpress" class="label label-default">wordpress</a>
   
@@ -203,6 +203,14 @@
     <li><a href="/tag/jira" title="jira" class="label label-default">jira</a>
   
     <li><a href="/tag/scrollview" title="scrollview" class="label label-default">scrollview</a>
+  
+    <li><a href="/tag/support-v4" title="support-v4" class="label label-default">support-v4</a>
+  
+    <li><a href="/tag/android" title="android" class="label label-default">android</a>
+  
+    <li><a href="/tag/optimization" title="optimization" class="label label-default">optimization</a>
+  
+    <li><a href="/tag/stackoverflow" title="stackoverflow" class="label label-default">stackoverflow</a>
   </li>
 </ul>
           </section>
@@ -215,37 +223,29 @@
 <h4>Subshell</h4>
 
 <p>Subshell xterm emilatöründeyken yeni bir bash prosesinin forklanmasıdır.yani:</p>
-
-<pre><code>budizin=$( pwd ; echo &quot;hımm&quot; )
+<div class="highlight"><pre><code class="language-text" data-lang="text">budizin=$( pwd ; echo &quot;hımm&quot; )
 echo $budizin
-</code></pre>
-
+</code></pre></div>
 <p>dediğimizde <code>$( pwd ; echo &quot;hımm&quot; )</code> ifadesinde bir çocuk prosesi üretilir ve komut burada yorumlanır.ancak</p>
-
-<pre><code>budizin=$( pwd ; var=&quot;hımm&quot; )
+<div class="highlight"><pre><code class="language-text" data-lang="text">budizin=$( pwd ; var=&quot;hımm&quot; )
 echo $budizin
-</code></pre>
-
+</code></pre></div>
 <p>dediğimizde anaprosese döndüğünde <code>$budizin</code> ifadesini yazdırdığında <code>var=&quot;hıımm&quot;</code> değişkenini göremez çünkü
 subshell&#39;de yaratılan değişkenler local olarak oluşturulmaktadır.
 Bu durumun ne gibi kullanımı vardır ?
 örnek : <code>echo &quot;sistem adi : $( uname -n ) &#39;dir .&quot;</code>  dediğimizde subshell&#39;e girip sistem adını basıp çıkıcaktır.</p>
 
 <p>export komutuyla anaprosesten subshell&#39;e değişiken gönderebilriz.</p>
-
-<pre><code>export var=&quot;merhaba&quot;
+<div class="highlight"><pre><code class="language-text" data-lang="text">export var=&quot;merhaba&quot;
 bash #subshell&#39;e giriyoruz.
 echo $var 
-</code></pre>
-
+</code></pre></div>
 <p>yada</p>
-
-<pre><code>var=&quot;merhaba&quot;
+<div class="highlight"><pre><code class="language-text" data-lang="text">var=&quot;merhaba&quot;
 export var
 bash
 echo $var
-</code></pre>
-
+</code></pre></div>
 <p>dediğimizde subshell gönderdiğimiz var değişkenini görmektedir.Ancak
 Subshell&#39;deyken export yapamayız ana prosesteyken export yapabiliriz buda subshell&#39;in variable listesine ekleme yapar.</p>
 
@@ -254,30 +254,22 @@ Subshell&#39;deyken export yapamayız ana prosesteyken export yapabiliriz buda s
 <h4>Shell değişken değiştirme</h4>
 
 <p>Burada değişkenimizin karekterleri üzerinde oynamalar yapabilicez.Örnek :</p>
-
-<pre><code>var=/foo/bar/baz
+<div class="highlight"><pre><code class="language-text" data-lang="text">var=/foo/bar/baz
 
 echo &quot;${ var##*/ }&quot;
-</code></pre>
-
+</code></pre></div>
 <p>Dediğimizde değişkenimizin başından itibaren tarayarak ilerle ve gidebileceğin en son yerdeki <code>/</code> karekterinden sonrasını döndür anlamındadır.
 çıktısı &gt;&gt; baz</p>
-
-<pre><code>echo &quot;${var#*/}&quot;
-</code></pre>
-
+<div class="highlight"><pre><code class="language-text" data-lang="text">echo &quot;${var#*/}&quot;
+</code></pre></div>
 <p>Bu durumda ise değişkenin başından itibaren tarayarak ilerle ve gidebileceğin en az mesafedeki <code>/</code> karakterinden sonrasını döndür.
 çıktısı &gt;&gt; foo/bar/baz </p>
-
-<pre><code>echo &quot;${var%/*}&quot;
-</code></pre>
-
+<div class="highlight"><pre><code class="language-text" data-lang="text">echo &quot;${var%/*}&quot;
+</code></pre></div>
 <p>Burada ise değişkenin sonundan itibaren tarayarak ilerle ve gidebileceğin en az mesafedeki <code>/</code> karakterinden sonrasını döndür.
 çıktı &gt;&gt; /foo/bar</p>
-
-<pre><code>echo &quot;${var%%/*}&quot;
-</code></pre>
-
+<div class="highlight"><pre><code class="language-text" data-lang="text">echo &quot;${var%%/*}&quot;
+</code></pre></div>
 <p>Dediğimizde değişkenimizin sonundan itibaren tarayarak ilerle ve gidebileceğin en son yerdeki <code>/</code> karekterinden sonrasını döndür anlamındadır.
 çıktı &gt;&gt; &quot;boş&quot;</p>
 
@@ -292,29 +284,24 @@ Eğer tab karekteri yoksa metnin kendisini döndürür.</p>
 Bunu:
     cut -d &#39; &#39; -f2-4
 olacak şekildede yazabiliriz.<code>-f2-4</code> ifadesi parçalardan 2 ve 4 dahil olmak üzere o aralığı döndürmektedir.</p>
-
-<pre><code>line=&quot;a:b:c:d&quot;
+<div class="highlight"><pre><code class="language-text" data-lang="text">line=&quot;a:b:c:d&quot;
 karakter=$( echo $line | cut -d &#39;:&#39; -f3 )
 echo $karakter 
-</code></pre>
-
+</code></pre></div>
 <p>Dediğimizde <code>c</code> &#39;yi döndürecektir.</p>
 
 <p>Bu şekilde girdiyi istediğimiz karaktere göre ayırabiliriz.Awk programıyla&#39;da benzer işi yapabiliriz ve awk programı daha kapsamlı olmasına rağmen cut komutu ile neredeyse 
 eşdeğer çalışmaktadır.Awk programının kullanımını daha sonradan bahsedicem ancak basit olarak </p>
-
-<pre><code>echo &quot;a ? b ? c ? d:e &quot; | awk -F ? &#39; { print $4 } &#39;
-</code></pre>
-
-<p>çıktı -> d:e</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">echo &quot;a ? b ? c ? d:e &quot; | awk -F ? &#39; { print $4 } &#39;
+</code></pre></div>
+<p>çıktı -&gt; d:e</p>
 
 <p>Dediğimizde <code>-F</code> paremetresi alan ayıraçı anlamında yani default olarak değilde verdiğimiz <code>?</code> karekterine göre ayırmamızı sağlamaktadır.
 <code>&#39;{print $4}&#39;</code> ifadesindeki <code>$4</code> parçalamadan sonraki 4. parçamızı ifade etmektedir.</p>
 
 <p>Bu şekil cut ve awk programlarını kullanarak işlemimizi gerçekleştirebiliriz ancak bunun için shell&#39;in kendi imkanlarını kullanmak daha mantıklı olacaktır.
 Her seferinde cut ve awk&#39;nın forklanması için ayrı bir sürede harcamamış olucaz.Bunu şu şekilde gösterebiliriz.</p>
-
-<pre><code>#!/bin/bash
+<div class="highlight"><pre><code class="language-text" data-lang="text">#!/bin/bash
 
     ifs_save=$IFS
     IFS=:
@@ -322,8 +309,7 @@ Her seferinde cut ve awk&#39;nın forklanması için ayrı bir sürede harcamam�
             set $line
             echo &quot;kabuk : $7&quot;
     done &lt; /etc/passwd
-</code></pre>
-
+</code></pre></div>
 <p>Burada doğrudan shell&#39;in kendi imkanlarını kullandık ve passwd dosyasının kullanıcıların kullandıkları kabuk programları listelemiş olduk.</p>
 
 </div>
