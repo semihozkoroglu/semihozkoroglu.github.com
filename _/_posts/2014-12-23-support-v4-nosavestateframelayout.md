@@ -4,15 +4,21 @@ title: Android support v4 NoSaveStateFrameLayout layout optimization
 tag: [support-v4, android, optimization, stackoverflow]
 ---
 
-Bildiğimiz gibi fragmentler HONEYCOMB ile geldi. Eğer uygulamamız içinde HONEYCOMB 'dan önceki sürümler için destek vermeyi düşünüyorsak. support-v4 kütüphanesi ile gelen fragment'i kullanmamız gerekmektedir. Ancak support kütüphanesinin fragment'i HONEYCOMB önceki sürümlere destek verebilmek için, araya NoSaveStateFrameLayout yerleştirmektedir.
+We know fragment coming from with HONEYCOMB. If we think to support the old version of this. we need to use the library from fragment support-v4.
+
+But support fragment in order to support the previous version HONEYCOMB, Is placed between the parent view and the fragment view nosavestatelayout
 
 ![infrastructure](https://raw.githubusercontent.com/semihozkoroglu/File/master/Blog/nosavestate.jpg)
 
-/**
- * Pre-Honeycomb versions of the platform don't have {@link View#setSaveFromParentEnabled(boolean)},
- * so instead we insert this between the view and its parent.
- */
+	/**
+	 * Pre-Honeycomb versions of the platform don't have {@link View#setSaveFromParentEnabled(boolean)},
+	 * so instead we insert this between the view and its parent.
+	 */
 
-[NoSaveStateFrameLayout.java](https://github.com/android/platform_frameworks_support/blob/master/v4/java/android/support/v4/app/NoSaveStateFrameLayout.java)
+@see [NoSaveStateFrameLayout.java](https://github.com/android/platform_frameworks_support/blob/master/v4/java/android/support/v4/app/NoSaveStateFrameLayout.java)
 
-Özellikle 4.0.3 ve 4.0.4 sürümlerinde stackoverflow hatası ile karşılaşıyorsanız. Support library 'den gelen bu framelayout sebebi ile oluşabilir. Bu hatayı düzeltmek için iki çözüm mevcut. Ya support kullanmayıp sürümü 3.0 'a yükseltmeniz. Veya kullandığınız layoutların derinliğini azaltmanızdır.
+
+
+Especially if you are experiencing with StackOverflow error in 4.0.3 and 4.0.4 versions. This framelayout coming from library may cause that crash.
+
+We need to know the situation. This crash occurs because of the layout is coming very depth.
