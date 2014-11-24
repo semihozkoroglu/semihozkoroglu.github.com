@@ -221,38 +221,38 @@
 
 <div class="post">
 <p>if the theme you want to use the scrollbar entire application. We need to write custom theme. that ;</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;application
-    .
-    .
-    android:theme=&quot;@style/AppTheme&quot;
-    .
-    . &gt;
+<div class="highlight"><pre><code class="language-text" data-lang="text">    &lt;application
+        .
+        .
+        android:theme=&quot;@style/AppTheme&quot;
+        .
+        . &gt;
 </code></pre></div>
 <p>and let&#39;s add scrollbar properties to sytles.xml</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;resources xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
-    &lt;style name=&quot;AppTheme&quot; parent=&quot;Theme.Sherlock.Light.NoActionBar&quot;&gt;
-        .
-        .
-        &lt;item name=&quot;android:scrollbarThumbVertical&quot;&gt;@drawable/shape_scrollbar_style&lt;/item&gt;
-        &lt;item name=&quot;android:scrollbarSize&quot;&gt;5dp&lt;/item&gt;
-        .
-        .
-    &lt;/style&gt;
-&lt;/resources&gt;
+<div class="highlight"><pre><code class="language-text" data-lang="text">    &lt;resources xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+        &lt;style name=&quot;AppTheme&quot; parent=&quot;Theme.Sherlock.Light.NoActionBar&quot;&gt;
+            .
+            .
+            &lt;item name=&quot;android:scrollbarThumbVertical&quot;&gt;@drawable/shape_scrollbar_style&lt;/item&gt;
+            &lt;item name=&quot;android:scrollbarSize&quot;&gt;5dp&lt;/item&gt;
+            .
+            .
+        &lt;/style&gt;
+    &lt;/resources&gt;
 </code></pre></div>
 <p>and now you can add what you want visuality to <code>drawable/shape_scrollbar_style.xml</code></p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; &gt;
+<div class="highlight"><pre><code class="language-text" data-lang="text">    &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+    &lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; &gt;
 
-    &lt;gradient
-        android:angle=&quot;45&quot;
-        android:endColor=&quot;#103249&quot;
-        android:startColor=&quot;#FF33B5E5&quot; /&gt;
+        &lt;gradient
+            android:angle=&quot;45&quot;
+            android:endColor=&quot;#103249&quot;
+            android:startColor=&quot;#FF33B5E5&quot; /&gt;
 
-    &lt;corners android:radius=&quot;1dp&quot; /&gt;
+        &lt;corners android:radius=&quot;1dp&quot; /&gt;
 
-    &lt;stroke android:width=&quot;2dp&quot;/&gt;
-&lt;/shape&gt;
+        &lt;stroke android:width=&quot;2dp&quot;/&gt;
+    &lt;/shape&gt;
 </code></pre></div>
 </div>
 

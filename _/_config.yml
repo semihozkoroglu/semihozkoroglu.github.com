@@ -3,7 +3,7 @@ disqus: 19notlar
 image: semih.jpg
 markdown: redcarpet
 paginate: 5
-pygments: true
+highlighter: true
 accounts:
 - icon: icos-github
   url: https://github.com/semihozkoroglu
