@@ -43,6 +43,6 @@
 
   <li><a href=""><strong style="color:#069;">{{paginator.page}}</strong></a><li>
   <li><a href="">..</a></li>
-  <li><a href=""><strong>{{paginator.total_pages}}</strong></a><li>
+  <li><a href="{{ site.url }}/page{{ paginator.total_pages }}"><strong>{{paginator.total_pages}}</strong></a><li>
 </ul>
 <!-- Pagination Links end -->
