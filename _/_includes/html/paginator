@@ -28,17 +28,17 @@
 <ul class="pager">
   {% if paginator.previous_page %}
     {% if paginator.previous_page > 1 %}
-      <li class="previous"><a href="{{ site.url }}/page{{ paginator.previous_page }}">&larr; {{site.previous}}</a></li>
+      <li class="previous"><a href="{{ site.url }}/page{{ paginator.previous_page }}">&larr; {{site.next}}</a></li>
     {% else %}
-      <li class="previous"><a href="/">&larr; {{site.previous}}</a></li>
+      <li class="previous"><a href="/">&larr; {{site.next}}</a></li>
     {% endif %}
   {% else %}
-    <li class="previous disabled"><a href="">&larr; {{site.previous}}</a></li>
+    <li class="previous disabled"><a href="">&larr; {{site.next}}</a></li>
   {% endif %}
   {% if paginator.next_page %}
-    <li class="next"><a href="{{ site.url }}/page{{ paginator.next_page }}">{{site.next}} &rarr;</a></li>
+    <li class="next"><a href="{{ site.url }}/page{{ paginator.next_page }}">{{site.previous}} &rarr;</a></li>
   {% else %}
-    <li class="next disabled"><a href="">{{site.next}} &rarr;</a></li>
+    <li class="next disabled"><a href="">{{site.previous}} &rarr;</a></li>
   {% endif %}
 
   <li><a href=""><strong style="color:#069;">{{paginator.page}}</strong></a><li>
