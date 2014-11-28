@@ -17,6 +17,8 @@ accounts:
   url: https://twitter.com/semihozkoroglu
 - icon: icos-youtube
   url: http://www.youtube.com/channel/UCGMOH3R6gUxE9optqiSHUBw
+- icon: icos-instagram
+  url: http://instagram.com/semihozkoroglu
 next: Newer
 previous: Older
 tagline: Android Developer
